@@ -11,10 +11,12 @@ sleep 5
 
 sudo pacman -Syu
 # system upgrade
-sudo pacman -S fish
+sudo pacman -S fish yay micro
 # installing essentials (lightweight only)
 sudo chsh -S /bin/fish
-#setting fish to default shell
+# setting fish to default shell
 
+sudo yay -S ciano kdenlive qalculate spotify glade ghostwriter discord
+# installing bonus programs
 
 # i stay norded // i've seen footage
