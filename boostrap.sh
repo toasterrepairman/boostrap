@@ -9,6 +9,9 @@ echo "exit now if you are not sure of what you are doing"
 
 sleep 5
 
+# setting wallpaper
+feh --bg-fill resources/wallpaper.png
+
 # system upgrade
 sudo pacman -Syu
 
@@ -19,7 +22,7 @@ sudo pacman -S fish yay micro
 sudo chsh -S /bin/fish
 
 # installing bonus programs
-sudo yay -S curlew kdenlive qalculate spotify glade ghostwriter discord albert
+sudo yay -S curlew kdenlive qalculate spotify glade ghostwriter discord albert elementary-planner feh polari tilix visual-studio-code-bin
 
 # bootstrapping GTK theme
 mkdir ~/.themes/ && cp resouces/Pop-nord-dark.zip ~/.themes/ 
@@ -30,3 +33,4 @@ gsettings set org.gnome.desktop.interface gtk-theme "Pop-nord-dark"
 cp -r resources/config/* ~/.config/
 
 # i stay norded // i've seen footage
+echo "installation is complete, please restart to ensure maximum potency"
