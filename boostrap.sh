@@ -13,21 +13,21 @@ sleep 5
 sudo pacman -Syu
 
 # installing essentials (lightweight only)
-sudo pacman -S fish yay micro
+sudo pacman -S fish yay micro feh 
 
 # setting fish to default shell
 sudo chsh -s /bin/fish
 
-# installing bonus programs
-yay -S curlew kdenlive spotify glade ghostwriter qalculate-gtk discord albert elementary-planner feh polari tilix visual-studio-code-bin
-
 # setting wallpaper
-feh --bg-fill resources/wallpaper.png
+feh --bg-fill $(pwd)/resources/wallpaper.png
+
+# installing bonus programs
+yay -S curlew ghostwriter qalculate-gtk albert polari tilix visual-studio-code-bin
 
 # bootstrapping GTK theme
 mkdir ~/.themes/ && cp resouces/Pop-nord-dark.zip ~/.themes/ 
 gsettings set org.gnome.shell.extensions.user-theme name "Pop-nord-dark"
-gsettings set org.gnome.desktop.interface gtk-theme mane  "Pop-nord-dark"
+gsettings set org.gnome.desktop.interface gtk-theme name "Pop-nord-dark"
 
 # restoring config
 cp -r resources/config/* ~/.config/
@@ -36,4 +36,4 @@ cp -r resources/config/* ~/.config/
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # i stay norded // i've seen footage
-echo "installation is complete, please restart to ensure maximum potency"
+echo "installation is complete, please reboot to finish the install"
