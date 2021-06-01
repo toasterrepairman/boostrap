@@ -22,7 +22,7 @@ sudo pacman -S fish yay micro
 sudo chsh -S /bin/fish
 
 # installing bonus programs
-sudo yay -S curlew kdenlive qalculate spotify glade ghostwriter discord albert elementary-planner feh polari tilix visual-studio-code-bin
+yay -S curlew kdenlive qalculate spotify glade ghostwriter discord albert elementary-planner feh polari tilix visual-studio-code-bin
 
 # bootstrapping GTK theme
 mkdir ~/.themes/ && cp resouces/Pop-nord-dark.zip ~/.themes/ 
@@ -31,6 +31,9 @@ gsettings set org.gnome.desktop.interface gtk-theme "Pop-nord-dark"
 
 # restoring config
 cp -r resources/config/* ~/.config/
+
+# installing rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # i stay norded // i've seen footage
 echo "installation is complete, please restart to ensure maximum potency"
