@@ -9,9 +9,6 @@ echo "exit now if you are not sure of what you are doing"
 
 sleep 5
 
-# setting wallpaper
-feh --bg-fill resources/wallpaper.png
-
 # system upgrade
 sudo pacman -Syu
 
@@ -19,15 +16,18 @@ sudo pacman -Syu
 sudo pacman -S fish yay micro
 
 # setting fish to default shell
-sudo chsh -S /bin/fish
+sudo chsh -s /bin/fish
 
 # installing bonus programs
-yay -S curlew kdenlive qalculate spotify glade ghostwriter discord albert elementary-planner feh polari tilix visual-studio-code-bin
+yay -S curlew kdenlive spotify glade ghostwriter qalculate-gtk discord albert elementary-planner feh polari tilix visual-studio-code-bin
+
+# setting wallpaper
+feh --bg-fill resources/wallpaper.png
 
 # bootstrapping GTK theme
 mkdir ~/.themes/ && cp resouces/Pop-nord-dark.zip ~/.themes/ 
-gsettings set org.gnome.shell.extensions.user-theme "Pop-nord-dark"
-gsettings set org.gnome.desktop.interface gtk-theme "Pop-nord-dark"
+gsettings set org.gnome.shell.extensions.user-theme name "Pop-nord-dark"
+gsettings set org.gnome.desktop.interface gtk-theme mane  "Pop-nord-dark"
 
 # restoring config
 cp -r resources/config/* ~/.config/
