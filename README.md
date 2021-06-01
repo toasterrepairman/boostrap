@@ -1,6 +1,6 @@
 # boostrap
 my personal nord-themed ricing setup (WIP)
-## Features:
+## features:
 - a dark and icy theme
 - 5k wallpaper
 - (coming soon) themed Spotify and Discord clients 
