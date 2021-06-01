@@ -8,6 +8,6 @@ my personal nord-themed ricing setup (WIP)
 # installation
 installation can be performed by copying the following line to your terminal and executing it
 
-`git clone git@github.com:toasterrepairman/boostrap.git && cd boostrap/ && sh boostrap.sh`
+`git clone https://github.com/toasterrepairman/boostrap.git && cd boostrap/ && sh boostrap.sh`
 
 this will clone the repo and run it, installing various helpful tools all themed with the nord color palette
