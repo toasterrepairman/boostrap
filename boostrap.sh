@@ -13,10 +13,13 @@ sleep 5
 sudo pacman -Syu
 
 # installing essentials (lightweight only)
-sudo pacman -S fish yay micro feh 
+sudo pacman -S fish yay micro feh base-devel
 
 # setting fish to default shell
 sudo chsh -s /bin/fish
+
+# bootstrap shell theme
+sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 
 # setting wallpaper
 feh --bg-fill $(pwd)/resources/wallpaper.png
