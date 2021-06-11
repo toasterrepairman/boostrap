@@ -30,6 +30,12 @@ yay -S nextcloud-client nerd-fonts-fira-code discord tootle spicetify-cli obs-st
 # installing SMB support
 pamac install nautilus-share manjaro-settings-samba
 
+# preparing Steam
+yay -S steam-manjaro steam-native
+steam-runtime&
+cp resources/air.zip ~/.local/share/Steam/skins
+unzip ~/.local/share/Steam/skins/air.zip
+
 # bootstrapping GTK theme
 mkdir ~/.themes/ && cp resouces/Pop-nord-dark.zip ~/.themes/ 
 gsettings set org.gnome.shell.extensions.user-theme name "Pop-nord-dark"
