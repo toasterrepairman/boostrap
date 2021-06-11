@@ -5,7 +5,7 @@ my personal nord-themed ricing setup (WIP)
 - 5k wallpaper
 - custom ghostwriter theme
 - fully configured shell with fish/starship.rs
-- (coming soon) themed Spotify and Discord clients 
+- themed Spotify and Discord clients 
 
 # installation
 installation can be performed by copying the following line to your terminal and executing it
