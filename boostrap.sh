@@ -28,7 +28,7 @@ sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 feh --bg-fill $(pwd)/resources/wallpaper.png
 
 # installing bonus programs
-yay -S nerd-fonts-fira-code tootle spicetify-cli spicetify-themes-git curlew ghostwriter qalculate-gtk albert polari tilix visual-studio-code-bin betterdiscordctl-git
+yay -S nextcloud-client nerd-fonts-fira-code tootle spicetify-cli spicetify-themes-git curlew ghostwriter qalculate-gtk albert polari tilix visual-studio-code-bin betterdiscordctl-git lutris
 
 # installing SMB support
 pamac install nautilus-share manjaro-settings-samba
@@ -41,8 +41,21 @@ gsettings set org.gnome.desktop.interface gtk-theme name "Pop-nord-dark"
 # restoring config
 cp -r resources/config/* ~/.config/
 
-# installing discord theme to resources/ 
-cd resources/ && git clone https://github.com/orblazer/discord-nordic.git
+# installing discord/kvantum theme to resources/ 
+cd resources/ 
+git clone https://github.com/orblazer/discord-nordic.git
+git clone https://github.com/EliverLara/Nordic.git
+cp -r Nordic/kde/kvantum .
+betterdiscordctl install
+cp discord-nordic/nordic.theme.css ~/.config/BetterDiscord/themes/
+cd ..
+
+# installing spicetify
+spicetify config color_scheme nord-dark
+spicetify apply
+
+# installing retroarch/libretro cores
+yay -S retroarch libretro-beetle-pce libretro-beetle-psx libretro-beetle-supergrafx libretro-blastem libretro-bsnes libretro-citra libretro-desmume libretro-dolphin libretro-gambatte libretro-mgba libretro-mupen64plus-next
 
 # i stay norded // i've seen footage
 echo "installation is complete, please reboot to finish the install"
