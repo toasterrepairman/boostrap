@@ -28,7 +28,7 @@ sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 feh --bg-fill $(pwd)/resources/wallpaper.png
 
 # installing bonus programs
-yay -S nextcloud-client nerd-fonts-fira-code discord tootle spicetify-cli obs-studio spicetify-themes-git curlew ghostwriter qalculate-gtk albert polari tilix visual-studio-code-bin betterdiscordctl-git lutris
+yay -S nextcloud-client nerd-fonts-fira-code discord tootle spicetify-cli obs-studio spicetify-themes-git curlew ghostwriter qalculate-gtk albert polari tilix visual-studio-code-bin betterdiscordctl-git lutris libreoffice-fresh
 
 # installing SMB support
 pamac install nautilus-share manjaro-settings-samba
