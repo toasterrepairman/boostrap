@@ -3,6 +3,8 @@ my personal nord-themed ricing setup (WIP)
 ## features:
 - a dark and icy theme
 - 5k wallpaper
+- custom ghostwriter theme
+- fully configured shell with fish/starship.rs
 - (coming soon) themed Spotify and Discord clients 
 
 # installation
