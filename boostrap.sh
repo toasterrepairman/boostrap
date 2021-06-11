@@ -24,9 +24,6 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # bootstrap shell theme
 sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 
-# setting wallpaper
-feh --bg-fill $(pwd)/resources/wallpaper.png
-
 # installing bonus programs
 yay -S nextcloud-client nerd-fonts-fira-code discord tootle spicetify-cli obs-studio spicetify-themes-git curlew ghostwriter qalculate-gtk albert polari tilix visual-studio-code-bin betterdiscordctl-git lutris libreoffice-fresh
 
@@ -37,6 +34,10 @@ pamac install nautilus-share manjaro-settings-samba
 mkdir ~/.themes/ && cp resouces/Pop-nord-dark.zip ~/.themes/ 
 gsettings set org.gnome.shell.extensions.user-theme name "Pop-nord-dark"
 gsettings set org.gnome.desktop.interface gtk-theme name "Pop-nord-dark"
+
+# setting wallpaper
+cp resources/wallpaper.png ~/.themes/
+gsettings set org.gnome.desktop.background picture-uri ~/.themes/wallpaper.png
 
 # restoring config
 cp -r resources/config/* ~/.config/
