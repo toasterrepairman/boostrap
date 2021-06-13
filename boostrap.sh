@@ -37,7 +37,7 @@ cp resources/air.zip ~/.local/share/Steam/skins
 unzip ~/.local/share/Steam/skins/air.zip
 
 # bootstrapping GTK theme
-mkdir ~/.themes/ && cp resouces/Pop-nord-dark.zip ~/.themes/ 
+mkdir ~/.themes/ && cp resources/Pop-nord-dark.zip ~/.themes/ 
 gsettings set org.gnome.shell.extensions.user-theme name "Pop-nord-dark"
 gsettings set org.gnome.desktop.interface gtk-theme name "Pop-nord-dark"
 
