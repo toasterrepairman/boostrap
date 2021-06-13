@@ -25,7 +25,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 
 # installing bonus programs
-yay -S nextcloud-client nerd-fonts-fira-code discord tootle spicetify-cli obs-studio spicetify-themes-git curlew ghostwriter qalculate-gtk albert polari tilix visual-studio-code-bin betterdiscordctl-git lutris libreoffice-fresh
+yay -S nextcloud-client nerd-fonts-fira-code discord tootle spicetify-cli spotify obs-studio spicetify-themes-git curlew ghostwriter qalculate-gtk albert polari tilix visual-studio-code-bin betterdiscordctl-git lutris libreoffice-fresh
 
 # installing SMB support
 pamac install nautilus-share manjaro-settings-samba
