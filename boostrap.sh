@@ -25,7 +25,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 
 # installing bonus programs
-yay -S nextcloud-client nerd-fonts-fira-code discord tootle spicetify-cli spotify obs-studio spicetify-themes-git curlew ghostwriter qalculate-gtk albert polari tilix visual-studio-code-bin betterdiscordctl-git lutris libreoffice-fresh
+yay -S nextcloud-client nerd-fonts-fira-code discord tootle obsidian-appimage spicetify-cli spotify obs-studio spicetify-themes-git curlew vivaldi ghostwriter qalculate-gtk albert polari tilix visual-studio-code-bin betterdiscordctl-git lutris libreoffice-fresh
 
 # installing SMB support
 pamac install nautilus-share manjaro-settings-samba
@@ -38,6 +38,7 @@ unzip ~/.local/share/Steam/skins/air.zip
 
 # bootstrapping GTK theme
 mkdir ~/.themes/ && cp resources/Pop-nord-dark.zip ~/.themes/ 
+unzip ~/.themes/Pop-nord-dark.zip
 gsettings set org.gnome.shell.extensions.user-theme name "Pop-nord-dark"
 gsettings set org.gnome.desktop.interface gtk-theme name "Pop-nord-dark"
 
@@ -54,6 +55,7 @@ git clone https://github.com/orblazer/discord-nordic.git
 git clone https://github.com/EliverLara/Nordic.git
 cp -r Nordic/kde/kvantum .
 betterdiscordctl install
+mkdir /.config/BetterDiscord/themes/
 cp discord-nordic/nordic.theme.css ~/.config/BetterDiscord/themes/
 cd ..
 
