@@ -30,6 +30,10 @@ yay -S nextcloud-client nerd-fonts-fira-code discord tootle meld obsidian-appima
 # installing SMB support
 pamac install nautilus-share manjaro-settings-samba
 
+# hacking spotify desu
+sudo chmod a+wr /opt/spotify
+sudo chmod a+wr /opt/spotify/Apps -R
+
 # preparing Steam
 yay -S steam-manjaro steam-native
 steam-runtime&
