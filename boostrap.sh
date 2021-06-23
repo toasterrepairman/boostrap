@@ -25,7 +25,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 
 # installing bonus programs
-yay -S nextcloud-client nerd-fonts-fira-code discord tootle meld obsidian-appimage spicetify-cli spotify obs-studio spicetify-themes-git curlew vivaldi ghostwriter qalculate-gtk albert polari tilix visual-studio-code-bin betterdiscordctl-git lutris libreoffice-fresh
+yay -S nextcloud-client docker kitematic nerd-fonts-fira-code discord tootle meld obsidian-appimage spicetify-cli spotify obs-studio spicetify-themes-git curlew vivaldi ghostwriter qalculate-gtk albert polari tilix visual-studio-code-bin betterdiscordctl-git lutris libreoffice-fresh
 
 # installing SMB support
 pamac install nautilus-share manjaro-settings-samba
@@ -69,6 +69,12 @@ spicetify apply
 
 # installing retroarch/libretro cores
 yay -S retroarch libretro-beetle-pce libretro-beetle-psx libretro-beetle-supergrafx libretro-blastem libretro-bsnes libretro-citra libretro-desmume libretro-dolphin libretro-gambatte libretro-mgba libretro-mupen64plus-next
+
+# satanic docker ritual
+sudo groupadd docker
+sudo usermod -aG docker $USER
+sudo chmod 666 /var/run/docker.sock
+sudo systemctl restart docker
 
 # i stay norded // i've seen footage
 echo "installation is complete, please reboot to finish the install"
