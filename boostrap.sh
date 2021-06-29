@@ -25,14 +25,15 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 
 # installing bonus programs
-yay -S nextcloud-client docker kitematic nerd-fonts-fira-code discord tootle meld obsidian-appimage spicetify-cli spotify obs-studio spicetify-themes-git curlew vivaldi ghostwriter qalculate-gtk albert polari tilix visual-studio-code-bin betterdiscordctl-git lutris libreoffice-fresh
+yay -S nextcloud-client docker kitematic nerd-fonts-fira-code discord tootle meld obsidian-appimage spicetify-cli spotify obs-studio spicetify-themes-git curlew vivaldi ghostwriter qalculate-gtk ulauncher polari tilix visual-studio-code-bin betterdiscordctl-git lutris libreoffice-fresh
 
 # installing SMB support
 pamac install nautilus-share manjaro-settings-samba
 
 # hacking spotify desu
 sudo chmod a+wr /opt/spotify
-sudo chmod a+wr /opt/spotify/Apps -R
+sudo chmod a+wr /opt/spotify/Apps -Rgit clone https://github.com/arcticicestudio/nord-gnome-terminal.git
+cd nord-gnome-terminal/src
 
 # preparing Steam
 yay -S steam-manjaro steam-native
@@ -75,6 +76,13 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 sudo chmod 666 /var/run/docker.sock
 sudo systemctl restart docker
+
+# gnome terminal theme
+cd resources/ 
+git clone https://github.com/arcticicestudio/nord-gnome-terminal.git
+cd nord-tilix/
+./install.sh
+cd ..
 
 # i stay norded // i've seen footage
 echo "installation is complete, please reboot to finish the install"
