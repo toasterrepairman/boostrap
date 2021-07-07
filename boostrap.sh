@@ -28,7 +28,7 @@ sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | gpg --import -
 
 # installing bonus programs
-yay -S nextcloud-client inter-font docker visual-studio-code-bin kitematic foliate tumbler twitz libgepub nerd-fonts-fira-code fd discord tootle meld obsidian-appimage spicetify-cli spotify obs-studio spicetify-themes-git curlew vivaldi ghostwriter qalculate-gtk ulauncher polari tilix visual-studio-code-bin betterdiscordctl-git lutris libreoffice-fresh
+yay -S nextcloud-client inter-font docker visual-studio-code-bin kitematic foliate tumbler twitz libgepub nerd-fonts-fira-code fd discord tootle meld obsidian-appimage spicetify-cli spotify obs-studio spicetify-themes-git curlew ghostwriter qalculate-gtk ulauncher polari tilix visual-studio-code-bin betterdiscordctl-git lutris libreoffice-fresh
 
 # installing SMB support
 pamac install nautilus-share manjaro-settings-samba
@@ -91,6 +91,10 @@ git clone https://github.com/arcticicestudio/nord-gnome-terminal.git
 cd nord-tilix/
 ./install.sh
 cd ..
+
+# git ident
+git config --global user.email "smol@toast.cyou"
+git config --global user.name "toast"
 
 # i stay norded // i've seen footage
 echo "installation is complete, please reboot to finish the install"
