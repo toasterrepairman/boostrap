@@ -24,20 +24,27 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # bootstrap shell theme
 sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 
+# grabbing Spotify PGP key
+curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | gpg --import -
+
 # installing bonus programs
-yay -S nextcloud-client docker kitematic foliate tumbler twitz libgepub nerd-fonts-fira-code fd discord tootle meld obsidian-appimage spicetify-cli spotify obs-studio spicetify-themes-git curlew vivaldi ghostwriter qalculate-gtk ulauncher polari tilix visual-studio-code-bin betterdiscordctl-git lutris libreoffice-fresh
+yay -S nextcloud-client inter-font docker visual-studio-code-bin kitematic foliate tumbler twitz libgepub nerd-fonts-fira-code fd discord tootle meld obsidian-appimage spicetify-cli spotify obs-studio spicetify-themes-git curlew vivaldi ghostwriter qalculate-gtk ulauncher polari tilix visual-studio-code-bin betterdiscordctl-git lutris libreoffice-fresh
 
 # installing SMB support
 pamac install nautilus-share manjaro-settings-samba
 
 # hacking spotify desu
 sudo chmod a+wr /opt/spotify
-sudo chmod a+wr /opt/spotify/Apps -Rgit clone https://github.com/arcticicestudio/nord-gnome-terminal.git
+sudo chmod a+wr /opt/spotify/Apps -R
+
+# download Gnome terminal theme
+git clone https://github.com/arcticicestudio/nord-gnome-terminal.git
 cd nord-gnome-terminal/src
+cd ../..
 
 # preparing Steam
 yay -S steam-manjaro steam-native
-steam-runtime&
+nohup steam-runtime&
 cp resources/air.zip ~/.local/share/Steam/skins
 unzip ~/.local/share/Steam/skins/air.zip
 
@@ -65,6 +72,7 @@ cp discord-nordic/nordic.theme.css ~/.config/BetterDiscord/themes/
 cd ..
 
 # installing spicetify
+spicetify backup apply
 spicetify config color_scheme nord-dark
 spicetify apply
 
