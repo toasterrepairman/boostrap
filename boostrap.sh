@@ -77,7 +77,7 @@ spicetify config color_scheme nord-dark
 spicetify apply
 
 # installing retroarch/libretro cores
-yay -S retroarch libretro-beetle-pce libretro-beetle-psx libretro-beetle-supergrafx libretro-blastem libretro-bsnes libretro-citra libretro-desmume libretro-dolphin libretro-gambatte libretro-mgba libretro-mupen64plus-next
+yay -S retroarch retroarch-assets-ozone libretro-beetle-pce libretro-beetle-psx libretro-beetle-supergrafx libretro-blastem libretro-bsnes libretro-citra libretro-desmume libretro-dolphin libretro-gambatte libretro-mgba libretro-mupen64plus-next
 
 # satanic docker ritual
 sudo groupadd docker
