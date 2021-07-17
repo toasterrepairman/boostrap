@@ -28,7 +28,10 @@ sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | gpg --import -
 
 # installing bonus programs
-yay -S nextcloud-client pinta inter-font docker visual-studio-code-bin whalebird-bin kitematic foliate spotify tumbler twitz libgepub nerd-fonts-fira-code fd discord tootle meld obsidian-appimage spicetify-cli spotify obs-studio spicetify-themes-git curlew qalculate-gtk ulauncher polari tilix visual-studio-code-bin betterdiscordctl-git lutris libreoffice-fresh
+yay -S nextcloud-client pinta inter-font whalebird-bin foliate spotify tumbler libgepub nerd-fonts-fira-code fd discord tootle meld obsidian-appimage spicetify-cli spotify obs-studio spicetify-themes-git curlew qalculate-gtk ulauncher polari tilix visual-studio-code-bin betterdiscordctl-git lutris libreoffice-fresh
+
+# battle.net dependencies
+sudo pacman -S lib32-gnutls lib32-libldap lib32-libgpg-error lib32-sqlite lib32-libpulse lib32-alsa-plugins
 
 # installing SMB support
 pamac install nautilus-share manjaro-settings-samba
