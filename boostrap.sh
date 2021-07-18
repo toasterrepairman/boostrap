@@ -28,7 +28,10 @@ sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | gpg --import -
 
 # installing bonus programs
-yay -S nextcloud-client pinta inter-font whalebird-bin foliate spotify tumbler libgepub nerd-fonts-fira-code fd discord tootle meld obsidian-appimage spicetify-cli spotify obs-studio spicetify-themes-git curlew qalculate-gtk ulauncher polari tilix visual-studio-code-bin betterdiscordctl-git lutris libreoffice-fresh
+yay -S nextcloud-client ttf-ibm-plex xclip pinta inter-font whalebird-bin foliate spotify tumbler libgepub nerd-fonts-fira-code fd discord tootle meld obsidian-appimage spicetify-cli spotify obs-studio spicetify-themes-git curlew qalculate-gtk ulauncher polari tilix visual-studio-code-bin betterdiscordctl-git lutris libreoffice-fresh
+
+# python installation
+pip install python3-xlib
 
 # battle.net dependencies
 sudo pacman -S lib32-gnutls lib32-libldap lib32-libgpg-error lib32-sqlite lib32-libpulse lib32-alsa-plugins
@@ -87,12 +90,6 @@ spicetify apply
 
 # installing retroarch/libretro cores
 yay -S retroarch retroarch-assets-ozone libretro-beetle-pce libretro-beetle-psx libretro-beetle-supergrafx libretro-blastem libretro-bsnes libretro-citra libretro-desmume libretro-dolphin libretro-gambatte libretro-mgba libretro-mupen64plus-next
-
-# satanic docker ritual
-sudo groupadd docker
-sudo usermod -aG docker $USER
-sudo chmod 666 /var/run/docker.sock
-sudo systemctl restart docker
 
 # gnome terminal theme
 cd resources/ 
