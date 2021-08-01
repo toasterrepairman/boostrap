@@ -21,14 +21,11 @@ sudo chsh -s /bin/fish
 # installing rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-# bootstrap shell theme
-sh -c "$(curl -fsSL https://starship.rs/install.sh)"
-
 # grabbing Spotify PGP key
 curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | gpg --import -
 
 # installing bonus programs
-yay -S nextcloud-client ttf-ibm-plex xclip vlc okteta monero-gui seahorse pinta inter-font whalebird-bin ghidra foliate spotify tumbler libgepub nerd-fonts-fira-code fd discord tootle meld obsidian-appimage spicetify-cli spotify obs-studio spicetify-themes-git curlew qalculate-gtk ulauncher polari tilix visual-studio-code-bin betterdiscordctl-git lutris libreoffice-fresh
+yay -S nextcloud-client ttf-ibm-plex xclip vlc okteta monero-gui seahorse pinta inter-font whalebird-bin ghidra foliate spotify tumbler libgepub nerd-fonts-fira-code fd discord tootle meld obsidian-appimage spicetify-cli spotify gitg obs-studio spicetify-themes-git curlew qalculate-gtk ulauncher polari tilix visual-studio-code-bin betterdiscordctl-git lutris libreoffice-fresh
 
 # python installation
 pip install python3-xlib
@@ -36,17 +33,9 @@ pip install python3-xlib
 # battle.net dependencies
 sudo pacman -S lib32-gnutls lib32-libldap lib32-libgpg-error lib32-sqlite lib32-libpulse lib32-alsa-plugins
 
-# installing SMB support
-pamac install nautilus-share manjaro-settings-samba
-
 # hacking spotify desu
 sudo chmod a+wr /opt/spotify
 sudo chmod a+wr /opt/spotify/Apps -R
-
-# download Gnome terminal theme
-git clone https://github.com/arcticicestudio/nord-gnome-terminal.git
-cd nord-gnome-terminal/src
-cd ../..
 
 # preparing Steam
 yay -S steam-manjaro steam-native
