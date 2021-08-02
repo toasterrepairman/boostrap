@@ -76,6 +76,9 @@ spicetify config extensions shuffle+.js
 spicetify config color_scheme nord-dark
 spicetify apply
 
+# Install uLauncher theme
+git clone https://github.com/KiranWells/ulauncher-nord/ \
+  ~/.config/ulauncher/user-themes/nord
 
 # installing retroarch/libretro cores
 yay -S retroarch retroarch-assets-ozone libretro-beetle-pce libretro-beetle-psx libretro-beetle-supergrafx libretro-blastem libretro-bsnes libretro-citra libretro-desmume libretro-dolphin libretro-gambatte libretro-mgba libretro-mupen64plus-next
