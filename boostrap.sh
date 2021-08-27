@@ -25,7 +25,10 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | gpg --import -
 
 # installing bonus programs
-yay -S nextcloud-client ttf-ibm-plex xclip gthumb vlc okteta monero-gui seahorse pinta inter-font gfeeds whalebird-bin ghidra foliate spotify tumbler libgepub nerd-fonts-fira-code fd discord tootle meld obsidian-appimage spicetify-cli spotify gitg obs-studio spicetify-themes-git curlew qalculate-gtk ulauncher polari tilix visual-studio-code-bin betterdiscordctl-git lutris libreoffice-fresh
+yay -S nextcloud-client xclip gthumb vlc okteta monero-gui seahorse pinta gfeeds ghidra foliate spotify libgepub nerd-fonts-fira-code fd discord tootle meld obsidian-appimage spicetify-cli spotify gitg obs-studio spicetify-themes-git curlew qalculate-gtk ulauncher polari tilix visual-studio-code-bin betterdiscordctl-git lutris libreoffice-fresh
+
+# rice
+yay -S nordic-theme papirus-folders-nordic ttf-ibm-plex inter-font
 
 # python installation
 pip install python3-xlib
