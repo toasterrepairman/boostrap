@@ -27,6 +27,10 @@ curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | gpg --import 
 # installing bonus programs
 yay -S ibus-typing-booster nextcloud-client xclip gthumb vlc okteta monero-gui seahorse pinta gfeeds ghidra foliate spotify libgepub nerd-fonts-fira-code fd discord tootle meld obsidian-appimage spicetify-cli spotify gitg obs-studio spicetify-themes-git curlew qalculate-gtk ulauncher polari tilix visual-studio-code-bin betterdiscordctl-git lutris libreoffice-fresh
 
+# beep beep installing Taxi
+yay -S python-dulwich
+yay -S taxi-git
+
 # rice
 yay -S nordic-theme papirus-folders-nordic ttf-ibm-plex inter-font
 
