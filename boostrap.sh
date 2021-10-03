@@ -25,7 +25,12 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | gpg --import -
 
 # installing bonus programs
-yay -S ibus-typing-booster lsp-plugins pulseeffects-legacy dialect syncthing-gtk xclip gthumb wike gnome-passwordsafe vlc okteta monero-gui seahorse pinta gfeeds ghidra foliate spotify libgepub nerd-fonts-fira-code fd discord tootle meld obsidian-appimage spicetify-cli spotify gitg obs-studio spicetify-themes-git curlew qalculate-gtk ulauncher polari tilix visual-studio-code-bin betterdiscordctl-git lutris libreoffice-fresh
+yay -S ibus-typing-booster lsp-plugins pulseeffects-legacy dialect syncthing-gtk \
+xclip gthumb wike gnome-passwordsafe vlc okteta monero-gui seahorse pinta gfeeds \
+ghidra foliate spotify libgepub nerd-fonts-fira-code fd discord tootle meld \
+obsidian-appimage spicetify-cli spotify gitg obs-studio spicetify-themes-git curlew \
+qalculate-gtk ulauncher polari tilix visual-studio-code-bin betterdiscordctl-git lutris \
+libreoffice-fresh
 
 # beep beep installing Taxi
 yay -S python-dulwich
@@ -38,7 +43,8 @@ yay -S nordic-theme papirus-folders-nordic ttf-ibm-plex inter-font
 pip install python3-xlib
 
 # battle.net dependencies
-sudo pacman -S lib32-gnutls lib32-libldap lib32-libgpg-error lib32-sqlite lib32-libpulse lib32-alsa-plugins
+sudo pacman -S lib32-gnutls lib32-libldap lib32-libgpg-error lib32-sqlite \
+lib32-libpulse lib32-alsa-plugins
 
 # hacking spotify desu
 sudo chmod a+wr /opt/spotify
@@ -88,7 +94,10 @@ git clone https://github.com/KiranWells/ulauncher-nord/ \
   ~/.config/ulauncher/user-themes/nord
 
 # installing retroarch/libretro cores
-yay -S retroarch retroarch-assets-ozone libretro-beetle-pce libretro-beetle-psx libretro-beetle-supergrafx libretro-blastem libretro-bsnes libretro-citra libretro-desmume libretro-dolphin libretro-gambatte libretro-mgba libretro-mupen64plus-next
+yay -S retroarch retroarch-assets-ozone libretro-beetle-pce libretro-beetle-psx \
+libretro-beetle-supergrafx libretro-blastem libretro-bsnes libretro-citra \
+libretro-desmume libretro-dolphin libretro-gambatte libretro-mgba \
+libretro-mupen64plus-next
 
 # gnome terminal theme
 cd resources/ 
