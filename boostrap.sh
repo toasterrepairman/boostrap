@@ -110,5 +110,8 @@ cd ..
 git config --global user.email "smol@toast.cyou"
 git config --global user.name "toast"
 
+# CPUfreq enable
+systemctl enable --now auto-cpufreq
+
 # i stay norded // i've seen footage
 echo "installation is complete, please reboot to finish the install"
