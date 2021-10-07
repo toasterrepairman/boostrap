@@ -30,7 +30,7 @@ xclip gthumb wike gnome-passwordsafe vlc okteta monero-gui seahorse pinta gfeeds
 ghidra foliate spotify libgepub nerd-fonts-fira-code fd discord tootle meld \
 obsidian-appimage spicetify-cli spotify gitg obs-studio spicetify-themes-git curlew \
 qalculate-gtk ulauncher polari tilix visual-studio-code-bin betterdiscordctl-git lutris \
-libreoffice-fresh
+libreoffice-fresh vivaldi vivaldi-ffmpeg-codecs
 
 # beep beep installing Taxi
 yay -S python-dulwich
