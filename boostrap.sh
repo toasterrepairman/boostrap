@@ -30,7 +30,7 @@ xclip gthumb wike gnome-passwordsafe vlc okteta monero-gui seahorse pinta gfeeds
 ghidra foliate spotify libgepub nerd-fonts-fira-code fd discord tootle meld \
 obsidian-appimage spicetify-cli spotify gitg obs-studio spicetify-themes-git curlew \
 qalculate-gtk ulauncher polari tilix visual-studio-code-bin betterdiscordctl-git lutris \
-libreoffice-fresh vivaldi vivaldi-ffmpeg-codecs
+libreoffice-fresh vivaldi vivaldi-ffmpeg-codecs blanket bottom auto-cpufreq
 
 # beep beep installing Taxi
 yay -S python-dulwich
@@ -112,6 +112,9 @@ bash <(curl -Ss https://my-netdata.io/kickstart.sh)
 # git ident
 git config --global user.email "smol@toast.cyou"
 git config --global user.name "toast"
+
+# CPUfreq enable
+systemctl enable --now auto-cpufreq
 
 # i stay norded // i've seen footage
 echo "installation is complete, please reboot to finish the install"
