@@ -3,7 +3,7 @@ my personal nord-themed ricing setup (WIP)
 ## features:
 - a dark and icy theme
 - 5k wallpaper
-- custom ghostwriter theme
+- ~~custom ghostwriter theme~~ removed, since Obsidian has a Nord theme 
 - fully configured shell with fish/starship.rs
 - themed Spotify and Discord clients 
 
