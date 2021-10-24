@@ -82,11 +82,6 @@ cd ..
 
 # installing spicetify
 spicetify backup apply
-spicetify config custom_apps lyrics-plus
-spicetify config custom_apps new-releases
-spicetify config extensions bookmark.js
-spicetify config extensions loopyLoop.js 
-spicetify config extensions shuffle+.js
 spicetify config color_scheme nord-dark
 spicetify apply
 
