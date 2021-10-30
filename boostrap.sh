@@ -37,6 +37,9 @@ hunspell-en_us
 yay -S python-dulwich
 yay -S taxi-git
 
+# install virtual machine stuffs
+sudo pacman -Syu qemu libvirt virt-manager
+
 # rice
 yay -S nordic-theme papirus-folders-nordic ttf-ibm-plex inter-font
 
