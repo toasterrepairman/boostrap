@@ -29,7 +29,7 @@ yay -S ibus-typing-booster lsp-plugins pulseeffects-legacy dialect syncthing-gtk
 xclip gthumb wike gnome-passwordsafe vlc okteta monero-gui seahorse pinta gfeeds \
 ghidra foliate spotify libgepub nerd-fonts-fira-code fd discord tootle meld \
 obsidian-appimage spicetify-cli spotify gitg obs-studio spicetify-themes-git curlew \
-qalculate-gtk ulauncher polari tilix visual-studio-code-bin betterdiscordctl-git lutris \
+qalculate-gtk polari tilix visual-studio-code-bin betterdiscordctl-git lutris \
 libreoffice-fresh chromium blanket bottom auto-cpufreq ventoy hunspell-en_us github-cli \
 curtail
 
