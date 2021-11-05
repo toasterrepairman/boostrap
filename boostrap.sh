@@ -105,9 +105,6 @@ cd nord-tilix/
 ./install.sh
 cd ..
 
-# install netdata
-bash <(curl -Ss https://my-netdata.io/kickstart.sh)
-
 # git ident
 git config --global user.email "smol@toast.cyou"
 git config --global user.name "toast"
