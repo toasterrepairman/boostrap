@@ -50,6 +50,10 @@ pip install python3-xlib
 sudo pacman -S lib32-gnutls lib32-libldap lib32-libgpg-error lib32-sqlite \
 lib32-libpulse lib32-alsa-plugins
 
+# syncthing setup
+systemctl enable syncthing@toast.service
+systemctl start syncthing@toast.service
+
 # hacking spotify desu
 sudo chmod a+wr /opt/spotify
 sudo chmod a+wr /opt/spotify/Apps -R
