@@ -25,13 +25,13 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | gpg --import -
 
 # installing bonus programs
-yay -S ibus-typing-booster lsp-plugins pulseeffects-legacy dialect syncthing \
+yay -S ibus-typing-booster lsp-plugins easyeffects syncthing libdbusmenu-glib \
 xclip gthumb wike gnome-passwordsafe vlc okteta monero-gui seahorse pinta gfeeds \
 ghidra foliate spotify libgepub nerd-fonts-fira-code fd discord tootle meld \
 obsidian-appimage spicetify-cli spotify gitg obs-studio spicetify-themes-git curlew \
 qalculate-gtk polari tilix visual-studio-code-bin betterdiscordctl-git lutris \
 libreoffice-fresh chromium blanket bottom auto-cpufreq ventoy hunspell-en_us github-cli \
-curtail gimagereader-gtk tesseract-data-eng mailspring earlyoom
+curtail gimagereader-gtk tesseract-data-eng evolution
 
 # beep beep installing Taxi
 yay -S python-dulwich
