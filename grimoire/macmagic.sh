@@ -4,18 +4,17 @@ Command Defaults write GlobalPreferences com.apple.mouse.scaling -1
 # install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+# set git identity
+git config --global user.email "smol@toast.cyou"
+git config --global user.name "toast"
+
 # install stuff *with* homebrew
 brew install slack iterm2 chromium
 
-# perform evil incantation to get Docker working
-brew install --cask docker
-
-# check to see if evil spell worked
-echo "This will check if Docker has been installed properly"
-sleep 5
-docker info
+# 
 
 # TODO
 # reverse scrolling // 
 
 # TO INSTALL
+# docker-desktop
