@@ -9,7 +9,7 @@ git config --global user.email "smol@toast.cyou"
 git config --global user.name "toast"
 
 # install stuff *with* homebrew
-brew install slack iterm2 chromium
+brew install slack iterm2 chromium 1password
 
 
 # TODO
