@@ -12,6 +12,16 @@ git config --global user.name "toast"
 brew install slack iterm2 chrome 1password sloth monitorcontrol coteditor \
 spotify spicetify
 
+# hacking spotify desu
+sudo chmod a+wr /opt/spotify
+sudo chmod a+wr /opt/spotify/Apps -R
+
+# installing spicetify
+spicetify backup apply
+spicetify config color_scheme nord-dark
+spicetify apply
+
+
 # TODO
 # reverse scrolling
 
