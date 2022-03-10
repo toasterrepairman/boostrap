@@ -8,3 +8,7 @@ rm ~/.ssh/*
 # delete all homebrew packages
 echo "removing all brew packages"
 brew remove $(brew list --formulae) $(brew list --cask) 
+
+# clean config directory
+echo "deleting config directory"
+rm -r ~/.config/*
