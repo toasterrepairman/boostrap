@@ -24,5 +24,5 @@ read -p "continue (y/n)?" choice
 case "$choice" in 
   y|Y ) rm -rf ~/Documents/* ~/Downloads/* ~/Music/* ~/Pictures/*;;
   n|N ) echo "skipping this step...";;
-  * ) echo "invalid, skipping step";;
+  * ) echo "invalid, skipping this step...";;
 esac
