@@ -31,7 +31,8 @@ ghidra foliate spotify libgepub nerd-fonts-fira-code fd discord tootle meld \
 obsidian-appimage spicetify-cli spotify gitg obs-studio spicetify-themes-git curlew \
 qalculate-gtk polari tilix visual-studio-code-bin betterdiscordctl-git lutris \
 libreoffice-fresh chromium blanket bottom auto-cpufreq ventoy hunspell-en_us github-cli \
-curtail gimagereader-gtk tesseract-data-eng evolution transmission-gtk evince
+curtail gimagereader-gtk tesseract-data-eng evolution transmission-gtk evince \
+geeqie gwenview
 
 # beep beep installing Taxi
 yay -S python-dulwich
