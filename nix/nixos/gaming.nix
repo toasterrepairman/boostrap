@@ -3,8 +3,8 @@
 {
   # Gaming stuff
   environment.systemPackages = with pkgs; [
-	flatpak
-	wine
+    flatpak
+    wine
     protonup
     multimc
     bottles
