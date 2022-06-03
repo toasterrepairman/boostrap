@@ -5,8 +5,6 @@
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowBroken = true;
 
-  systemd.network.enable = true;
-
   # Enable Bluetooth on a hardware level
   hardware.bluetooth.enable = true;
 
@@ -61,7 +59,6 @@
     kdeconnect
     quota
     syncthing
-    syncthing-gtk 
     gnome.seahorse
     gnome.gnome-keyring
     gnome.libgnome-keyring
@@ -82,6 +79,7 @@
     elementary-planner
     zoom-us
     obsidian
+    transmission-gtk
     # Productity
     evince
     gImageReader

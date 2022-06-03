@@ -7,11 +7,11 @@
 {
   imports =
     [ # Here we list the modules we want to add to our config:
-      ./devices/desktop/hardware-configuration.nix
-      ./devices/desktop/desktop.nix
-      ./gaming.nix
-      ./plasma.nix
-      ./terminal.nix
+      ./modules/devices/desktop/hardware-configuration.nix
+      ./modules/devices/desktop/desktop.nix
+      ./modules/gaming.nix
+      ./modules/plasma.nix
+      ./modules/terminal.nix
     ];
 
   # This value determines the NixOS release from which the default
@@ -20,5 +20,5 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "21.11"; # Did you read the comment?
+  system.stateVersion = "unstable"; # Did you read the comment?
 }
