@@ -12,6 +12,7 @@
       ./modules/gaming.nix
       ./modules/plasma.nix
       ./modules/terminal.nix
+      ./modules/toast.nix
     ];
 
   # This value determines the NixOS release from which the default

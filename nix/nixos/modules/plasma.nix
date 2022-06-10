@@ -11,9 +11,34 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  
 
-  # Enable Syncthing
-  services.syncthing.enable = true;
-
+  services = {
+    syncthing = {
+      enable = true;
+      openDefaultPorts = true;
+      systemService = true;
+      devices = {
+        "Phone" = { id = "NHAN2GF-PQN2XBO-K7IQQVE-DRFPP2H-RX7J4SK-CEP2FVF-HUGQXH2-EG5OXAE"; };
+      };
+      folders = {
+        "Cloud" = {        # Name of folder in Syncthing, also the folder ID
+          path = "/home/toast/Documents/Cloud";    # Which folder to add to Syncthing
+          devices = [ "Phone" ];      # Which devices to share the folder with
+        };
+        "Pictures" = {        # Name of folder in Syncthing, also the folder ID
+          path = "/home/toast/Pictures";    # Which folder to add to Syncthing
+          devices = [ "Phone" ];      # Which devices to share the folder with
+        };
+        "Music" = {        # Name of folder in Syncthing, also the folder ID
+          path = "/home/toast/Music";    # Which folder to add to Syncthing
+          devices = [ "Phone" ];      # Which devices to share the folder with
+        };
+        "Books" = {        # Name of folder in Syncthing, also the folder ID
+          path = "/home/toast/Documents/Books";    # Which folder to add to Syncthing
+          devices = [ "Phone" ];      # Which devices to share the folder with
+        };
+      };
+    };
+  };
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -96,7 +121,9 @@
     taxi
     okteta
     vscodium
+    jetbrains.idea-community
     meld
     gitg
+    kate
   ];
 }
