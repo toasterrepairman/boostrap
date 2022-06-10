@@ -17,5 +17,28 @@
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "21.05";
+  home.stateVersion = "22.05";
+
+  {
+    gtk = {
+      enable = true;
+      theme = {
+        package = pkgs.nordic;
+        name = "nordic";
+      };
+      iconTheme = {
+        package = pkgs.nordzy-icon-theme;
+        name = "nordzy-icon-theme";
+      };
+      gtk2.extraConfig = ''
+        gtk-cursor-theme-size = 16
+        gtk-cursor-theme-name = "nordzy-cursor-theme
+      '';
+      gtk3.extraConfig = {
+        gtk-cursor-theme-size = 16;
+        gtk-cursor-theme-name = "nordzy-cursor-theme";
+      };
+    };
+  }
 }
+
