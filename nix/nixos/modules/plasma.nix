@@ -110,6 +110,7 @@
     gImageReader
     wike
     libreoffice
+    gimp
     # Media
     vlc
     handbrake
