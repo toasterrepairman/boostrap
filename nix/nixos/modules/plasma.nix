@@ -85,7 +85,6 @@
     libreoffice
     gimp
     syncthingtray
-    martchus.syncthingplasmoid
     # Media
     vlc
     handbrake
