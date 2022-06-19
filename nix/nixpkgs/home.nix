@@ -1,3 +1,4 @@
+
 { config, pkgs, ... }:
 
 {
@@ -27,12 +28,27 @@
     enable = true;
     userName  = "toasterrepairman";
     userEmail = "fixing@toast.cyou";
-  };
-  
+  };  
   programs.gitui.enable = true; 
 
   # Terminal config
-  programs.fish.shellAliases
+  programs.fish.shellAliases = {
+  	g = "git";
+    "..." = "cd ../..";
+    treesaver = "cbonsai -S -t 3";
+    weather = "curl wttr.in";
+  };
+
+  # Terminal spotify configuration
+  programs.ncspot = {
+  	enable = true; 
+  	settings = {
+      primary = "#5E81AC";
+      gapless = true; 
+      notify = false;
+      initial_screen = "library";
+  	};
+  };
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
