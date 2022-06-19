@@ -13,6 +13,7 @@
   home.username = "toast";
   home.homeDirectory = "/home/toast";
 
+  # GTK configuration
   gtk = {
     enable = true;
     theme = {
@@ -21,6 +22,7 @@
     };
   };
 
+  # Git configuration
   programs.git = {
     enable = true;
     userName  = "toasterrepairman";
@@ -28,6 +30,9 @@
   };
   
   programs.gitui.enable = true; 
+
+  # Terminal config
+  programs.fish.shellAliases
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
