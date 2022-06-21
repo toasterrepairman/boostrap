@@ -8,6 +8,7 @@
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+  nixpkgs.config.allowUnfree = true;
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
@@ -23,32 +24,37 @@
     };
   };
 
-  # Git configuration
-  programs.git = {
-    enable = true;
-    userName  = "toasterrepairman";
-    userEmail = "fixing@toast.cyou";
-  };  
-  programs.gitui.enable = true; 
+  # VS Code Config
+  programs = {
+    vscode = {
+      enable = true;
+      package = pkgs.vscode;
+      extensions = with pkgs.vscode-extensions; [
+        # Some example extensions...
+        arcticicestudio.nord-visual-studio-code
+      ];
+    };
 
-  # Terminal config
-  programs.fish.shellAliases = {
-  	g = "git";
-    "..." = "cd ../..";
-    treesaver = "cbonsai -S -t 3";
-    weather = "curl wttr.in";
+    ncspot = {
+      enable = true; 
+      settings = {
+        primary = "#5E81AC";
+        gapless = true; 
+        notify = false;
+        initial_screen = "library";
+      };
+    };
+
+    fish.shellAliases = {
+      g = "git";
+      "..." = "cd ../..";
+      treesaver = "cbonsai -S -t 3";
+      weather = "curl wttr.in";
+    };
   };
 
   # Terminal spotify configuration
-  programs.ncspot = {
-  	enable = true; 
-  	settings = {
-      primary = "#5E81AC";
-      gapless = true; 
-      notify = false;
-      initial_screen = "library";
-  	};
-  };
+
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

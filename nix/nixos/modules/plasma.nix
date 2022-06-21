@@ -124,7 +124,7 @@
     # Programming
     taxi
     okteta
-    vscodium
+    vscode
     jetbrains.idea-community
     meld
     gitg
