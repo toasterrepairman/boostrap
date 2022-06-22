@@ -55,5 +55,7 @@
     btop
     libsecret
     ponysay
+    jq
+    fd
   ];
 }

@@ -90,6 +90,7 @@
     gnome.libgnome-keyring
     filelight 
     ouch
+    ibus-engines.typing-booster
     qt5.qttools
     # Ricing
     home-manager
@@ -107,6 +108,9 @@
     zoom-us
     obsidian
     transmission-gtk
+    tootle
+    spicetify-cli
+    betterdiscordctl
     # Productity
     evince
     gImageReader
@@ -121,6 +125,9 @@
     spotify
     easyeffects
     gthumb
+    mpv
+    quodlibet
+    curtail
     # Programming
     taxi
     okteta
@@ -129,5 +136,7 @@
     meld
     gitg
     kate
+    sysprof
+    ghidra
   ];
 }
