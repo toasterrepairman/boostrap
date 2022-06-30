@@ -5,6 +5,10 @@
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowBroken = true;
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-12.2.3"
+  ];
+
   # Enable Bluetooth on a hardware level
   hardware.bluetooth.enable = true;
 
@@ -44,6 +48,8 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
+  services.tailscale.enable = true;
+  
   # Select internationalisation properties.
   # i18n.defaultLocale = "en_US.UTF-8";
   # console = {
@@ -111,6 +117,8 @@
     tootle
     spicetify-cli
     betterdiscordctl
+    libsForQt5.ark
+    partition-manager
     # Productity
     evince
     gImageReader
@@ -118,6 +126,7 @@
     libreoffice
     gimp
     syncthingtray
+    etcher
     # Media
     vlc
     handbrake

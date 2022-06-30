@@ -11,6 +11,8 @@
   hardware.pulseaudio.support32Bit = true;
   hardware.opengl.enable = true;
   hardware.steam-hardware.enable = true;  
+  hardware.nvidia.powerManagement.enable = true;
+
  
   # Use the systemd boot
   boot.loader.systemd-boot.enable = true;

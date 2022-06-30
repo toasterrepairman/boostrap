@@ -1,11 +1,15 @@
 
 { config, pkgs, ... }:
 
+let 
+  
+in
 {
   imports =
   [ # Here we list the modules we want to add to our config:
-    # ./modules/
+
   ];
+  
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   nixpkgs.config.allowUnfree = true;
@@ -36,7 +40,7 @@
     };
 
     ncspot = {
-      enable = true; 
+      enable = true;
       settings = {
         primary = "#5E81AC";
         gapless = true; 
