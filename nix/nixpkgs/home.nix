@@ -1,9 +1,6 @@
 
 { config, pkgs, ... }:
 
-let 
-  
-in
 {
   imports =
   [ # Here we list the modules we want to add to our config:
