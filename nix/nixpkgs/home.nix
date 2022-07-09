@@ -8,7 +8,6 @@
   ];
   
   # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
   nixpkgs.config.allowUnfree = true;
 
   # Home Manager needs a bit of information about you and the
@@ -36,6 +35,8 @@
       ];
     };
 
+    home-manager.enable = true;
+
     ncspot = {
       enable = true;
       settings = {
@@ -43,6 +44,15 @@
         gapless = true; 
         notify = false;
         initial_screen = "library";
+      };
+    };
+
+    git = {
+      enable = true;
+      userName = "Joel B.";
+      userEmail = "smol@toast.cyou";
+      aliases = {
+        st = "status";
       };
     };
 
