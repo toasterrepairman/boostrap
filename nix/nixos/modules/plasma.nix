@@ -4,6 +4,8 @@
   # Allow proprietary software to taint my pure system
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowBroken = true;
+  # Add "the Stain"
+  services.flatpak.enable = true;
 
   nixpkgs.config.permittedInsecurePackages = [
     "electron-12.2.3"
@@ -135,7 +137,6 @@
     easyeffects
     gthumb
     mpv
-    quodlibet
     curtail
     # Programming
     taxi
