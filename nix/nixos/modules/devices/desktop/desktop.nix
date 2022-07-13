@@ -12,7 +12,7 @@
   hardware.opengl.enable = true;
   hardware.steam-hardware.enable = true;  
   hardware.nvidia.powerManagement.enable = true;
-
+  hardware.nvidia.modesetting.enable = true;
  
   # Use the systemd boot
   boot.loader.systemd-boot.enable = true;

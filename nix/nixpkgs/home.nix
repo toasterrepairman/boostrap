@@ -1,9 +1,6 @@
 
 { config, pkgs, ... }:
 
-let 
-  
-in
 {
   imports =
   [ # Here we list the modules we want to add to our config:
@@ -11,7 +8,6 @@ in
   ];
   
   # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
   nixpkgs.config.allowUnfree = true;
 
   # Home Manager needs a bit of information about you and the
@@ -39,6 +35,8 @@ in
       ];
     };
 
+    home-manager.enable = true;
+
     ncspot = {
       enable = true;
       settings = {
@@ -46,6 +44,15 @@ in
         gapless = true; 
         notify = false;
         initial_screen = "library";
+      };
+    };
+
+    git = {
+      enable = true;
+      userName = "Joel B.";
+      userEmail = "smol@toast.cyou";
+      aliases = {
+        st = "status";
       };
     };
 
