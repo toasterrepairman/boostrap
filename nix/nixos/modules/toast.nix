@@ -130,6 +130,7 @@ in
     betterdiscordctl
     libsForQt5.ark
     partition-manager
+    minecraft
     # Productity
     evince
     gImageReader
