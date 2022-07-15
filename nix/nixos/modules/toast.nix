@@ -37,10 +37,15 @@ in
   services = {
     syncthing = {
       enable = true;
+      dataDir = "/home/toast";
+      user = "toast";
+      group = "users";
+      configDir = "/home/toast/Documents/Cloud/Lifehub/Computer/Syncthing";
       openDefaultPorts = true;
-      systemService = true;
+      # systemService = true;
       devices = {
         "Phone" = { id = "NHAN2GF-PQN2XBO-K7IQQVE-DRFPP2H-RX7J4SK-CEP2FVF-HUGQXH2-EG5OXAE"; };
+        "toaster" = { id = "H3VMTII-YXHUKR3-FQN4HQT-LQQWLQW-WJ4SUR5-OWPGR3P-KIZAVZ6-KJWFFAO"; };
       };
       folders = {
         "Cloud" = {        # Name of folder in Syncthing, also the folder ID
