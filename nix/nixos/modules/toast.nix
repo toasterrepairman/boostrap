@@ -109,6 +109,7 @@ in
     nordic
     quintom-cursor-theme
     ibm-plex
+    zafiro-icons
     # Userland
     chromium
     evolution
