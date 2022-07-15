@@ -4,6 +4,8 @@
   # Gaming stuff
   environment.systemPackages = with pkgs; [
     flatpak
+    discord
+    betterdiscord-installer
     wine
     protonup
     bottles

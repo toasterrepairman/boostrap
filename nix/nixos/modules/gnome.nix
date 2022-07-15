@@ -4,8 +4,14 @@
   environment.systemPackages = with pkgs; [
     firefox-wayland
     tilix
+    xwayland
+    # Extensions
     gnomeExtensions.gsconnect
+    gnome.gnome-tweaks
   ];
+
+  nixpkgs.config.chromium.commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland --disable-gpu-sandbox";
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   networking.firewall.allowedTCPPortRanges = [
     # KDE Connect

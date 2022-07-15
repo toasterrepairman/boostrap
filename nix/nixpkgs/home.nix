@@ -19,7 +19,7 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Nordic";
+      name = "Nordic-v40";
       package = pkgs.nordic;
     };
   };

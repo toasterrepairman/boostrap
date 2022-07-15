@@ -144,12 +144,13 @@ in
     # Programming
     taxi
     okteta
-    vscode
     jetbrains.idea-community
     meld
     gitg
     kate
     sysprof
     ghidra
+    rustup
+    gcc
   ];
 }

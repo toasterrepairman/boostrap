@@ -10,7 +10,7 @@
       ./modules/devices/desktop/hardware-configuration.nix
       ./modules/devices/desktop/desktop.nix
       ./modules/gaming.nix
-      ./modules/plasma.nix
+      ./modules/gnome.nix
       ./modules/terminal.nix
       ./modules/toast.nix
     ];
