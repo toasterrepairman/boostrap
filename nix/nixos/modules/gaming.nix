@@ -11,6 +11,7 @@
     bottles
     lutris
     polymc
+    obs-studio
     # Tools
     gamemode
     mangohud

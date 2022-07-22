@@ -98,6 +98,11 @@ in
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
+  environment.Variables = rec {
+    GOPATH = "\${HOME}/.go";
+  };
+  
+
   environment.systemPackages = with pkgs; [
     # OS tools
     quota
