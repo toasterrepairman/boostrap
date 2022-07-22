@@ -4,12 +4,15 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.toast = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager" "docker" ]; # Enable ‘sudo’ for the user.
   };
   
   users.defaultUserShell = pkgs.fish;
   security.pam.services.toast.enableKwallet = true;
   services.gnome.gnome-keyring.enable = true;
+
+  # Docker time!
+  virtualisation.docker.enable = true;
 
   programs.git.enable = true;
   programs.git.config = {

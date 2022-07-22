@@ -10,7 +10,7 @@
     gnome.gnome-tweaks
   ];
 
-  nixpkgs.config.chromium.commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland --disable-gpu-sandbox";
+  nixpkgs.config.chromium.commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   networking.firewall.allowedTCPPortRanges = [
