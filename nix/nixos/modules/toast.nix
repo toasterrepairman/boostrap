@@ -46,6 +46,7 @@ in
       devices = {
         "Phone" = { id = "NHAN2GF-PQN2XBO-K7IQQVE-DRFPP2H-RX7J4SK-CEP2FVF-HUGQXH2-EG5OXAE"; };
         "toaster" = { id = "H3VMTII-YXHUKR3-FQN4HQT-LQQWLQW-WJ4SUR5-OWPGR3P-KIZAVZ6-KJWFFAO"; };
+        "toastpad" = { id = "NRVLA6J-ODWB5WB-A566FOC-LZXLFJL-EMEUUPY-KENYIJK-U7DF6IF-RPEFJQM"; };
       };
       folders = {
         "Cloud" = {        # Name of folder in Syncthing, also the folder ID
