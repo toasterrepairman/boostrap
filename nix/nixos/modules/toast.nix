@@ -99,7 +99,7 @@ in
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
-  environment.Variables = rec {
+  environment.variables = rec {
     GOPATH = "\${HOME}/.go";
   };
   
