@@ -40,8 +40,8 @@ in
       dataDir = "/home/toast";
       user = "toast";
       group = "users";
-      configDir = "/home/toast/Documents/Cloud/Lifehub/Computer/Syncthing";
       openDefaultPorts = true;
+      configDir = "/home/toast/.syncthing/";
       # systemService = true;
       devices = {
         "Phone" = { id = "NHAN2GF-PQN2XBO-K7IQQVE-DRFPP2H-RX7J4SK-CEP2FVF-HUGQXH2-EG5OXAE"; };
@@ -145,6 +145,7 @@ in
     gimp
     syncthingtray
     etcher
+    thiefmd
     # Media
     vlc
     handbrake
@@ -153,7 +154,8 @@ in
     easyeffects
     gthumb
     mpv
-    curtail
+    yt-dlp
+    davinci-resolve
     # Programming
     taxi
     okteta
@@ -165,5 +167,6 @@ in
     ghidra
     rustup
     gcc
+    cascadia-code
   ];
 }

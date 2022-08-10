@@ -32,6 +32,11 @@
       extensions = with pkgs.vscode-extensions; [
         # Some example extensions...
         arcticicestudio.nord-visual-studio-code
+        usernamehw.errorlens
+        serayuzgur.crates
+        matklad.rust-analyzer
+        ritwickdey.liveserver
+        bbenoist.nix
       ];
     };
 
@@ -63,9 +68,6 @@
       weather = "curl wttr.in";
     };
   };
-
-  # Terminal spotify configuration
-
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

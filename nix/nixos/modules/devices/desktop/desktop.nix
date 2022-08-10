@@ -14,6 +14,8 @@
   hardware.nvidia.powerManagement.enable = true;
   hardware.nvidia.modesetting.enable = true;
  
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
   # Use the systemd boot
   boot.loader.systemd-boot.enable = true;
 

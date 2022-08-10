@@ -13,30 +13,39 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/1F2D-4E82";
+  fileSystems."/" =
+    { device = "/dev/disk/by-uuid/8996aa27-6292-4b08-b5c7-3a82d3d5816e";
+      fsType = "ext4";
+    };
+
+  boot.initrd.luks.devices."luks-6ce9fb31-a07d-4f83-8606-ef70f7fa0b7a".device = "/dev/disk/by-uuid/6ce9fb31-a07d-4f83-8606-ef70f7fa0b7a";
+
+  fileSystems."/boot/efi" =
+    { device = "/dev/disk/by-uuid/34DE-77F6";
       fsType = "vfat";
     };
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/477fb665-25c5-483d-bc7a-fbbc1bf268a4";
-      fsType = "btrfs";
-    };
-
-  fileSystems."/mnt/FastLane" =
-    { device = "/dev/disk/by-uuid/4c9ef5ff-7fed-4066-b64c-0a5d740a270c";
-      fsType = "btrfs";
-    };
-
-  fileSystems."/mnt/Storage" =
-    { device = "/dev/disk/by-uuid/8ef0fe8b-b1ec-4289-8e27-3fd061220658";
-      fsType = "btrfs";
-    };
-
-  boot.initrd.luks.devices."enc".device = "/dev/disk/by-uuid/1b9bcd00-ee91-4f17-898d-b66870b7c4a3";
-
   swapDevices = [ ];
 
-  powerManagement.cpuFreqGovernor = lib.mkDefault "ondemand";
+  # Bootloader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.efi.efiSysMountPoint = "/boot/efi";
+
+  # Setup keyfile
+  boot.initrd.secrets = {
+    "/crypto_keyfile.bin" = null;
+  };
+
+
+  # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
+  # (the default) this is the recommended approach. When using systemd-networkd it's
+  # still possible to use this option, but it's recommended to use it in conjunction
+  # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
+  networking.useDHCP = lib.mkDefault true;
+  # networking.interfaces.enp4s0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.wlp3s0.useDHCP = lib.mkDefault true;
+
+  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
