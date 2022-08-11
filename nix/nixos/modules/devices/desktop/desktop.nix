@@ -39,4 +39,8 @@
   #     '' config /home/toast/Documents/Cloud/Lifehub/Computer/VPN/openvpn-toast.key ''; 
   #    };
   # };  
+
+  environment.systemPackages = with pkgs; [
+    davinci-resolve
+  ]
 }

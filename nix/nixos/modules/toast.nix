@@ -155,7 +155,6 @@ in
     gthumb
     mpv
     yt-dlp
-    davinci-resolve
     # Programming
     taxi
     okteta
