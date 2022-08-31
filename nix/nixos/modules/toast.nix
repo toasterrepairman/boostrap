@@ -102,7 +102,9 @@ in
   environment.variables = rec {
     GOPATH = "\${HOME}/.go";
   };
-  
+
+  # Evil shit
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   environment.systemPackages = with pkgs; [
     # OS tools

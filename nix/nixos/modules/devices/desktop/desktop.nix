@@ -13,6 +13,7 @@
   hardware.steam-hardware.enable = true;  
   hardware.nvidia.powerManagement.enable = true;
   hardware.nvidia.modesetting.enable = true;
+  virtualisation.docker.enableNvidia = true;
  
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
@@ -42,5 +43,5 @@
 
   environment.systemPackages = with pkgs; [
     davinci-resolve
-  ]
+  ];
 }
