@@ -12,6 +12,8 @@
   ];
 
   programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.gnome.seahorse.out}/libexec/seahorse/ssh-askpass";
+  services.xserver.displayManager.sddm.enable = true;
+  services.xserver.desktopManager.plasma5.enable = true;
 
   networking.firewall.allowedTCPPortRanges = [
     # KDE Connect

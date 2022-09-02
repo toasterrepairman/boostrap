@@ -95,12 +95,6 @@ in
   #   font = "Lat2-Terminus16";
   #   keyMap = "us";
   # };
-  
-  # Enable the Plasma 5 Desktop Environment.
-  services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-
   environment.variables = rec {
     GOPATH = "\${HOME}/.go";
   };
@@ -127,6 +121,7 @@ in
     zafiro-icons
     # Userland
     chromium
+    firefox-wayland
     evolution
     foliate
     gnome-feeds
@@ -147,7 +142,6 @@ in
     wike
     libreoffice
     gimp
-    syncthingtray
     etcher
     thiefmd
     # Media
