@@ -8,8 +8,6 @@
   };
   
   users.defaultUserShell = pkgs.fish;
-  security.pam.services.toast.enableKwallet = true;
-  services.gnome.gnome-keyring.enable = true;
 
   # Docker time!
   virtualisation.docker.enable = true;

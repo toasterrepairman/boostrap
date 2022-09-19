@@ -6,10 +6,8 @@
 
   # Appease the Nvidia Gods
   services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.opengl.driSupport32Bit = true;
   hardware.opengl.extraPackages32 = with pkgs.pkgsi686Linux; [ libva ];
   hardware.pulseaudio.support32Bit = true;
-  hardware.opengl.enable = true;
   hardware.steam-hardware.enable = true;  
   hardware.nvidia.powerManagement.enable = true;
   hardware.nvidia.modesetting.enable = true;
@@ -43,5 +41,14 @@
 
   environment.systemPackages = with pkgs; [
     davinci-resolve
+  ];
+
+  hardware.opengl.driSupport32Bit = true;
+  hardware.opengl.enable = true;
+
+  users.users.toast.packages = with pkgs;
+  [
+    vulkan-tools
+    lutris-unwrapped
   ];
 }

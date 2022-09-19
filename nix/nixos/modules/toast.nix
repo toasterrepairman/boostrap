@@ -99,6 +99,10 @@ in
     GOPATH = "\${HOME}/.go";
   };
 
+  environment.sessionVariables = {
+     MOZ_ENABLE_WAYLAND = "1";
+  };
+
   # Evil shit
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
@@ -122,6 +126,7 @@ in
     # Userland
     chromium
     firefox-wayland
+    tilix
     evolution
     foliate
     gnome-feeds
@@ -152,6 +157,7 @@ in
     easyeffects
     gthumb
     mpv
+    vaapiVdpau
     yt-dlp
     # Programming
     taxi
@@ -165,5 +171,22 @@ in
     rustup
     gcc
     cascadia-code
+    # these are my dark GTK passengers
+    pkg-config
+    gdk-pixbuf
+    gtk4.dev
+
+    glib
+    gsettings-desktop-schemas
+    gtk3
+    gtksourceview4
+    gspell
+    json-glib
+    libdazzle
+    libgee
+    libgit2-glib
+    libpeas
+    libsecret
+    libsoup
   ];
 }
