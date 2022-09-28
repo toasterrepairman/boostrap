@@ -6,6 +6,7 @@
     tilix
     xwayland
     libgda
+    kooha
     # Extensions
     gnomeExtensions.gsconnect
     gnome.gnome-tweaks

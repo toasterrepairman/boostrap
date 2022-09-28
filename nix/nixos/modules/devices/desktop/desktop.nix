@@ -15,6 +15,12 @@
  
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
+  nixpkgs.config = {
+      allowUnfree = true;
+      cudaSupport = true;
+  };
+  
+
   # Use the systemd boot
   boot.loader.systemd-boot.enable = true;
 

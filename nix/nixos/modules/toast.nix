@@ -27,6 +27,8 @@ in
     "electron-12.2.3"
   ];
 
+  nix.settings.experimental-features = "nix-command flakes";
+
   # Enable Bluetooth on a hardware level
   hardware.bluetooth.enable = true;
 
@@ -125,7 +127,7 @@ in
     zafiro-icons
     # Userland
     chromium
-    firefox-wayland
+    # firefox-wayland
     tilix
     evolution
     foliate
@@ -142,6 +144,7 @@ in
     partition-manager
     minecraft
     # Productity
+	blender
     evince
     gImageReader
     wike
@@ -150,13 +153,14 @@ in
     etcher
     thiefmd
     # Media
+    bitwig-studio
     vlc
     handbrake
     ncspot
     spotify
     easyeffects
     gthumb
-    mpv
+    celluloid
     vaapiVdpau
     yt-dlp
     # Programming
@@ -175,7 +179,6 @@ in
     pkg-config
     gdk-pixbuf
     gtk4.dev
-
     glib
     gsettings-desktop-schemas
     gtk3
