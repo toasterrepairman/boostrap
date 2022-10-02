@@ -68,7 +68,7 @@ in
           devices = [ "toastpad" "toaster" "Phone" ];      # Which devices to share the folder with
         };
         "Bitwig" = {        # Name of folder in Syncthing, also the folder ID
-          path = "/home/toast/Documents/Bitwig Studio";    # Which folder to add to Syncthing
+          path = "/home/toast/Bitwig Studio";    # Which folder to add to Syncthing
           devices = [ "toastpad" "toaster" ];      # Which devices to share the folder with
         };
         

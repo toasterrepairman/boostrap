@@ -10,6 +10,11 @@
 
   # Set your time zone.
   time.timeZone = "America/Detroit";
+  hardware.opengl.driSupport32Bit = true;
+  hardware.opengl.extraPackages32 = with pkgs.pkgsi686Linux; [ libva ];
+  hardware.pulseaudio.support32Bit = true;
+  hardware.opengl.enable = true;
+  hardware.steam-hardware.enable = true; 
 
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
   # Per-interface useDHCP will be mandatory in the future, so this generated config
