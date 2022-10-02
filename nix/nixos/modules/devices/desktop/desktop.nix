@@ -47,6 +47,7 @@
 
   environment.systemPackages = with pkgs; [
     davinci-resolve
+    xorg.libxcb
   ];
 
   hardware.opengl.driSupport32Bit = true;

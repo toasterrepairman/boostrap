@@ -47,26 +47,31 @@ in
       # systemService = true;
       devices = {
         "Phone" = { id = "NHAN2GF-PQN2XBO-K7IQQVE-DRFPP2H-RX7J4SK-CEP2FVF-HUGQXH2-EG5OXAE"; };
-        "toaster" = { id = "H3VMTII-YXHUKR3-FQN4HQT-LQQWLQW-WJ4SUR5-OWPGR3P-KIZAVZ6-KJWFFAO"; };
-        "toastpad" = { id = "NRVLA6J-ODWB5WB-A566FOC-LZXLFJL-EMEUUPY-KENYIJK-U7DF6IF-RPEFJQM"; };
+        "toaster" = { id = "MKBA3EO-ZZI2KJ3-ZAGF5UM-AWM37PO-YIEECSW-IW4PKVY-QZGR2A7-I6ICEAT"; };
+        "toastpad" = { id = "FCCIKQE-VIMS4JX-F2MSSTL-72CGKJR-QTN3RXC-6KNH3H5-6SYQHDR-OW3JRQB"; };
       };
       folders = {
         "Cloud" = {        # Name of folder in Syncthing, also the folder ID
           path = "/home/toast/Documents/Cloud";    # Which folder to add to Syncthing
-          devices = [ "Phone" ];      # Which devices to share the folder with
+          devices = [ "toastpad" "toaster" "Phone" ];      # Which devices to share the folder with
         };
         "Pictures" = {        # Name of folder in Syncthing, also the folder ID
           path = "/home/toast/Pictures";    # Which folder to add to Syncthing
-          devices = [ "Phone" ];      # Which devices to share the folder with
+          devices = [ "toastpad" "toaster" "Phone" ];      # Which devices to share the folder with
         };
         "Music" = {        # Name of folder in Syncthing, also the folder ID
           path = "/home/toast/Music";    # Which folder to add to Syncthing
-          devices = [ "Phone" ];      # Which devices to share the folder with
+          devices = [ "toastpad" "toaster" "Phone" ];      # Which devices to share the folder with
         };
         "Books" = {        # Name of folder in Syncthing, also the folder ID
           path = "/home/toast/Documents/Books";    # Which folder to add to Syncthing
-          devices = [ "Phone" ];      # Which devices to share the folder with
+          devices = [ "toastpad" "toaster" "Phone" ];      # Which devices to share the folder with
         };
+        "Bitwig" = {        # Name of folder in Syncthing, also the folder ID
+          path = "/home/toast/Documents/Bitwig Studio";    # Which folder to add to Syncthing
+          devices = [ "toastpad" "toaster" ];      # Which devices to share the folder with
+        };
+        
       };
     };
   };
