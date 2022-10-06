@@ -8,7 +8,6 @@
     betterdiscord-installer
     wine
     protonup
-    lutris-unwrapped
     polymc
     obs-studio
     # Tools
