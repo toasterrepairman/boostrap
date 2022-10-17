@@ -28,6 +28,7 @@ in
   ];
 
   nix.settings.experimental-features = "nix-command flakes";
+  nix.settings.auto-optimise-store = true;
 
   # Enable Bluetooth on a hardware level
   hardware.bluetooth.enable = true;
@@ -134,15 +135,12 @@ in
     chromium
     # firefox-wayland
     tilix
-    evolution
     foliate
     gnome-feeds
     betterdiscordctl
-    elementary-planner
     zoom-us
     obsidian
     transmission-gtk
-    tootle
     spicetify-cli
     betterdiscordctl
     libsForQt5.ark
@@ -153,7 +151,7 @@ in
     evince
     gImageReader
     wike
-    libreoffice
+    libreoffice-qt
     gimp
     etcher
     thiefmd
