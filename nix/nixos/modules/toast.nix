@@ -103,6 +103,8 @@ in
   #   font = "Lat2-Terminus16";
   #   keyMap = "us";
   # };
+
+  # horrorshow hacks
   environment.variables = rec {
     GOPATH = "\${HOME}/.go";
   };

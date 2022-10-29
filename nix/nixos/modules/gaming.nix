@@ -8,7 +8,7 @@
     betterdiscord-installer
     wine
     protonup
-    polymc
+    prismlauncher
     obs-studio
     # Tools
     gamemode
