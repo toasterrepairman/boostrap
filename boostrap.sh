@@ -8,7 +8,7 @@ Help()
   echo "Bootstrapping script for various Linux systems."
   echo "(may end with undesirable/insecure results)"
   echo
-  echo "Syntax: scriptTemplate [-h|r|a|n]"
+  echo "Syntax: ./boostrap.sh [-h|r|a|n]"
   echo "options:"
   echo "h     Print this help screen."
   echo "r     Run ricing script."
