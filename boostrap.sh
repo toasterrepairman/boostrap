@@ -8,12 +8,13 @@ Help()
   echo "Bootstrapping script for various Linux systems."
   echo "(may end with undesirable/insecure results)"
   echo
-  echo "Syntax: scriptTemplate [-g|h|v|V]"
+  echo "Syntax: scriptTemplate [-h|r|a|n]"
   echo "options:"
-  echo "g     Print the GPL license notification."
-  echo "h     Print this Help."
-  echo "v     Verbose mode."
-  echo "V     Print software version and exit."
+  echo "h     Print this help screen."
+  echo "r     Run ricing script."
+  echo "a     Run Arch installer."
+  echo "n     Run NixOS installer."
+  echo "c     Cleans repo (useful after bootstrapping)."
   echo
 }
 
@@ -93,10 +94,65 @@ Arch()
 BootstrapNixOS()
 {
   su
-    rm -r /etc/nixos/;
-    ln -s nix/nixos/ /etc/;
-    cat /etc/nixos/configuration.nix
+    # Initialize system config
+    echo "{ config, pkgs, ... }: 
+
+{
+  imports =
+    [ # Here we list the modules we want to add to our config:
+      ./modules/gaming.nix
+      ./modules/terminal.nix
+    ];
     
+  system.stateVersion = "unstable"; 
+}" >> /etc/nixos/configuration.nix
+
+    # Generate hardware profile and link repo to system config
+    nixos-generate-config 
+    ln -s nix/nixos/modules/ /etc/nixos;
+    
+    # Select system preset
+    echo "Select a preset profile to continue:";
+    echo "  [d]esktop (Intel/Nvidia)";
+    echo "  [l]aptop (Intel)";
+    read -p "\nOption " profile
+    case $profile in 
+      d ) cp /etc/nixos/hardware-configuration.nix nix/nixos/modules/devices/desktop/;
+          sed '6i\
+              ./modules/devices/desktop/desktop.nix
+              ./modules/devices/laptop/hardware-configuration.nix
+              ' /etc/nixos/configuration.nix;;
+      l ) cp /etc/nixos/hardware-configuration.nix nix/nixos/modules/devices/laptop/;
+          sed '6i\
+              ./modules/devices/laptop/laptop.nix
+              ./modules/devices/laptop/hardware-configuration.nix
+              ' /etc/nixos/configuration.nix;;
+      * ) echo "invalid response";
+        exit 1;;
+    esac
+
+    # Pick desktop environment
+    echo "Select a desktop environment to continue:";
+    echo "  [k]de plasma";
+    echo "  [g]nome";
+    read -p "\nOption " desktop
+    case $desktop in 
+      k ) 
+          sed '6i\
+              ./modules/plasma.nix
+              ' /etc/nixos/configuration.nix;;
+      g ) cp /etc/nixos/hardware-configuration.nix nix/nixos/modules/devices/laptop/;
+          sed '6i\
+              ./modules/gnome.nix
+              ' /etc/nixos/configuration.nix;;
+      * ) echo "invalid response";
+        exit 1;;
+    esac
+
+    # Configure system username
+    read -p "Enter your system username: " username
+    sed -i "s/users.users.*/users.users.=$username = {/g"
+
     echo "";
     echo "This config will be committed in 5 seconds...";
     sleep 5
@@ -135,7 +191,7 @@ set -euo pipefail
 # Process the input options. Add options as needed.        #
 ############################################################
 # Get the options
-while getopts ":hran:" option; do
+while getopts ":hranc:" option; do
   case $option in
     h) # Prints help 
       Help
@@ -147,6 +203,8 @@ while getopts ":hran:" option; do
       Name=$OPTARG;;
     n) # Bootstraps NixOS system
       Name=$OPTARG;;
+    c) # Cleans repo
+      git reset --hard HEAD;;
     \?) # Invalid option
       echo "Error: Invalid option"
       exit;;

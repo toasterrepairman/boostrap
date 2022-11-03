@@ -47,6 +47,47 @@
   #   enableSSHSupport = true;
   # };
 
+  services.tailscale.enable = true;
+  services.packagekit.enable = false;
+
+  environment.sessionVariables = {
+     MOZ_ENABLE_WAYLAND = "1";
+  };
+
+  # Enable sound.
+  sound.enable = true;
+  hardware.pulseaudio.enable = false; # explicitly set to false for pipewire
+  services.pipewire = {
+    enable = true;
+    alsa = {
+      enable = true;
+      support32Bit = true;
+    };
+    pulse.enable = true;
+  };
+
+    programs.dconf.enable = true;
+
+  xdg.portal.enable = true;
+
+  # Allow proprietary software to taint my pure system
+  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowBroken = true;
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-12.2.3"
+  ];
+
+  nix.settings.experimental-features = "nix-command flakes";
+  nix.settings.auto-optimise-store = true;
+
+  # Enable Bluetooth on a hardware level
+  hardware.bluetooth.enable = true;
+
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.networkmanager.enable = true;  
+  systemd.services.NetworkManager-wait-online.enable = false;
+
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
