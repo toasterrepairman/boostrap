@@ -22,9 +22,13 @@
   };
 
   # Configure shell
-  environment.shellAliases = {
-  	ll = "ls -l";
-  	cocosay = "ponysay -f 'Coco Pommel'";
+  programs.fish = {
+    shellAbbrs = {
+      ll = "ls -l";
+      cocosay = "ponysay -f 'Coco Pommel'";
+      gitlog = "git log --graph --oneline";
+    };
+    vendor.completions.enable = true; 
   };
 
   # Enable Nix Flakes

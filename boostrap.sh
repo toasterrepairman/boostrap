@@ -1,121 +1,154 @@
-# boostrap, a nordic Arch bootstrap
+#!/bin/bash
+############################################################
+# Functions                                                     #
+############################################################
+Help()
+{
+  # Display Help
+  echo "Bootstrapping script for various Linux systems."
+  echo "(may end with undesirable/insecure results)"
+  echo
+  echo "Syntax: scriptTemplate [-g|h|v|V]"
+  echo "options:"
+  echo "g     Print the GPL license notification."
+  echo "h     Print this Help."
+  echo "v     Verbose mode."
+  echo "V     Print software version and exit."
+  echo
+}
 
-echo "-- boostrap --"
-echo "the following script will install a lot of dotfiles you may not want"
+Ricing()
+{
+  # bootstrapping GTK theme
+  mkdir ~/.themes/ && cp resources/Pop-nord-dark.zip ~/.themes/ 
+  unzip ~/.themes/Pop-nord-dark.zip
+  gsettings set org.gnome.shell.extensions.user-theme name "Pop-nord-dark"
+  gsettings set org.gnome.desktop.interface gtk-theme name "Pop-nord-dark"
 
-sleep 2
+  # setting wallpaper
+  cp resources/wallpaper.png ~/.themes/
+  gsettings set org.gnome.desktop.background picture-uri ~/.themes/wallpaper.png
 
-echo "exit now if you are not sure of what you are doing"
+  # gnome terminal theme
+  cd resources/ 
+  git clone https://github.com/arcticicestudio/nord-gnome-terminal.git
+  cd nord-tilix/
+  ./install.sh
+  cd ..
+}
 
-sleep 5
+Arch()
+{
+  # system upgrade
+  sudo pacman -Syu
 
-# system upgrade
-sudo pacman -Syu
+  # installing essentials (lightweight only)
+  sudo pacman -S fish yay micro feh base-devel
 
-# installing essentials (lightweight only)
-sudo pacman -S fish yay micro feh base-devel
+  # setting fish to default shell
+  sudo chsh -s /bin/fish
 
-# setting fish to default shell
-sudo chsh -s /bin/fish
+  # installing rust
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-# installing rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  # installing bonus programs
+  yay -S ibus-typing-booster lsp-plugins easyeffects syncthing libdbusmenu-glib \
+  xclip gthumb wike keeweb-desktop-bin vlc okteta monero-gui seahorse pinta gfeeds \
+  ghidra foliate spotify libgepub nerd-fonts-fira-code fd discord tootle meld \
+  obsidian-appimage spicetify-cli spotify gitg obs-studio spicetify-themes-git curlew \
+  qalculate-gtk polari tilix visual-studio-code-bin betterdiscordctl-git lutris \
+  libreoffice-fresh chromium blanket bottom auto-cpufreq ventoy hunspell-en_us github-cli \
+  curtail gimagereader-gtk tesseract-data-eng evolution transmission-gtk evince \
+  geeqie gwenview
 
-# grabbing Spotify PGP key
-curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | gpg --import -
+  # beep beep installing Taxi
+  yay -S python-dulwich
+  yay -S taxi-git
 
-# installing bonus programs
-yay -S ibus-typing-booster lsp-plugins easyeffects syncthing libdbusmenu-glib \
-xclip gthumb wike keeweb-desktop-bin vlc okteta monero-gui seahorse pinta gfeeds \
-ghidra foliate spotify libgepub nerd-fonts-fira-code fd discord tootle meld \
-obsidian-appimage spicetify-cli spotify gitg obs-studio spicetify-themes-git curlew \
-qalculate-gtk polari tilix visual-studio-code-bin betterdiscordctl-git lutris \
-libreoffice-fresh chromium blanket bottom auto-cpufreq ventoy hunspell-en_us github-cli \
-curtail gimagereader-gtk tesseract-data-eng evolution transmission-gtk evince \
-geeqie gwenview
+  # install virtual machine stuffs
+  sudo pacman -Syu qemu libvirt virt-manager
 
-# beep beep installing Taxi
-yay -S python-dulwich
-yay -S taxi-git
+  # rice
+  yay -S nordic-theme papirus-folders-nordic ttf-ibm-plex inter-font
 
-# install virtual machine stuffs
-sudo pacman -Syu qemu libvirt virt-manager
+  # battle.net dependencies
+  sudo pacman -S lib32-gnutls lib32-libldap lib32-libgpg-error lib32-sqlite \
+  lib32-libpulse lib32-alsa-plugins
 
-# rice
-yay -S nordic-theme papirus-folders-nordic ttf-ibm-plex inter-font
+  # installing retroarch/libretro cores
+  yay -S retroarch retroarch-assets-ozone libretro-beetle-pce libretro-beetle-psx \
+  libretro-beetle-supergrafx libretro-blastem libretro-bsnes libretro-citra \
+  libretro-desmume libretro-dolphin libretro-gambatte libretro-mgba \
+  libretro-mupen64plus-next
 
-# python installation
-pip install python3-xlib
+  # syncthing setup
+  systemctl enable syncthing@toast.service
+  systemctl start syncthing@toast.service
 
-# battle.net dependencies
-sudo pacman -S lib32-gnutls lib32-libldap lib32-libgpg-error lib32-sqlite \
-lib32-libpulse lib32-alsa-plugins
+  # git ident
+  git config --global user.email "smol@toast.cyou"
+  git config --global user.name "toast"
+}
 
-# syncthing setup
-systemctl enable syncthing@toast.service
-systemctl start syncthing@toast.service
+BootstrapNixOS()
+{
+  su
+    rm -r /etc/nixos/;
+    ln -s nix/nixos/ /etc/;
+    cat /etc/nixos/configuration.nix
+    
+    echo "";
+    echo "This config will be committed in 5 seconds...";
+    sleep 5
 
-# hacking spotify desu
-sudo chmod a+wr /opt/spotify
-sudo chmod a+wr /opt/spotify/Apps -R
+    nixos-rebuild switch --upgrade-all
 
-# preparing Steam
-yay -S steam-manjaro steam-native
-nohup steam-runtime&
-cp resources/air.zip ~/.local/share/Steam/skins
-unzip ~/.local/share/Steam/skins/air.zip
+    exit;
+}
 
-# bootstrapping GTK theme
-mkdir ~/.themes/ && cp resources/Pop-nord-dark.zip ~/.themes/ 
-unzip ~/.themes/Pop-nord-dark.zip
-gsettings set org.gnome.shell.extensions.user-theme name "Pop-nord-dark"
-gsettings set org.gnome.desktop.interface gtk-theme name "Pop-nord-dark"
+NixOS()
+{
+  echo "The following script will lobotomize your NixOS install and potentially"
+  echo "leave your system in a non-secure state."
+  read -p "Do you want to proceed? (y/n) " yn
+  case $yn in 
+    y ) BootstrapNixOS;;
+    n ) echo "exiting...";
+      exit;;
+    * ) echo "invalid response";
+      exit 1;;
+  esac
 
-# setting wallpaper
-cp resources/wallpaper.png ~/.themes/
-gsettings set org.gnome.desktop.background picture-uri ~/.themes/wallpaper.png
+  echo "The following script will lobotomize your NixOS install and potentially"
+  echo "leave your system in a non-secure state."
+}
 
-# restoring config
-cp -r resources/config/* ~/.config/
+############################################################
+############################################################
+# Main program                                             #
+############################################################
+############################################################
 
-# installing discord/kvantum theme to resources/ 
-cd resources/ 
-git clone https://github.com/orblazer/discord-nordic.git
-git clone https://github.com/EliverLara/Nordic.git
-cp -r Nordic/kde/kvantum .
-betterdiscordctl install
-mkdir /.config/BetterDiscord/themes/
-cp discord-nordic/nordic.theme.css ~/.config/BetterDiscord/themes/
-cd ..
+set -euo pipefail
 
-# installing spicetify
-spicetify backup apply
-spicetify config color_scheme nord-dark
-spicetify apply
-
-# Install uLauncher theme
-git clone https://github.com/KiranWells/ulauncher-nord/ \
-  ~/.config/ulauncher/user-themes/nord
-
-# installing retroarch/libretro cores
-yay -S retroarch retroarch-assets-ozone libretro-beetle-pce libretro-beetle-psx \
-libretro-beetle-supergrafx libretro-blastem libretro-bsnes libretro-citra \
-libretro-desmume libretro-dolphin libretro-gambatte libretro-mgba \
-libretro-mupen64plus-next
-
-# gnome terminal theme
-cd resources/ 
-git clone https://github.com/arcticicestudio/nord-gnome-terminal.git
-cd nord-tilix/
-./install.sh
-cd ..
-
-# git ident
-git config --global user.email "smol@toast.cyou"
-git config --global user.name "toast"
-
-# CPUfreq enable
-systemctl enable --now auto-cpufreq
-
-# i stay norded // i've seen footage
-echo "installation is complete, please reboot to finish the install"
+############################################################
+# Process the input options. Add options as needed.        #
+############################################################
+# Get the options
+while getopts ":hran:" option; do
+  case $option in
+    h) # Prints help 
+      Help
+      exit;; 
+    r) # Installs Ricing 
+      Help
+      exit;;
+    a) # Bootstraps Arch system
+      Name=$OPTARG;;
+    n) # Bootstraps NixOS system
+      Name=$OPTARG;;
+    \?) # Invalid option
+      echo "Error: Invalid option"
+      exit;;
+  esac
+done
