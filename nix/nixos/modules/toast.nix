@@ -117,6 +117,7 @@ in
     spotify
     easyeffects
     celluloid
+    spot
     vaapiVdpau
     yt-dlp
     blender
