@@ -96,8 +96,6 @@ in
     chromium
     # firefox-wayland
     tilix
-    foliate
-    gnome-feeds
     betterdiscordctl
     zoom-us
     obsidian
@@ -106,16 +104,11 @@ in
     betterdiscordctl
     libsForQt5.ark
     partition-manager
-    minecraft
     # Productity
-	blender
     evince
     gImageReader
-    wike
-    libreoffice-qt
     gimp
     etcher
-    thiefmd
     # Media
     bitwig-studio
     vlc
@@ -123,10 +116,10 @@ in
     ncspot
     spotify
     easyeffects
-    gthumb
     celluloid
     vaapiVdpau
     yt-dlp
+    blender
     # Programming
     taxi
     okteta

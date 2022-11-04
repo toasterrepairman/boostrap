@@ -96,6 +96,11 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
+  services.earlyoom = {
+  	enable = true;
+  	freeMemThreshold = 5;
+  };
+
   # Packages required for profile
   environment.systemPackages = with pkgs; [
     micro 

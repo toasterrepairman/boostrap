@@ -56,6 +56,5 @@
   users.users.toast.packages = with pkgs;
   [
     vulkan-tools
-    lutris-unwrapped
   ];
 }
