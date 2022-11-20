@@ -72,8 +72,10 @@ in
     GOPATH = "\${HOME}/.go";
   };
 
-  # Evil shit
+  # delete this when your system breaks
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.extraModulePackages = with config.boot.kernelPackages; [ virtualbox ];
+  # (it will probably be too late :p)
 
   environment.systemPackages = with pkgs; [
     # OS tools

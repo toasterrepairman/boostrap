@@ -35,12 +35,7 @@
   };
 
   # Enable Nix Flakes
-  # nix = {
-  #   package = pkgs.nixFlakes;
-  #   extraOptions = ''
-  #     experimental-features = nix-command flakes
-  #   '';
-  # };
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -51,7 +46,6 @@
   # };
 
   services.tailscale.enable = true;
-  services.packagekit.enable = false;
 
   environment.sessionVariables = {
      MOZ_ENABLE_WAYLAND = "1";
@@ -81,7 +75,6 @@
     "electron-12.2.3"
   ];
 
-  nix.settings.experimental-features = "nix-command flakes";
   nix.settings.auto-optimise-store = true;
 
   # Enable Bluetooth on a hardware level

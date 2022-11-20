@@ -1,4 +1,5 @@
-{ config, pkgs, ... }: 
+{ config, pkgs, lib, ... }: 
+
 
 {
   # Gaming stuff
@@ -15,4 +16,9 @@
     mangohud
   ];
   services.flatpak.enable = true;
+
+  nixpkgs.overlays = [
+    (import ./applications/discord.nix)
+    (import ./applications/obsidian.nix)
+  ];
 }
