@@ -11,6 +11,7 @@
     protonup
     prismlauncher
     obs-studio
+    projectm
     # Tools
     gamemode
     mangohud
