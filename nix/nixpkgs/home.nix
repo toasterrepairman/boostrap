@@ -1,4 +1,3 @@
-
 { config, pkgs, ... }:
 
 {
@@ -15,15 +14,6 @@
   home.username = "toast";
   home.homeDirectory = "/home/toast";
 
-  # GTK configuration
-  gtk = {
-    enable = true;
-    theme = {
-      name = "Nordic-v40";
-      package = pkgs.nordic;
-    };
-  };
-
   # VS Code Config
   programs = {
     vscode = {
@@ -32,11 +22,6 @@
       extensions = with pkgs.vscode-extensions; [
         # Some example extensions...
         arcticicestudio.nord-visual-studio-code
-        usernamehw.errorlens
-        serayuzgur.crates
-        matklad.rust-analyzer
-        ritwickdey.liveserver
-        bbenoist.nix
       ];
     };
 
@@ -77,5 +62,5 @@
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "22.05";
+  home.stateVersion = "22.11";
 }
