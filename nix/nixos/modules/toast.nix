@@ -74,7 +74,6 @@ in
 
   # delete this when your system breaks
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.extraModulePackages = with config.boot.kernelPackages; [ virtualbox ];
   # (it will probably be too late :p)
 
   environment.systemPackages = with pkgs; [
@@ -112,12 +111,14 @@ in
     gimp
     etcher
     # Media
+    tootle
     bitwig-studio
     vlc
     handbrake
     ncspot
     spotify
     easyeffects
+    kdenlive
     celluloid
     spot
     vaapiVdpau
