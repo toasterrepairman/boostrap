@@ -49,6 +49,7 @@
   environment.systemPackages = with pkgs; [
     davinci-resolve
     xorg.libxcb
+    cudaPackages.cudatoolkit
   ];
 
   hardware.opengl.driSupport32Bit = true;
