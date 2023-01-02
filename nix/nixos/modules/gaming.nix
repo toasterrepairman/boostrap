@@ -14,6 +14,7 @@
     # Tools
     gamemode
     mangohud
+    protonup-ng
   ];
   
   services.flatpak.enable = true;

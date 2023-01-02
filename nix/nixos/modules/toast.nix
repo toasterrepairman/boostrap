@@ -94,7 +94,7 @@ in
     ibm-plex
     zafiro-icons
     # Userland
-    chromium
+	firefox
     # firefox-wayland
     tilix
     betterdiscordctl
