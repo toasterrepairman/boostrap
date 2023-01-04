@@ -93,9 +93,9 @@ in
     quintom-cursor-theme
     ibm-plex
     zafiro-icons
+    tootle
     # Userland
-	firefox
-    # firefox-wayland
+    chromium
     tilix
     betterdiscordctl
     zoom-us
@@ -110,6 +110,7 @@ in
     gImageReader
     gimp
     etcher
+    kdenlive
     # Media
     tootle
     bitwig-studio

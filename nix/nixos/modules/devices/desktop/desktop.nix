@@ -21,6 +21,7 @@
       cudaSupport = true;
   };
   
+  hardware.nvidia.open = true;
 
   # Use the systemd boot
   boot.loader.systemd-boot.enable = true;
