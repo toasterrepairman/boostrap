@@ -95,7 +95,7 @@ in
     zafiro-icons
     tootle
     # Userland
-    chromium
+    firefox
     tilix
     betterdiscordctl
     zoom-us
