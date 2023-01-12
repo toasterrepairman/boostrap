@@ -72,6 +72,12 @@ in
     GOPATH = "\${HOME}/.go";
   };
 
+  # python workaround
+  nixpkgs.config.permittedInsecurePackages = [
+    "python-2.7.18.6"
+  ];
+  
+
   # delete this when your system breaks
   boot.kernelPackages = pkgs.linuxPackages_latest;
   # (it will probably be too late :p)
