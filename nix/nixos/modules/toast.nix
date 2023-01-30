@@ -129,7 +129,6 @@ in
     ncspot
     spotify
     easyeffects
-    ffmpeg_4
     kdenlive
     celluloid
     spot
