@@ -15,6 +15,8 @@
     gamemode
     mangohud
     protonup-ng
+    xonotic
+    protontricks
   ];
   
   services.flatpak.enable = true;

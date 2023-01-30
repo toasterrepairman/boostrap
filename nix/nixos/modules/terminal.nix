@@ -104,5 +104,7 @@
     ponysay
     jq
     fd
+    lsof 
+    killall
   ];
 }

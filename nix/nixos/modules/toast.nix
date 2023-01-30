@@ -95,6 +95,7 @@ in
     ouch
     ibus-engines.typing-booster
     qt5.qttools
+    appimage-run
     # Ricing
     home-manager
     nordic
@@ -119,6 +120,7 @@ in
     gimp
     etcher
     kdenlive
+    gnome-secrets
     # Media
     tootle
     bitwig-studio
@@ -127,6 +129,7 @@ in
     ncspot
     spotify
     easyeffects
+    ffmpeg_4
     kdenlive
     celluloid
     spot
@@ -137,6 +140,7 @@ in
     taxi
     okteta
     jetbrains.idea-community
+    pipenv
     meld
     gitg
     kate
@@ -144,22 +148,29 @@ in
     ghidra
     rustup
     gcc
+    gdb
     cascadia-code
     # these are my dark GTK passengers
-    pkg-config
+    rustc
+    cargo
+    cairo
     gdk-pixbuf
-    gtk4.dev
-    glib
-    gsettings-desktop-schemas
-    gtk3
-    gtksourceview4
-    gspell
-    json-glib
-    libdazzle
-    libgee
-    libgit2-glib
-    libpeas
-    libsecret
-    libsoup
+    gobject-introspection
+    graphene
+    gtk3.dev
+    gtksourceview5
+    libadwaita
+    openssl
+    pandoc
+    pango
+    pkgconfig
+    appstream-glib
+    polkit
+    gettext
+    desktop-file-utils
+    meson
+    ninja
+    git
+    wrapGAppsHook4
   ];
 }
