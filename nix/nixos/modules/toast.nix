@@ -125,7 +125,6 @@ in
     tootle
     bitwig-studio
     vlc
-    handbrake
     ncspot
     spotify
     easyeffects
