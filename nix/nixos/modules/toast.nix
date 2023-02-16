@@ -133,7 +133,6 @@ in
     spot
     vaapiVdpau
     yt-dlp
-    blender
     # Programming
     taxi
     okteta
