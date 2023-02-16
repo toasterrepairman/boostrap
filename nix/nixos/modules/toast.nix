@@ -126,7 +126,6 @@ in
     bitwig-studio
     vlc
     ncspot
-    spotify
     easyeffects
     kdenlive
     celluloid

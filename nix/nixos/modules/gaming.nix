@@ -34,9 +34,10 @@
       ];
     };
   };
-
+/*
   nixpkgs.overlays = [
     (import ./applications/discord.nix)
     (import ./applications/obsidian.nix)
   ];
+*/
 }
