@@ -28,6 +28,13 @@ in
   services.xserver.enable = true;
   security.pam.services.toast.enableKwallet = true;
 
+	hardware.bluetooth.settings = {
+	  General = {
+	    Enable = "Source,Sink,Media,Socket";
+	  };
+	};
+
+
   # Configure keymap in X11
   # services.xserver.layout = "us";
   # services.xserver.xkbOptions = "eurosign:e";
