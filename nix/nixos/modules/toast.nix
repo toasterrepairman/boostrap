@@ -146,6 +146,10 @@ in
     gcc
     gdb
     cascadia-code
+    # bluetooth hack 
+    bluedevil 
+    bluez-utils 
+    pulseaudio-bluetooth
     # these are my dark GTK passengers
     rustc
     cargo
