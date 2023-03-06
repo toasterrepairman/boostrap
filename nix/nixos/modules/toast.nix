@@ -146,7 +146,6 @@ in
     gcc
     gdb
     cascadia-code
-    yakuake
     # bluetooth hack 
     bluedevil 
     # these are my dark GTK passengers
