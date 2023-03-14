@@ -93,7 +93,6 @@ in
     gnome.libgnome-keyring
     filelight 
     ouch
-    ibus-engines.typing-booster
     qt5.qttools
     appimage-run
     # Ricing
@@ -111,8 +110,14 @@ in
     obsidian
     transmission-gtk
     spicetify-cli
+    cemu
     betterdiscordctl
     libsForQt5.ark
+    libsForQt5.kio-extras
+    pavucontrol 
+    libsForQt5.bluez-qt
+    libsForQt5.kitinerary
+    bluez
     partition-manager
     # Productity
     evince
@@ -122,7 +127,7 @@ in
     kdenlive
     gnome-secrets
     # Media
-    tootle
+    libsForQt5.tokodon
     bitwig-studio
     vlc
     ncspot
