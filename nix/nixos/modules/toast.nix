@@ -76,8 +76,9 @@ in
   nixpkgs.config.permittedInsecurePackages = [
     "python-2.7.18.6"
     "electron-12.2.3"
-    
   ];
+
+  programs.fish.enable = true;
   
 
   # delete this when your system breaks
