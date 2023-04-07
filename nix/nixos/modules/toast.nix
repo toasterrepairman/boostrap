@@ -146,6 +146,7 @@ in
     meld
     gitg
     kate
+    racket
     sysprof
     ghidra
     rustup
