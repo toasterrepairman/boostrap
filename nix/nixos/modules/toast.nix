@@ -107,7 +107,6 @@ in
     firefox
     tilix
     betterdiscordctl
-    zoom-us
     obsidian
     transmission-gtk
     spicetify-cli
