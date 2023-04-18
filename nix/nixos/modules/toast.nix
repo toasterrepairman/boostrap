@@ -95,6 +95,7 @@ in
     filelight 
     qt5.qttools
     appimage-run
+    gsettings-desktop-schemas
     # Ricing
     home-manager
     nordic

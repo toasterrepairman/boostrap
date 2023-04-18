@@ -115,7 +115,6 @@
     yt-dlp
     ruff
     ouch
-
     rustup
     gcc
     gdb
