@@ -93,7 +93,6 @@ in
     gnome.gnome-keyring
     gnome.libgnome-keyring
     filelight 
-    ouch
     qt5.qttools
     appimage-run
     # Ricing
@@ -136,27 +135,19 @@ in
     celluloid
     spot
     vaapiVdpau
-    yt-dlp
     # Programming
     taxi
     okteta
     jetbrains.idea-community
-    pipenv
     meld
     gitg
     kate
-    racket
     sysprof
     ghidra
-    rustup
-    gcc
-    gdb
     cascadia-code
     # bluetooth hack 
     bluedevil 
     # these are my dark GTK passengers
-    rustc
-    cargo
     cairo
     gdk-pixbuf
     gobject-introspection
@@ -165,16 +156,11 @@ in
     gtksourceview5
     libadwaita
     openssl
-    pandoc
     pango
-    pkgconfig
     appstream-glib
     polkit
     gettext
     desktop-file-utils
-    meson
-    ninja
-    git
     wrapGAppsHook4
   ];
 }

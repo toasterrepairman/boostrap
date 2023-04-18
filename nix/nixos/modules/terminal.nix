@@ -106,5 +106,21 @@
     fd
     lsof 
     killall
+    rustc
+    cargo
+    pandoc
+    pkgconfig
+    racket
+    pipenv
+    yt-dlp
+    ruff
+    ouch
+
+    rustup
+    gcc
+    gdb
+    meson
+    ninja
+    git
   ];
 }
