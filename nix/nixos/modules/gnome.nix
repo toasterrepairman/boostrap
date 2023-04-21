@@ -16,6 +16,10 @@
   services.xserver.desktopManager.gnome.enable = true;
   services.gnome.gnome-keyring.enable = true;
 
+  # important
+  xdg.portal.enable = true;
+  networking.networkmanager.enable = true;
+
   networking.firewall.allowedTCPPortRanges = [
     # KDE Connect
     { from = 1714; to = 1764; }

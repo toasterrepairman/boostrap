@@ -16,6 +16,10 @@ in
     };
   };
 
+  # important
+  xdg.portal.enable = true;
+  networking.networkmanager.enable = true;
+
   # Enable the Plasma 5 Desktop Environment.
   # services.xserver.desktopManager.plasma5.enable = true;
 

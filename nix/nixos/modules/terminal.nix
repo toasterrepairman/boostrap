@@ -65,8 +65,6 @@
 
     programs.dconf.enable = true;
 
-  xdg.portal.enable = true;
-
   # Allow proprietary software to taint my pure system
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowBroken = true;
