@@ -77,7 +77,7 @@
   hardware.bluetooth.enable = true;
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  
+  # networking.networkmanager.enable = true;
   systemd.services.NetworkManager-wait-online.enable = false;
 
   # List services that you want to enable:
