@@ -71,10 +71,6 @@
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowBroken = true;
 
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-12.2.3"
-  ];
-
   nix.settings.auto-optimise-store = true;
 
   # Enable Bluetooth on a hardware level

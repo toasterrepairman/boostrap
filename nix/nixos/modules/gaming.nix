@@ -9,7 +9,7 @@
     wine
     protonup
     prismlauncher
-    obs-studio
+    # obs-studio
     projectm
     # Tools
     gamemode
