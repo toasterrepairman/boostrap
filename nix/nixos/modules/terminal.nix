@@ -70,6 +70,8 @@
   nixpkgs.config.allowBroken = true;
 
   nix.settings.auto-optimise-store = true;
+  programs.fish.enable = true;
+
 
   # Enable Bluetooth on a hardware level
   hardware.bluetooth.enable = true;
