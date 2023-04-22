@@ -21,7 +21,7 @@
   environment.systemPackages = with pkgs; [
 	spotifyd    
   ];
-  
+
   services.spotifyd = {
   	enable = true;
   	settings = {
@@ -29,6 +29,8 @@
   		device_type = "audio_dongle";
   		device_name = "LivingRoom";
   		zeroconf_port = 1234;
+        username = "HARDKOR3";
+        password_cmd = "echo $spotify_pass";
 	  };
   	};
   };
