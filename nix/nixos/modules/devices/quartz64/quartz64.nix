@@ -33,9 +33,8 @@
 
   # List services that you want to enable:
 
-  powerManagement.powerUpCommands = [
-  	""
-  ];
+  powerManagement.powerUpCommands = """
+  """;
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
