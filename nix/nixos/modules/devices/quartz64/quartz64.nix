@@ -18,22 +18,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-	spotifyd    
-  ];
-
-  services.spotifyd = {
-  	enable = true;
-  	settings = {
-  	  global = {
-  		device_type = "audio_dongle";
-  		device_name = "LivingRoom";
-  		zeroconf_port = 1234;
-        username = "HARDKOR3";
-        password_cmd = "fish -C echo $spotify_pass";
-	  };
-  	};
-  };
+  
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
