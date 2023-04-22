@@ -18,10 +18,20 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  # environment.systemPackages = with pkgs; [
-  #   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #   wget
-  # ];
+  environment.systemPackages = with pkgs; [
+	spotifyd    
+  ];
+  
+  services.spotifyd = {
+  	enable = true;
+  	settings = {
+  	  global = {
+  		device_type = "audio_dongle";
+  		device_name = "LivingRoom";
+  		zeroconf_port = 1234;
+	  };
+  	};
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -41,7 +51,7 @@
   services.openssh.permitRootLogin = "yes";
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 22 ];
+  networking.firewall.allowedTCPPorts = [ 22 1234 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
