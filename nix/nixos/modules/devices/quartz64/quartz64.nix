@@ -30,7 +30,7 @@
   		device_name = "LivingRoom";
   		zeroconf_port = 1234;
         username = "HARDKOR3";
-        password_cmd = "echo $spotify_pass";
+        password_cmd = "fish -C echo $spotify_pass";
 	  };
   	};
   };
