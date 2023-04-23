@@ -117,5 +117,6 @@
     meson
     ninja
     git
+    cryptsetup
   ];
 }

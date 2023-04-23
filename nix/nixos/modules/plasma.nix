@@ -16,6 +16,8 @@ in
     };
   };
 
+  programs.dconf.enable = true;
+
   # important
   xdg.portal.enable = true;
   networking.networkmanager.enable = true;
