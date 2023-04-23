@@ -13,6 +13,10 @@
 
   networking.hostName = "nixos-quartz"; # Define your hostname.
   # Pick only one of the below networking options.
+
+  # Latest kernel
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
