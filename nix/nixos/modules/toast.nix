@@ -106,6 +106,7 @@ in
     tootle
     # Userland
     firefox
+    newsflash
     tilix
     betterdiscordctl
     obsidian
