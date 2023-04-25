@@ -23,11 +23,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
 
-   swapDevices = [ {
-      device = "/var/lib/swapfile";
-      size = 4*1024;
-    } ];
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
