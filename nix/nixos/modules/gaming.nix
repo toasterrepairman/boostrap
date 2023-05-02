@@ -8,8 +8,8 @@
     betterdiscord-installer
     wine
     protonup
-    prismlauncher
-    # obs-studio
+    # prismlauncher
+    obs-studio
     projectm
     # Tools
     gamemode
