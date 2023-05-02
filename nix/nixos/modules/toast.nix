@@ -106,6 +106,7 @@ in
     tootle
     # Userland
     firefox
+    syncthingtray
     newsflash
     tilix
     betterdiscordctl
