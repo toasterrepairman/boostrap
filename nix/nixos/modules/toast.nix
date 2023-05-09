@@ -124,6 +124,7 @@ in
     partition-manager
     # Productity
     evince
+    foliate
     gImageReader
     gimp
     etcher
