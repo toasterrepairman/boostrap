@@ -40,6 +40,9 @@
   services.openssh.enable = true;
   services.openssh.permitRootLogin = "yes";
 
+  # Jellyfin
+  services.jellyfin.enable = true; 
+
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 22 1234 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
