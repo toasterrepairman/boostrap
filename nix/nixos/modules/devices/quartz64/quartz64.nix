@@ -69,7 +69,7 @@
       # ...
     };
     serviceConfig = {
-      ExecStart = "bash -c 'echo none > /sys/class/leds/user-led/trigger'";
+      ExecStart = ''${pkgs.bash}/bin/bash -c "echo none > /sys/class/leds/user-led/trigger"'';
       # ...
     };
     wantedBy = [ "multi-user.target" ];
