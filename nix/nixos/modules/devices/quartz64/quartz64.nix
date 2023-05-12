@@ -61,13 +61,27 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
+  systemd.services.user-led = {
+    enable = true;
+    description = "Turn off heartbeat LED";
+    unitConfig = {
+      Type = "simple";
+      # ...
+    };
+    serviceConfig = {
+      ExecStart = "bash -c 'echo none > /sys/class/leds/user-led/trigger'";
+      # ...
+    };
+    wantedBy = [ "multi-user.target" ];
+    after = [ "multi-user.target" ];
+
+  };
+
 
   # Disable the heartbeat LED for Quartz64 Board
   services.systemd.units = {
     "user-led.service" = {
-      description = "Turn off heartbeat LED";
       wantedBy = [ "multi-user.target" ];
-      after = [ "multi-user.target" ];
       serviceConfig = {
         type = "simple";
         execStart = ''
