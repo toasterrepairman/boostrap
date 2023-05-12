@@ -97,6 +97,7 @@ in
     qt5.qttools
     appimage-run
     gsettings-desktop-schemas
+    libsForQt5.kdenetwork-filesharing
     # Ricing
     home-manager
     nordic

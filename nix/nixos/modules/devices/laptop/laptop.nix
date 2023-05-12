@@ -34,4 +34,20 @@
 
   # Enable Bluetooth on a hardware level
   hardware.bluetooth.enable = true;
+
+  # Disable the heartbeat LED for Quartz64 Board
+  services.systemd.units = {
+    "user-led.service" = {
+      description = "Turn off heartbeat LED";
+      wantedBy = [ "multi-user.target" ];
+      after = [ "multi-user.target" ];
+      serviceConfig = {
+        type = "simple";
+        execStart = ''
+          echo none > /sys/class/leds/user-led/trigger
+        '';
+      };
+    };
+  };
+
 }
