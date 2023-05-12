@@ -77,20 +77,6 @@
 
   };
 
-
-  # Disable the heartbeat LED for Quartz64 Board
-  services.systemd.units = {
-    "user-led.service" = {
-      wantedBy = [ "multi-user.target" ];
-      serviceConfig = {
-        type = "simple";
-        execStart = ''
-          echo none > /sys/class/leds/user-led/trigger
-        '';
-      };
-    };
-  };
-
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
   # accidentally delete configuration.nix.
