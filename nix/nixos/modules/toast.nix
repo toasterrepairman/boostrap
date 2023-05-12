@@ -149,6 +149,8 @@ in
     sysprof
     ghidra
     cascadia-code
+    ryujinx
+    amberol
     # bluetooth hack 
     bluedevil 
     # these are my dark GTK passengers

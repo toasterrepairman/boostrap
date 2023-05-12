@@ -61,6 +61,22 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
+
+  # Disable the heartbeat LED for Quartz64 Board
+  services.systemd.units = {
+    "user-led.service" = {
+      description = "Turn off heartbeat LED";
+      wantedBy = [ "multi-user.target" ];
+      after = [ "multi-user.target" ];
+      serviceConfig = {
+        type = "simple";
+        execStart = ''
+          echo none > /sys/class/leds/user-led/trigger
+        '';
+      };
+    };
+  };
+
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
   # accidentally delete configuration.nix.
