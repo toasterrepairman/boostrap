@@ -138,6 +138,7 @@ in
     easyeffects
     celluloid
     spot
+    chatterino2
     vaapiVdpau
     # Programming
     taxi
