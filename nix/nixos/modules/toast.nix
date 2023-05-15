@@ -121,6 +121,8 @@ in
     libsForQt5.bluez-qt
     libsForQt5.kitinerary
     qt5.qtwebsockets
+    libsForQt5.plasma-framework
+    libsForQt5.qtdeclarative
     kdeplasma-addons
     bluez
     partition-manager
@@ -133,9 +135,11 @@ in
     gnome-secrets
     # Media
     libsForQt5.tokodon
+    vulkan-headers
     bitwig-studio
     vlc
     ncspot
+    mpv
     easyeffects
     celluloid
     spot
@@ -170,5 +174,9 @@ in
     gettext
     desktop-file-utils
     wrapGAppsHook4
+    # python
+    python311
+    python311Packages.websockets
+    python311Packages.pip
   ];
 }
