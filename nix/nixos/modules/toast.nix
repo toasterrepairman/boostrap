@@ -107,7 +107,6 @@ in
     tootle
     # Userland
     firefox
-    syncthingtray
     newsflash
     tilix
     betterdiscordctl
@@ -121,6 +120,8 @@ in
     pavucontrol 
     libsForQt5.bluez-qt
     libsForQt5.kitinerary
+    qt5.qtwebsockets
+    kdeplasma-addons
     bluez
     partition-manager
     # Productity
