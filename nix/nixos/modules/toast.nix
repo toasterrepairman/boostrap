@@ -155,7 +155,7 @@ in
     sysprof
     ghidra
     cascadia-code
-    ryujinx
+    yuzu-early-access
     amberol
     # bluetooth hack 
     bluedevil 
