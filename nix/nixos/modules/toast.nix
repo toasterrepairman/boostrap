@@ -108,6 +108,7 @@ in
     # Userland
     firefox
     newsflash
+    komikku
     tilix
     betterdiscordctl
     obsidian
