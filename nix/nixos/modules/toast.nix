@@ -133,6 +133,7 @@ in
     gImageReader
     gimp
     etcher
+    calibre
     gnome-secrets
     # Media
     libsForQt5.tokodon
