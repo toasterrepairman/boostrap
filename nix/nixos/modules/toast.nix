@@ -51,7 +51,6 @@ in
           path = "/home/toast/Bitwig Studio";    # Which folder to add to Syncthing
           devices = [ "toastpad" "toaster" ];      # Which devices to share the folder with
         };
-        
       };
     };
   };
