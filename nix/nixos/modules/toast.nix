@@ -17,7 +17,7 @@ in
   };
 
   services = {
-    syncthing = {
+    syncthing.settings = {
       enable = true;
       dataDir = "/home/toast";
       user = "toast";
@@ -55,6 +55,8 @@ in
       };
     };
   };
+
+    networking.firewall.allowedTCPPorts = [ 22 8080 80 ];
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
