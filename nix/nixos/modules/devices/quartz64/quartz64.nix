@@ -32,23 +32,23 @@
   # };
 
   
-  services.xserver.enable = true;
-  services.xserver.desktopManager.kodi.enable = true;
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "kodi";
+  # services.xserver.enable = true;
+  # services.xserver.desktopManager.kodi.enable = true;
+  # services.xserver.displayManager.autoLogin.enable = true;
+  # services.xserver.displayManager.autoLogin.user = "kodi";
 
 
   # TV Server Config:
   # --- Radarr ---
-  services.radarr.enable = true;
-  services.radarr.openFirewall = true;
+  # services.radarr.enable = true;
+  # services.radarr.openFirewall = true;
 
   # --- Sonarr ---
-  services.sonarr.enable = true;
-  services.sonarr.openFirewall = true;
+  # services.sonarr.enable = true;
+  # services.sonarr.openFirewall = true;
 
   # --- Bazarr ---
-  services.bazarr.enable = true;
+  # services.bazarr.enable = true;
 
   # List services that you want to enable:
 
