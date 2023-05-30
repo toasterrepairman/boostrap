@@ -37,11 +37,25 @@
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "kodi";
 
+
+  # TV Server Config:
+  # --- Kodi ---
   users.extraUsers.kodi.isNormalUser = true;
   services.cage.user = "kodi";
   services.cage.program = "${pkgs.kodi-wayland}/bin/kodi-standalone";
   services.cage.enable = true;
   nixpkgs.config.kodi.enableAdvancedLauncher = true;
+
+  # --- Radarr ---
+  services.radarr.enable = true;
+  services.radarr.openFirewall = true;
+
+  # --- Sonarr ---
+  services.sonarr.enable = true;
+  services.sonarr.openFirewall = true;
+
+  # --- Bazarr ---
+  services.bazarr.enable = true;
 
   # List services that you want to enable:
 
