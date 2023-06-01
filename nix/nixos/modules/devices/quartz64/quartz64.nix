@@ -63,7 +63,7 @@
   services.jellyfin.enable = true; 
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 22 1234 8096 ];
+  networking.firewall.allowedTCPPorts = [ 22 80 8080 1234 8096 ];
   networking.firewall.allowedUDPPorts = [ 7359 1900 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
