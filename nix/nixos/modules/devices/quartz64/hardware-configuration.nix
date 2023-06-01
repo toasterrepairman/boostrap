@@ -18,6 +18,12 @@
       fsType = "ext4";
     };
 
+  fileSystems."/mnt/media" =
+    { device = "/dev/disk/by-label/MediaDisk";
+      fsType = "ext4";
+    };
+
+
   swapDevices = [ {
         device = "/var/lib/swapfile";
         size = 4*1024;
