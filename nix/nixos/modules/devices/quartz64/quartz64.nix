@@ -65,7 +65,7 @@
     #DLNA
     services.minidlna.enable = true;
     services.minidlna.settings = {
-      friendly_name = "Joel's Desktop";
+      friendly_name = "Home Server";
       media_dir = [
        "V,/mnt/media" #Videos files are located here
       ];
