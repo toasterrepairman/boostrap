@@ -67,7 +67,7 @@
     services.minidlna.settings = {
       friendly_name = "Joel's Desktop";
       media_dir = [
-       "V,/run/media/toast/Leviathan 1/" #Videos files are located here
+       "V,/mnt/media" #Videos files are located here
       ];
       log_level = "error";
     };
