@@ -45,23 +45,23 @@
   #    };
   # };
 
-    #DLNA
-    services.minidlna.enable = true;
-    services.minidlna.settings = {
-      friendly_name = "Joel's Desktop";
-      media_dir = [
-         "V,/run/media/toast/Leviathan 1/" #Videos files are located here
-     ];
-      log_level = "error";
-    };
+  #DLNA
+  services.minidlna.enable = true;
+  services.minidlna.settings = {
+    friendly_name = "Joel's Desktop";
+    media_dir = [
+     "V,/run/media/toast/Leviathan 1/" #Videos files are located here
+    ];
+    log_level = "error";
+  };
 
-    users.users.minidlna = {
-      extraGroups = [ "users" ]; # so minidlna can access the files.
-    };
+  users.users.minidlna = {
+    extraGroups = [ "users" ]; # so minidlna can access the files.
+  };
 
-    services.minidlna.openFirewall = true;
+  services.minidlna.openFirewall = true;
 
-  environment.systemPakages = with pkgs; [
+  environment.systemPackages = with pkgs; [
     # davinci-resolve
     xorg.libxcb
     cudaPackages.cudatoolkit
