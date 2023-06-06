@@ -60,7 +60,23 @@
   services.openssh.permitRootLogin = "yes";
 
   # Jellyfin
-  services.jellyfin.enable = true; 
+  services.jellyfin.enable = true;
+
+    #DLNA
+    services.minidlna.enable = true;
+    services.minidlna.settings = {
+      friendly_name = "Joel's Desktop";
+      media_dir = [
+       "V,/run/media/toast/Leviathan 1/" #Videos files are located here
+      ];
+      log_level = "error";
+    };
+
+    users.users.minidlna = {
+      extraGroups = [ "users" ]; # so minidlna can access the files.
+    };
+
+    services.minidlna.openFirewall = true;
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 22 80 8080 1234 8096 ];
