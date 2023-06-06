@@ -45,45 +45,23 @@
   #    };
   # };
 
-  services.samba-wsdd.enable = true; # make shares visible for windows 10 clients
-  networking.firewall.allowedTCPPorts = [
-    5357 # wsdd
-  ];
-  networking.firewall.allowedUDPPorts = [
-    3702 # wsdd
-  ];
-  services.samba = {
-    enable = true;
-    securityType = "user";
-    extraConfig = ''
-      #workgroup = WORKGROUP
-      server string = toaster
-      netbios name = toaster
-      security = user
-      #use sendfile = yes
-      #max protocol = smb2
-      # note: localhost is the ipv6 localhost ::1
-      hosts allow = 192.168.0. 127.0.0.1 localhost
-      hosts deny = 0.0.0.0/0
-      guest account = nobody
-      map to guest = bad user
-    '';
-    shares = {
-      public = {
-        path = "/run/media/toast/Leviathan 1/Archives/Videos/";
-        browseable = "yes";
-        "read only" = "yes";
-        "guest ok" = "yes";
-        # "create mask" = "0644";
-        # "directory mask" = "0755";
-        # "force user" = "username";
-        # "force group" = "groupname";
-      };
+    #DLNA
+    services.minidlna.enable = true;
+    services.minidlna.settings = {
+      friendly_name = "Joel's Desktop";
+      media_dir = [
+         "V,/run/media/toast/Leviathan 1/" #Videos files are located here
+     ];
+      log_level = "error";
     };
-  };
 
+    users.users.minidlna = {
+      extraGroups = [ "users" ]; # so minidlna can access the files.
+    };
 
-  environment.systemPackages = with pkgs; [
+    services.minidlna.openFirewall = true;
+
+  environment.systemPakages = with pkgs; [
     # davinci-resolve
     xorg.libxcb
     cudaPackages.cudatoolkit

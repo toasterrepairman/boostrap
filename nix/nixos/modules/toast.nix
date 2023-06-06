@@ -17,7 +17,7 @@ in
   };
 
   services = {
-    syncthing.settings = {
+    syncthing = {
       enable = true;
       dataDir = "/home/toast";
       user = "toast";
