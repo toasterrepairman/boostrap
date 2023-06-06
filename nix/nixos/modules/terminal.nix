@@ -119,6 +119,8 @@
     meson
     ninja
     git
+    git-lfs
+    unrar
     cryptsetup
   ];
 }

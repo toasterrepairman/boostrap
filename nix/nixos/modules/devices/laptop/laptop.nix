@@ -30,7 +30,7 @@
   networking.dhcpcd.enable = false;
 
   # this leads to timeouts for some devices (virtualbox or tinc adapter)
-  systemd.services.systemd-udev-settle.serviceConfig.ExecStart = ["" "${pkgs.coreutils}/bin/true"];
+  # systemd.services.systemd-udev-settle.serviceConfig.ExecStart = ["" "${pkgs.coreutils}/bin/true"];
 
   # Enable Bluetooth on a hardware level
   hardware.bluetooth.enable = true;

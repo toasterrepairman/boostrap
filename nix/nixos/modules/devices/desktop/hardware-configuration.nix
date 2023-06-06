@@ -17,6 +17,10 @@
     { device = "/dev/disk/by-uuid/8996aa27-6292-4b08-b5c7-3a82d3d5816e";
       fsType = "ext4";
     };
+  fileSystems."/mnt/FastLane" =
+    { device = "/dev/disk/by-label/Fast\x20Lane";
+      fsType = "btrfs";
+    };
 
   boot.initrd.luks.devices."luks-6ce9fb31-a07d-4f83-8606-ef70f7fa0b7a".device = "/dev/disk/by-uuid/6ce9fb31-a07d-4f83-8606-ef70f7fa0b7a";
 
