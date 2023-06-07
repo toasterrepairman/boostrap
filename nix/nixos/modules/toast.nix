@@ -56,6 +56,12 @@ in
   };
 
     networking.firewall.allowedTCPPorts = [ 22 8080 80 ];
+    networking.firewall.allowedUDPPorts = [ 1900 ];
+      networking.firewall.allowedUDPPortRanges = [
+        # Allow UPnP/SSDP traffic for Chromecast
+        # https://github.com/NixOS/nixpkgs/issues/49630#issuecomment-622498732
+        { from = 32768; to = 60999; }
+      ];
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -79,7 +85,8 @@ in
     "python-2.7.18.6"
 
   ];
-  
+
+  virtualisation.libvirtd.enable = true;
 
   programs.fish.enable = true;
 
@@ -151,6 +158,10 @@ in
     # Programming
     taxi
     okteta
+    miniupnpc
+    libupnp
+    qemu
+    gnome.gnome-boxes
     jetbrains.idea-community
     meld
     gitg

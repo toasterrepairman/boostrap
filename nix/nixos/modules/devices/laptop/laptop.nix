@@ -25,7 +25,7 @@
 
   systemd.network.enable = true;
   # often hangs
-  systemd.services.systemd-networkd-wait-online.enable = true;
+  # systemd.services.systemd-networkd-wait-online.enable = true;
 
   networking.dhcpcd.enable = false;
 
