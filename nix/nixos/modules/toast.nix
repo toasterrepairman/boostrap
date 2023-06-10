@@ -83,7 +83,6 @@ in
     "electron-21.4.0"
     "electron-12.2.3"
     "python-2.7.18.6"
-
   ];
 
   virtualisation.libvirtd.enable = true;
@@ -157,6 +156,9 @@ in
     vaapiVdpau
     # Programming
     taxi
+    heaptrack
+    hotspot
+    linux_latest_libre.perf
     okteta
     miniupnpc
     libupnp
