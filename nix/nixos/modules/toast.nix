@@ -158,7 +158,7 @@ in
     taxi
     heaptrack
     hotspot
-    linux_latest_libre.perf
+    linuxKernel.packages.linux_latest_libre.perf
     okteta
     miniupnpc
     libupnp
