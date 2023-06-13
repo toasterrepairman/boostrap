@@ -82,7 +82,6 @@
     };
   };
 
-
   # Enable Bluetooth on a hardware level
   hardware.bluetooth.enable = true;
 

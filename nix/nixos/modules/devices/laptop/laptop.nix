@@ -24,6 +24,8 @@
   networking.interfaces.wlp4s0.useDHCP = true;
 
   systemd.network.enable = true;
+  systemd.network.wait-online.anyInterface = true;
+  systemd.network.wait-online.enable = false;
   # often hangs
   # systemd.services.systemd-networkd-wait-online.enable = true;
 
