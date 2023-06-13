@@ -144,6 +144,7 @@ in
     gnome-secrets
     # Media
     libsForQt5.tokodon
+    obs-studio
     vulkan-headers
     bitwig-studio
     vlc
