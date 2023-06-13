@@ -71,7 +71,16 @@
   nixpkgs.config.allowBroken = true;
 
   nix.settings.auto-optimise-store = true;
-  programs.fish.enable = true;
+
+  programs.fish = {
+    enable = true;
+    shellInit = "date";
+    shellAliases = {
+      l = "ls -l";
+      cdd = "cd ~/Documents/Code/Shell/boostrap || echo 'boostrap repo not found'";
+      cdc = "cd ~/Documents/Code/ || echo 'Code directory not found'";
+    };
+  };
 
 
   # Enable Bluetooth on a hardware level
