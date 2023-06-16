@@ -59,9 +59,6 @@
   services.openssh.enable = true;
   services.openssh.permitRootLogin = "yes";
 
-  # Jellyfin
-  services.jellyfin.enable = true;
-
     #DLNA
     services.minidlna.enable = true;
     services.minidlna.settings = {
@@ -79,10 +76,17 @@
     services.minidlna.openFirewall = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 22 80 8080 1234 8096 ];
+  networking.firewall.allowedTCPPorts = [ 22 80 8080 1234 8096 8090 ];
   networking.firewall.allowedUDPPorts = [ 7359 1900 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+
+  services.deluge = {
+    user = "toast";
+    web.enable = true;
+    web.port = 8090;
+    web.openFirewall = true;
+  };
 
   systemd.services.user-led = {
     enable = true;
