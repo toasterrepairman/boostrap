@@ -118,6 +118,7 @@
     racket
     pipenv
     yt-dlp
+    nix-tree
     ruff
     ouch
     rustup

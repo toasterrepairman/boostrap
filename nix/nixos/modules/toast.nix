@@ -125,6 +125,7 @@ in
     betterdiscordctl
     libsForQt5.ark
     libsForQt5.kio-extras
+    libsForQt5.libdbusmenu
     pavucontrol 
     libsForQt5.bluez-qt
     libsForQt5.kitinerary
@@ -145,6 +146,9 @@ in
     # Media
     libsForQt5.tokodon
     obs-studio
+    video-trimmer
+    cutter
+    arduino
     vulkan-headers
     bitwig-studio
     vlc
