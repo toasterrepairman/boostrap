@@ -95,6 +95,7 @@ in
 
   environment.systemPackages = with pkgs; [
     # OS tools
+    linuxKernel.packages.linux_latest_libre.system76-scheduler
     quota
     syncthing
     gnome.seahorse
@@ -168,7 +169,6 @@ in
     miniupnpc
     libupnp
     qemu
-    gnome.gnome-boxes
     jetbrains.idea-community
     meld
     gitg

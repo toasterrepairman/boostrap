@@ -130,5 +130,6 @@
     git-lfs
     unrar
     cryptsetup
+    fzf
   ];
 }
