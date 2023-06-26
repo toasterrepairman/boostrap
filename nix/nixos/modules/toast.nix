@@ -75,10 +75,13 @@ in
   # };
 
   # horrorshow hacks
+  # delete these before reaching the gates of heaven
   environment.variables = rec {
     GOPATH = "\${HOME}/.go";
+    GTK_THEME = "Nordic";
   };
 
+  # i trust these are unneccesary but i dont know anymore
   nixpkgs.config.permittedInsecurePackages = [
     "electron-21.4.0"
     "electron-12.2.3"
