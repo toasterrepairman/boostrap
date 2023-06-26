@@ -28,10 +28,8 @@
   programs.fish = {
     shellAbbrs = {
       ll = "ls -l";
-      cocosay = "ponysay -f 'Coco Pommel'";
-      gitlog = "git log --graph --oneline";
+
     };
-    vendor.completions.enable = true; 
   };
 
   # Enable Nix Flakes
@@ -76,10 +74,15 @@
     enable = true;
     shellInit = "date";
     shellAliases = {
+      cocosay = "ponysay -f 'Coco Pommel'";
+      gitlog = "git log --graph --oneline";
       l = "ls -l";
       cdd = "cd ~/Documents/Code/Shell/boostrap || echo 'boostrap repo not found'";
       cdc = "cd ~/Documents/Code/ || echo 'Code directory not found'";
+      rebuild = "sudo nixos-rebuild switch --cores 4";
+      rebuild-full = "sudo nixos-rebuild switch --upgrade-all --cores 4";
     };
+    vendor.completions.enable = true;
   };
 
   # Enable Bluetooth on a hardware level
