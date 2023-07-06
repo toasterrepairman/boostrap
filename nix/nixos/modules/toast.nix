@@ -76,7 +76,7 @@ in
 
   # horrorshow hacks
   # delete these before reaching the gates of heaven
-  environment.variables = rec {
+  environment.sessionVariables = rec {
     GOPATH = "\${HOME}/.go";
     GTK_THEME = "Nordic";
   };
@@ -111,6 +111,7 @@ in
     libsForQt5.kdenetwork-filesharing
     # Ricing
     home-manager
+    gradience
     nordic
     quintom-cursor-theme
     ibm-plex
