@@ -7,6 +7,7 @@
     discord
     betterdiscord-installer
     wine
+    gamescope
     protonup
     # prismlauncher
     # obs-studio
