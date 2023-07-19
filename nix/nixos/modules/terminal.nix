@@ -28,7 +28,6 @@
   programs.fish = {
     shellAbbrs = {
       ll = "ls -l";
-
     };
   };
 
@@ -79,8 +78,8 @@
       l = "ls -l";
       cdd = "cd ~/Documents/Code/Shell/boostrap || echo 'boostrap repo not found'";
       cdc = "cd ~/Documents/Code/ || echo 'Code directory not found'";
-      rebuild = "sudo nixos-rebuild switch --cores 4";
-      rebuild-full = "sudo nixos-rebuild switch --upgrade-all --cores 4";
+      rebuild = "sudo nixos-rebuild switch --cores 8";
+      rebuild-full = "sudo nixos-rebuild switch --upgrade-all --cores 8";
     };
     vendor.completions.enable = true;
   };
