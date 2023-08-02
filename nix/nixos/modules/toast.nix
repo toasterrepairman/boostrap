@@ -119,6 +119,7 @@ in
     tootle
     # Userland
     firefox
+    ungoogled-chromium
     newsflash
     komikku
     tilix
@@ -157,9 +158,11 @@ in
     vulkan-headers
     bitwig-studio
     vlc
+    amberol
     ncspot
     mpv
     easyeffects
+    handbrake
     celluloid
     spot
     chatterino2
@@ -180,8 +183,7 @@ in
     sysprof
     ghidra
     cascadia-code
-    amberol
-    # bluetooth hack 
+    # bluetooth hack
     bluedevil 
     # these are my dark GTK passengers
     cairo
