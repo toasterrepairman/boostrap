@@ -121,6 +121,7 @@ in
     firefox
     ungoogled-chromium
     newsflash
+    prusa-slicer
     komikku
     tilix
     betterdiscordctl
