@@ -58,6 +58,10 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
   services.openssh.permitRootLogin = "yes";
+  services.octoprint = {
+    enable = true;
+    openFirewall = true;
+  };
 
     #DLNA
     services.minidlna.enable = true;
