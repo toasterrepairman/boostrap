@@ -8,32 +8,38 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "rtsx_pci_sdmmc" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/mapper/enc";
-      fsType = "btrfs";
-      options = [ "subvol=nixos" "compress=zstd" "autodefrag" "noatime" ];
+    { device = "/dev/disk/by-uuid/68da6a7c-3ec3-444a-8e65-f470b0dd6217";
+      fsType = "ext4";
     };
 
-  boot.initrd.luks.devices."enc".device = "/dev/disk/by-uuid/65286fb8-f6f8-4ba0-bdcc-8cbbf0f6b9bb";
-
-  fileSystems."/home" =
-    { device = "/dev/mapper/enc";
-      fsType = "btrfs";
-      options = [ "subvol=home" ];
-    };
+  boot.initrd.luks.devices."luks-ea620666-f91c-49b5-9cbd-212df2025ddc".device = "/dev/disk/by-uuid/ea620666-f91c-49b5-9cbd-212df2025ddc";
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/2932-9A77";
+    { device = "/dev/disk/by-uuid/26CE-B126";
       fsType = "vfat";
     };
 
-  swapDevices = [ ];
+  swapDevices =
+    [ { device = "/dev/disk/by-uuid/62a62ea7-bad0-4c93-9eee-4fee45912bcb"; }
+    ];
 
-  powerManagement.cpuFreqGovernor = lib.mkDefault "balanced";
+  # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
+  # (the default) this is the recommended approach. When using systemd-networkd it's
+  # still possible to use this option, but it's recommended to use it in conjunction
+  # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
+  networking.useDHCP = lib.mkDefault true;
+  # networking.interfaces.docker0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.enp0s31f6.useDHCP = lib.mkDefault true;
+  # networking.interfaces.tailscale0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.wlp4s0.useDHCP = lib.mkDefault true;
+
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
