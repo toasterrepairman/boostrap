@@ -78,7 +78,7 @@ in
   # delete these before reaching the gates of heaven
   environment.sessionVariables = rec {
     GOPATH = "\${HOME}/.go";
-    GTK_THEME = "Nordic";
+    GTK_THEME = "adw-gtk3";
   };
 
   # i trust these are unneccesary but i dont know anymore
@@ -115,6 +115,7 @@ in
     nordic
     quintom-cursor-theme
     ibm-plex
+    adw-gtk3
     zafiro-icons
     tootle
     # Userland
@@ -149,6 +150,8 @@ in
     gimp
     etcher
     calibre
+    gaphor
+    denaro
     gnome-secrets
     # Media
     libsForQt5.tokodon
@@ -170,7 +173,6 @@ in
     vaapiVdpau
     # Programming
     taxi
-    heaptrack
     hotspot
     linuxKernel.packages.linux_latest_libre.perf
     okteta
@@ -181,7 +183,6 @@ in
     meld
     gitg
     kate
-    sysprof
     ghidra
     cascadia-code
     # bluetooth hack
