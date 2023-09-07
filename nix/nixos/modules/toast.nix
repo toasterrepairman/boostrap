@@ -66,7 +66,9 @@ in
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-  
+
+
+
   # Select internationalisation properties.
   # i18n.defaultLocale = "en_US.UTF-8";
   # console = {
@@ -95,6 +97,12 @@ in
   # delete this when your system breaks
   boot.kernelPackages = pkgs.linuxPackages_latest;
   # (it will probably be too late :p)
+  # its a miracle my computer still works
+    boot.kernel.sysctl = {
+      "net.core.default_qdisc" = "fq";
+      "net.ipv4.tcp_congestion_control" = "bbr";
+      "vm.swappiness" = 10;
+    };
 
   environment.systemPackages = with pkgs; [
     # OS tools
