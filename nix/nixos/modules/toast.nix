@@ -177,6 +177,7 @@ in
     handbrake
     celluloid
     spot
+    gnome-podcasts
     chatterino2
     vaapiVdpau
     # Programming
