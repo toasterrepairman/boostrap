@@ -61,13 +61,17 @@
     pulse.enable = true;
   };
 
-    programs.dconf.enable = true;
+  programs.dconf.enable = true;
+
+  nix.settings.auto-optimise-store = true;
+  nix.gc = {
+    options = "--delete-older-than 30d";
+  };
 
   # Allow proprietary software to taint my pure system
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowBroken = true;
 
-  nix.settings.auto-optimise-store = true;
 
   programs.fish = {
     enable = true;
@@ -116,7 +120,7 @@
     rustc
     cargo
     pandoc
-    pkgconfig
+    pkg-config
     racket
     pipenv
     yt-dlp
