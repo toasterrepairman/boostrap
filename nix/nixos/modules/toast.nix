@@ -90,6 +90,11 @@ in
     "python-2.7.18.6"
   ];
 
+  nix.extraOptions = ''
+   binary-caches-parallel-connections = 3
+   connect-timeout = 5
+  '';
+  
   virtualisation.libvirtd.enable = true;
 
   programs.fish.enable = true;
