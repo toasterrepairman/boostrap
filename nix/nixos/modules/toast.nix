@@ -120,6 +120,7 @@ in
     gradience
     adw-gtk3
     nordic
+    xdg-desktop-portal-gtk
     quintom-cursor-theme
     ibm-plex
     zafiro-icons
