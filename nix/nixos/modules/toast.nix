@@ -118,6 +118,7 @@ in
     # Ricing
     home-manager
     gradience
+    adw-gtk3
     nordic
     quintom-cursor-theme
     ibm-plex
