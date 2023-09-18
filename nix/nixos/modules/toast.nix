@@ -151,7 +151,6 @@ in
     gImageReader
     gimp
     etcher
-    imaginer
     calibre
     gnome-secrets
     # Media
