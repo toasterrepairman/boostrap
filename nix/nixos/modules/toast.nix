@@ -126,13 +126,11 @@ in
     tootle
     # Userland
     firefox
-    ungoogled-chromium
     newsflash
     prusa-slicer
     komikku
     tilix
     obsidian
-    transmission-gtk
     spicetify-cli
     cemu
     libsForQt5.ark
@@ -153,6 +151,7 @@ in
     gImageReader
     gimp
     etcher
+    imaginer
     calibre
     gnome-secrets
     # Media
