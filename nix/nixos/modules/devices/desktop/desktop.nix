@@ -49,11 +49,6 @@
     # davinci-resolve
     xorg.libxcb
     cudaPackages.cudatoolkit
-    cachix
-  ];
-
-  boot.binfmt.emulatedSystems = [
-    "aarch64-linux"
   ];
 
   hardware.opengl.driSupport32Bit = true;

@@ -133,12 +133,10 @@ in
     prusa-slicer
     komikku
     tilix
-    betterdiscordctl
     obsidian
     transmission-gtk
     spicetify-cli
     cemu
-    betterdiscordctl
     libsForQt5.ark
     libsForQt5.kio-extras
     libsForQt5.libdbusmenu
@@ -172,6 +170,7 @@ in
     vlc
     amberol
     ncspot
+    gtkcord4
     mpv
     easyeffects
     handbrake
