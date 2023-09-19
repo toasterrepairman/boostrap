@@ -55,8 +55,8 @@ in
     };
   };
 
-    networking.firewall.allowedTCPPorts = [ 22 8080 80 ];
-    networking.firewall.allowedUDPPorts = [ 1900 ];
+    networking.firewall.allowedTCPPorts = [ 22 8080 80 9943 9944 ];
+    networking.firewall.allowedUDPPorts = [ 1900 9943 9944 ];
       networking.firewall.allowedUDPPortRanges = [
         # Allow UPnP/SSDP traffic for Chromecast
         # https://github.com/NixOS/nixpkgs/issues/49630#issuecomment-622498732
