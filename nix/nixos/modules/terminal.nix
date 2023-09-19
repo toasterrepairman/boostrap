@@ -84,6 +84,7 @@
       cdc = "cd ~/Documents/Code/ || echo 'Code directory not found'";
       rebuild = "sudo nixos-rebuild switch --cores 8";
       rebuild-full = "sudo nixos-rebuild switch --upgrade-all --cores 8";
+      disable-ipv6 = "su -c 'echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6'";
     };
     vendor.completions.enable = true;
   };
