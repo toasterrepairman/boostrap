@@ -163,7 +163,6 @@ in
     arduino
     vulkan-headers
     bitwig-studio
-    vital
     vlc
     amberol
     ncspot
