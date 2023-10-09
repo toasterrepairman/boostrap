@@ -152,7 +152,6 @@ in
     foliate
     gImageReader
     gimp
-    etcher
     calibre
     gnome-secrets
     # Media
