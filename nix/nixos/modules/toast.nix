@@ -110,6 +110,7 @@ in
     gnome.seahorse
     gnome.gnome-keyring
     gnome.libgnome-keyring
+    gnome.gnome-logs
     filelight 
     qt5.qttools
     appimage-run
@@ -162,6 +163,7 @@ in
     arduino
     vulkan-headers
     bitwig-studio
+    vital
     vlc
     amberol
     ncspot
