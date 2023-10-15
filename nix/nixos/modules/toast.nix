@@ -69,7 +69,7 @@ in
 
 
 
-  # Select internationalisation properties.
+  # Select internationalisation propeties.
   # i18n.defaultLocale = "en_US.UTF-8";
   # console = {
   #   font = "Lat2-Terminus16";
@@ -94,6 +94,10 @@ in
    binary-caches-parallel-connections = 3
    connect-timeout = 5
   '';
+
+  networking = {
+    nameservers = ["8.8.8.8" "8.8.4.4"];
+  };
   
   virtualisation.libvirtd.enable = true;
 
