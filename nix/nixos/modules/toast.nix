@@ -187,7 +187,8 @@ in
     miniupnpc
     libupnp
     qemu
-    jetbrains.idea-community
+    kakoune
+    rnote
     meld
     gitg
     kate
