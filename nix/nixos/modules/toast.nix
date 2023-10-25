@@ -129,20 +129,16 @@ in
     quintom-cursor-theme
     ibm-plex
     zafiro-icons
-    tootle
     # Userland
     firefox
     newsflash
-    prusa-slicer
     komikku
-    tilix
     obsidian
     spicetify-cli
     cemu
     libsForQt5.ark
     libsForQt5.kio-extras
     libsForQt5.libdbusmenu
-    pavucontrol 
     libsForQt5.bluez-qt
     libsForQt5.kitinerary
     qt5.qtwebsockets
@@ -159,7 +155,7 @@ in
     calibre
     gnome-secrets
     # Media
-    libsForQt5.tokodon
+    tuba
     obs-studio
     video-trimmer
     cutter
@@ -168,12 +164,10 @@ in
     bitwig-studio
     vlc
     amberol
-    ncspot
+    shortwave
     gtkcord4
-    mpv
     easyeffects
     handbrake
-    celluloid
     spot
     gnome-podcasts
     chatterino2
@@ -187,11 +181,11 @@ in
     miniupnpc
     libupnp
     qemu
-    kakoune
     rnote
     meld
     gitg
     kate
+    helix
     sysprof
     ghidra
     cascadia-code
