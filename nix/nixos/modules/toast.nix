@@ -87,6 +87,7 @@ in
   nixpkgs.config.permittedInsecurePackages = [
     "electron-21.4.0"
     "electron-12.2.3"
+    "electron-24.8.6"
     "python-2.7.18.6"
   ];
 
