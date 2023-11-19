@@ -109,6 +109,8 @@
   # Packages required for profile
   environment.systemPackages = with pkgs; [
     micro 
+    helix
+    vscode-extensions.llvm-org.lldb-vscode
     wget
     fish
     btop
