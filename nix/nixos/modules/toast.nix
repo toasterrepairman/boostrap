@@ -159,7 +159,6 @@ in
     tuba
     obs-studio
     video-trimmer
-    cutter
     arduino
     vulkan-headers
     bitwig-studio
