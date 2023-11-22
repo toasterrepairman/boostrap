@@ -55,7 +55,7 @@ in
     };
   };
 
-    networking.firewall.allowedTCPPorts = [ 22 8080 80 9943 9944 ];
+    networking.firewall.allowedTCPPorts = [ 22 443 8080 80 9943 9944 ];
     networking.firewall.allowedUDPPorts = [ 1900 9943 9944 ];
       networking.firewall.allowedUDPPortRanges = [
         # Allow UPnP/SSDP traffic for Chromecast

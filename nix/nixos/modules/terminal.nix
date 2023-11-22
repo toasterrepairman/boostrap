@@ -43,7 +43,7 @@
   # };
 
   services.tailscale.enable = true;
-  networking.firewall.checkReversePath = "loose";
+  # networking.firewall.checkReversePath = "loose";
 
   environment.sessionVariables = {
      MOZ_ENABLE_WAYLAND = "1";
