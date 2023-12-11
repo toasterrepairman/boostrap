@@ -153,7 +153,7 @@ in
     evince
     foliate
     gImageReader
-    gimp
+    # gimp
     calibre
     gnome-secrets
     # Media
