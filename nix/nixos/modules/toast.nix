@@ -55,13 +55,13 @@ in
     };
   };
 
-    networking.firewall.allowedTCPPorts = [ 22 443 8080 80 9943 9944 ];
-    networking.firewall.allowedUDPPorts = [ 1900 9943 9944 ];
-      networking.firewall.allowedUDPPortRanges = [
-        # Allow UPnP/SSDP traffic for Chromecast
-        # https://github.com/NixOS/nixpkgs/issues/49630#issuecomment-622498732
-        { from = 32768; to = 60999; }
-      ];
+  #  networking.firewall.allowedTCPPorts = [ 22 443 8080 80 9943 9944 ];
+  #  networking.firewall.allowedUDPPorts = [ 1900 9943 9944 ];
+  #    networking.firewall.allowedUDPPortRanges = [
+  #      # Allow UPnP/SSDP traffic for Chromecast
+  #      # https://github.com/NixOS/nixpkgs/issues/49630#issuecomment-622498732
+  #      { from = 32768; to = 60999; }
+  #    ];
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -88,17 +88,18 @@ in
     "electron-21.4.0"
     "electron-12.2.3"
     "electron-24.8.6"
+    "electron-25.9.0"
     "python-2.7.18.6"
   ];
 
   nix.extraOptions = ''
-   binary-caches-parallel-connections = 3
-   connect-timeout = 5
+   binary-caches-parallel-connections = 4
+   connect-timeout = 10
   '';
 
-  networking = {
-    nameservers = ["8.8.8.8" "8.8.4.4"];
-  };
+  # networking = {
+  #  nameservers = ["8.8.8.8" "8.8.4.4"];
+  # };
   
   virtualisation.libvirtd.enable = true;
 
