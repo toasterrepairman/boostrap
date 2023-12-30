@@ -36,6 +36,10 @@
 
   networking.dhcpcd.enable = false;
 
+  
+  programs.adb.enable = true;
+  users.users.toast.extraGroups = ["adbusers"];
+
   # this leads to timeouts for some devices (virtualbox or tinc adapter)
   systemd.services.systemd-udev-settle.serviceConfig.ExecStart = ["" "${pkgs.coreutils}/bin/true"];
 
