@@ -108,6 +108,9 @@ in
   # delete this when your system breaks
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  programs.adb.enable = true;
+  users.users.toast.extraGroups = ["adbusers"];
+
   environment.systemPackages = with pkgs; [
     # OS tools
     linuxKernel.packages.linux_latest_libre.system76-scheduler
