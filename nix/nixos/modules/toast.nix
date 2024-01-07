@@ -156,6 +156,7 @@ in
     evince
     foliate
     gImageReader
+    gnome.gnome-clocks
     # gimp
     calibre
     gnome-secrets
