@@ -97,6 +97,8 @@ in
    connect-timeout = 10
   '';
 
+  security.polkit.enable = true;
+
   # networking = {
   #  nameservers = ["8.8.8.8" "8.8.4.4"];
   # };
