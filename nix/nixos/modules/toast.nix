@@ -139,7 +139,6 @@ in
     # Userland
     firefox
     newsflash
-    komikku
     obsidian
     spicetify-cli
     cemu
