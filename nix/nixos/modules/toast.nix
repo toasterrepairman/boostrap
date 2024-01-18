@@ -93,7 +93,7 @@ in
   ];
 
   nix.extraOptions = ''
-   binary-caches-parallel-connections = 4
+   binary-caches-parallel-connections = 1
    connect-timeout = 10
   '';
 
