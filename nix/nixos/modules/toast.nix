@@ -193,7 +193,6 @@ in
     kate
     helix
     sysprof
-    ghidra
     cascadia-code
     # bluetooth hack
     bluedevil 
