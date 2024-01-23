@@ -25,31 +25,33 @@ in
       openDefaultPorts = true;
       configDir = "/home/toast/.syncthing/";
       # systemService = true;
-      devices = {
-        "Phone" = { id = "NHAN2GF-PQN2XBO-K7IQQVE-DRFPP2H-RX7J4SK-CEP2FVF-HUGQXH2-EG5OXAE"; };
-        "toaster" = { id = "EBRBP4H-7KU7UVJ-G3FXKXD-6EJS7S5-G6KROIW-73L4SSZ-IOFNN2B-T7THGA2"; };
-        "toastpad" = { id = "V4MZ27K-QC7SAC2-QVIRM4J-QWDT6SN-7PFTRZH-OLLOI2X-XAGOP76-3I67QQP"; };
-      };
-      folders = {
-        "Cloud" = {        # Name of folder in Syncthing, also the folder ID
-          path = "/home/toast/Documents/Cloud";    # Which folder to add to Syncthing
-          devices = [ "toastpad" "toaster" "Phone" ];      # Which devices to share the folder with
+      settings = {
+        devices = {
+          "Phone" = { id = "NHAN2GF-PQN2XBO-K7IQQVE-DRFPP2H-RX7J4SK-CEP2FVF-HUGQXH2-EG5OXAE"; };
+          "toaster" = { id = "EBRBP4H-7KU7UVJ-G3FXKXD-6EJS7S5-G6KROIW-73L4SSZ-IOFNN2B-T7THGA2"; };
+          "toastpad" = { id = "V4MZ27K-QC7SAC2-QVIRM4J-QWDT6SN-7PFTRZH-OLLOI2X-XAGOP76-3I67QQP"; };
         };
-        "Pictures" = {        # Name of folder in Syncthing, also the folder ID
-          path = "/home/toast/Pictures";    # Which folder to add to Syncthing
-          devices = [ "toastpad" "toaster" "Phone" ];      # Which devices to share the folder with
-        };
-        "Music" = {        # Name of folder in Syncthing, also the folder ID
-          path = "/home/toast/Music";    # Which folder to add to Syncthing
-          devices = [ "toastpad" "toaster" "Phone" ];      # Which devices to share the folder with
-        };
-        "Books" = {        # Name of folder in Syncthing, also the folder ID
-          path = "/home/toast/Documents/Books";    # Which folder to add to Syncthing
-          devices = [ "toastpad" "toaster" "Phone" ];      # Which devices to share the folder with
-        };
-        "Bitwig" = {        # Name of folder in Syncthing, also the folder ID
-          path = "/home/toast/Bitwig Studio";    # Which folder to add to Syncthing
-          devices = [ "toastpad" "toaster" ];      # Which devices to share the folder with
+        folders = {
+          "Cloud" = {        # Name of folder in Syncthing, also the folder ID
+            path = "/home/toast/Documents/Cloud";    # Which folder to add to Syncthing
+            devices = [ "toastpad" "toaster" "Phone" ];      # Which devices to share the folder with
+          };
+          "Pictures" = {        # Name of folder in Syncthing, also the folder ID
+            path = "/home/toast/Pictures";    # Which folder to add to Syncthing
+            devices = [ "toastpad" "toaster" "Phone" ];      # Which devices to share the folder with
+          };
+          "Music" = {        # Name of folder in Syncthing, also the folder ID
+            path = "/home/toast/Music";    # Which folder to add to Syncthing
+            devices = [ "toastpad" "toaster" "Phone" ];      # Which devices to share the folder with
+          };
+          "Books" = {        # Name of folder in Syncthing, also the folder ID
+            path = "/home/toast/Documents/Books";    # Which folder to add to Syncthing
+            devices = [ "toastpad" "toaster" "Phone" ];      # Which devices to share the folder with
+          };
+          "Bitwig" = {        # Name of folder in Syncthing, also the folder ID
+            path = "/home/toast/Bitwig Studio";    # Which folder to add to Syncthing
+            devices = [ "toastpad" "toaster" ];      # Which devices to share the folder with
+          };
         };
       };
     };
@@ -66,8 +68,6 @@ in
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-
 
   # Select internationalisation propeties.
   # i18n.defaultLocale = "en_US.UTF-8";
