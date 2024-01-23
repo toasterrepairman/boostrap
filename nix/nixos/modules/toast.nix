@@ -94,10 +94,36 @@ in
 
   nix.extraOptions = ''
    binary-caches-parallel-connections = 1
-   connect-timeout = 10
+   connect-timeout = 3
+   cores = 8
   '';
 
+
+  # Enable Bluetooth on a hardware level
+  hardware.bluetooth.enable = true;
+
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  # networking.networkmanager.enable = true;
+  systemd.services.NetworkManager-wait-online.enable = false;
+
+
   security.polkit.enable = true;
+
+  environment.sessionVariables = {
+     MOZ_ENABLE_WAYLAND = "1";
+  };
+
+  # Enable sound.
+  sound.enable = true;
+  hardware.pulseaudio.enable = false; # explicitly set to false for pipewire
+  services.pipewire = {
+    enable = true;
+    alsa = {
+      enable = true;
+      support32Bit = true;
+    };
+    pulse.enable = true;
+  };
 
   # networking = {
   #  nameservers = ["8.8.8.8" "8.8.4.4"];
