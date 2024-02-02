@@ -167,7 +167,6 @@ in
     newsflash
     obsidian
     spicetify-cli
-    cemu
     libsForQt5.ark
     libsForQt5.kio-extras
     libsForQt5.libdbusmenu
