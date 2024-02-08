@@ -12,6 +12,7 @@
     gnomeExtensions.appindicator
     tuba
     cartridges
+    apostrophe
     gnome.gnome-tweaks
   ];
 
