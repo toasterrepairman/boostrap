@@ -11,10 +11,17 @@
   ];
 
   programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.gnome.seahorse.out}/libexec/seahorse/ssh-askpass";
-  services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
   services.gnome.gnome-keyring.enable = true;
+
+  services.xserver = {
+    enable = true;
+    videoDrivers = [ "nvidia"];
+    displayManager.gdm = {
+      enable = true;
+      wayland = true;
+    };
+    desktopManager.gnome.enable = true;
+  };
 
   # important
   xdg.portal.enable = true;
