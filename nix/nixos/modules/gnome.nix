@@ -11,6 +11,7 @@
     gnomeExtensions.pano
     gnomeExtensions.appindicator
     tuba
+    cartridges
     gnome.gnome-tweaks
   ];
 
