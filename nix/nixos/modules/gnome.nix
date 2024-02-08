@@ -7,9 +7,13 @@
     libgda
     # Extensions
     gnomeExtensions.gsconnect
+    gnomeExtensions.pano
     gnome.gnome-tweaks
   ];
 
+  programs.dconf.enable = true;
+
+  # important
   programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.gnome.seahorse.out}/libexec/seahorse/ssh-askpass";
   services.gnome.gnome-keyring.enable = true;
 
@@ -18,7 +22,6 @@
     videoDrivers = [ "nvidia" ];
   };
   services.xserver.desktopManager.gnome.enable = true;
-  services.xserver.desktopManager.default = "gnome";
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.displayManager.gdm.wayland = true;
   services.xserver.displayManager.defaultSession = "gnome";
