@@ -6,8 +6,11 @@
     xwayland
     libgda
     # Extensions
+    gnomeExtensions.blur-my-shell
     gnomeExtensions.gsconnect
     gnomeExtensions.pano
+    gnomeExtensions.appindicator
+    tuba
     gnome.gnome-tweaks
   ];
 
