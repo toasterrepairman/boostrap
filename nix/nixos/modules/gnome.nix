@@ -6,8 +6,8 @@
     xwayland
     libgda
     # Extensions
-    # gnomeExtensions.gsconnect
-    # gnome.gnome-tweaks
+    gnomeExtensions.gsconnect
+    gnome.gnome-tweaks
   ];
 
   programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.gnome.seahorse.out}/libexec/seahorse/ssh-askpass";
@@ -15,13 +15,18 @@
 
   services.xserver = {
     enable = true;
-    videoDrivers = [ "nvidia"];
-    displayManager.gdm = {
-      enable = true;
-      wayland = true;
-    };
-    desktopManager.gnome.enable = true;
+    videoDrivers = [ "nvidia" ];
   };
+  services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.desktopManager.default = "gnome";
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.displayManager.gdm.wayland = true;
+  services.xserver.displayManager.defaultSession = "gnome";
+
+  services.udev.packages = with pkgs; [
+    gnome.gnome-settings-daemon
+  ];
+
 
   # important
   xdg.portal.enable = true;
