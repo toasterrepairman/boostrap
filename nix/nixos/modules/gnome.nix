@@ -10,6 +10,7 @@
     gnomeExtensions.gsconnect
     gnomeExtensions.pano
     gnomeExtensions.appindicator
+    gnomeExtensions.caffeine
     tuba
     cartridges
     apostrophe

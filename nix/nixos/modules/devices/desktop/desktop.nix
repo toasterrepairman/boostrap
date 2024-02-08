@@ -5,7 +5,6 @@
   time.timeZone = "America/Detroit";
 
   # Appease the Nvidia Gods
-  services.xserver.videoDrivers = [ "nvidia" ];
   hardware.opengl.extraPackages32 = with pkgs.pkgsi686Linux; [ libva ];
   hardware.pulseaudio.support32Bit = true;
   hardware.steam-hardware.enable = true;  
@@ -29,7 +28,7 @@
     # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus 
     # Only available from driver 515.43.04+
     # Currently alpha-quality/buggy, so false is currently the recommended setting.
-    open = false;
+    open = true;
 
     # Enable the Nvidia settings menu,
   	# accessible via `nvidia-settings`.
@@ -45,7 +44,33 @@
       allowUnfree = true;
       cudaSupport = true;
   };
+
+    programs.xwayland.enable = true;
+
+  services.xserver = {
+    enable = true;
+    videoDrivers = ["nvidia"];
+    layout = "us";
+    displayManager = {
+      gdm = {
+        enable = true;
+        wayland = true;
+      };
+    };
+
+    desktopManager = {
+      gnome = {
+        enable = true;
+      };
+    };
+  };
   
+  boot.initrd.kernelModules = [ "nvidia" ];
+  boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
+  # hardware.nvidia.powerManagement.finegrained = true;
+  # intel
+  boot.kernelParams = [ "module_blacklist=i915" ];
+
   # Use the systemd boot
   boot.loader.systemd-boot.enable = true;
   zramSwap.enable = true;
