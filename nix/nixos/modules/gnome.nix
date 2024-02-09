@@ -15,6 +15,7 @@
     cartridges
     apostrophe
     gnome.gnome-tweaks
+    ungoogled-chromium
   ];
 
   programs.dconf.enable = true;
@@ -23,10 +24,6 @@
   programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.gnome.seahorse.out}/libexec/seahorse/ssh-askpass";
   services.gnome.gnome-keyring.enable = true;
 
-  services.xserver = {
-    enable = true;
-    videoDrivers = [ "nvidia" ];
-  };
   services.xserver.desktopManager.gnome.enable = true;
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.displayManager.gdm.wayland = true;
@@ -36,6 +33,9 @@
     gnome.gnome-settings-daemon
   ];
 
+  services.xserver = {
+    enable = true;
+  };
 
   # important
   xdg.portal.enable = true;

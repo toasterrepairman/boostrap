@@ -10,6 +10,16 @@
   hardware.steam-hardware.enable = true;  
   virtualisation.docker.enableNvidia = true;
 
+  nixpkgs.config.nvidia.acceptLicense = true;
+
+  boot.kernelPackages = pkgs.linuxPackages.extend (self: super: {
+    nvidia_x11 = super.nvidia_x11_production;
+  });
+  
+  services.xserver = {
+    videoDrivers = [ "nvidia" ];
+  };
+
   hardware.nvidia = {
 
     # Modesetting is required.
@@ -28,14 +38,14 @@
     # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus 
     # Only available from driver 515.43.04+
     # Currently alpha-quality/buggy, so false is currently the recommended setting.
-    open = true;
+    open = false;
 
     # Enable the Nvidia settings menu,
   	# accessible via `nvidia-settings`.
     nvidiaSettings = true;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.beta;
+    package = config.boot.kernelPackages.nvidiaPackages.production;
   };
  
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
@@ -45,25 +55,8 @@
       cudaSupport = true;
   };
 
-    programs.xwayland.enable = true;
+  programs.xwayland.enable = true;
 
-  services.xserver = {
-    enable = true;
-    videoDrivers = ["nvidia"];
-    layout = "us";
-    displayManager = {
-      gdm = {
-        enable = true;
-        wayland = true;
-      };
-    };
-
-    desktopManager = {
-      gnome = {
-        enable = true;
-      };
-    };
-  };
   
   boot.initrd.kernelModules = [ "nvidia" ];
   boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];

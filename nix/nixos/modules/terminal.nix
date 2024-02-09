@@ -4,7 +4,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.toast = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "docker" "user-with-access-to-virtualbox" ]; 
+    extraGroups = [ "wheel" "networkmanager" "docker" "user-with-access-to-virtualbox" "video" ]; 
   };
   
   users.defaultUserShell = pkgs.fish;

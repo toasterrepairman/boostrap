@@ -106,7 +106,6 @@ in
   # networking.networkmanager.enable = true;
   systemd.services.NetworkManager-wait-online.enable = false;
 
-
   security.polkit.enable = true;
 
   environment.sessionVariables = {
@@ -134,7 +133,7 @@ in
   programs.fish.enable = true;
 
   # delete this when your system breaks
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
 
   programs.adb.enable = true;
   users.users.toast.extraGroups = ["adbusers"];
