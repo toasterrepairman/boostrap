@@ -37,6 +37,21 @@
     enable = true;
   };
 
+  services.xserver.desktopManager.gnome = {
+    extraGSettingsOverrides = ''
+      # Change default background
+      [org.gnome.mutter]
+      check-alive-timeout=60000
+    '';
+
+      
+    extraGSettingsOverridePackages = [
+      pkgs.gsettings-desktop-schemas # for org.gnome.desktop
+      pkgs.gnome.gnome-shell # for org.gnome.shell
+      pkgs.gnome.mutter
+    ];
+  };
+
   # important
   xdg.portal.enable = true;
   networking.networkmanager.enable = true;
