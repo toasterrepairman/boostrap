@@ -11,6 +11,8 @@
     gnomeExtensions.pano
     gnomeExtensions.appindicator
     gnomeExtensions.caffeine
+    gnomeExtensions.wintile-windows-10-window-tiling-for-gnome
+    gnomeExtensions.gsnap
     tuba
     cartridges
     apostrophe
@@ -42,6 +44,7 @@
       # Change default background
       [org.gnome.mutter]
       check-alive-timeout=60000
+      experimental-features=['scale-monitor-framebuffer']
     '';
 
       
