@@ -164,7 +164,6 @@ in
     # Userland
     firefox
     newsflash
-    obsidian
     spicetify-cli
     libsForQt5.ark
     libsForQt5.kio-extras
