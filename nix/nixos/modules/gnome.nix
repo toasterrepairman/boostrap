@@ -13,6 +13,7 @@
     gnomeExtensions.caffeine
     gnomeExtensions.wintile-windows-10-window-tiling-for-gnome
     gnomeExtensions.gsnap
+    gnomeExtensions.rounded-window-corners
     tuba
     cartridges
     apostrophe
