@@ -141,6 +141,7 @@ in
   environment.systemPackages = with pkgs; [
     # OS tools
     linuxKernel.packages.linux_latest_libre.system76-scheduler
+    ungoogled-chromium
     quota
     syncthing
     gnome.seahorse
