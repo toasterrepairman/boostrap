@@ -5,18 +5,17 @@
   environment.systemPackages = with pkgs; [
     flatpak
     discord
-    betterdiscord-installer
     wine
     gamescope
     protonup
     # prismlauncher
     # obs-studio
-    projectm
+    # projectm
     # Tools
     gamemode
     mangohud
     protonup-ng
-    xonotic
+    # xonotic
     protontricks
   ];
   
@@ -43,8 +42,4 @@
       { from = 47998; to = 48010; }
     ];
   };
-  
-  nixpkgs.overlays = [
-    (import ./applications/discord.nix)
-  ];
 }

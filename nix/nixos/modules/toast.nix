@@ -182,7 +182,6 @@ in
     gImageReader
     gnome.gnome-clocks
     # gimp
-    calibre
     gnome-secrets
     # Media
     tuba

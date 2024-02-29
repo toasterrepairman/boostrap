@@ -83,12 +83,6 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  # services.openvpn.servers = {
-  #   toastvpn = { config = 
-  #     '' config /home/toast/Documents/Cloud/Lifehub/Computer/VPN/openvpn-toast.key ''; 
-  #    };
-  # };
-
   environment.systemPackages = with pkgs; [
     # davinci-resolve
     xorg.libxcb
