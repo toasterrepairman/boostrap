@@ -28,7 +28,7 @@ in
   # KDE Connect support
   programs.kdeconnect.enable = true;
 
-  services.xserver.desktopManager.plasma6.enable = true;
+  services.xserver.desktopManager.plasma5.enable = true;
   services.xserver.displayManager.sddm.enable = true;
   programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.ksshaskpass.out}/bin/ksshaskpass";
   services.xserver.enable = true;
