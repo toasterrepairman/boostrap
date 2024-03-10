@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: 
+{ config, pkgs, lib, ... }: 
 
 {
   # Set your time zone.
@@ -44,9 +44,21 @@
   	# accessible via `nvidia-settings`.
     nvidiaSettings = true;
 
+    package = config.boot.kernelPackages.nvidiaPackages.production;
+
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.production;
-    };
+    # package = config.boot.kernelPackages.nvidiaPackages.production;
+    # package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
+    #   version = "535.154.05";
+    #   sha256_64bit = "sha256-fpUGXKprgt6SYRDxSCemGXLrEsIA6GOinp+0eGbqqJg=";
+    #   sha256_aarch64 = "sha256-G0/GiObf/BZMkzzET8HQjdIcvCSqB1uhsinro2HLK9k=";
+    #   openSha256 = "sha256-wvRdHguGLxS0mR06P5Qi++pDJBCF8pJ8hr4T8O6TJIo=";
+    #   settingsSha256 = "sha256-9wqoDEWY4I7weWW05F4igj1Gj9wjHsREFMztfEmqm10=";
+    #   persistencedSha256 = "sha256-d0Q3Lk80JqkS1B54Mahu2yY/WocOqFFbZVBh+ToGhaE=";
+    #   # patches = [ rcu_patch ];
+    # };
+  };
+      
  
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
@@ -86,7 +98,7 @@
   environment.systemPackages = with pkgs; [
     # davinci-resolve
     xorg.libxcb
-    cudaPackages.cudatoolkit
+    # cudaPackages.cudatoolkit
     # linuxKernel.packages.linux_6_6.nvidia_x11_production
   ];
 

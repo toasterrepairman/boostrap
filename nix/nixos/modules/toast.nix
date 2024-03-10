@@ -133,7 +133,7 @@ in
   programs.fish.enable = true;
 
   # delete this when your system breaks
-  # boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.kernelPackages = pkgs.linuxPackages;
 
   programs.adb.enable = true;
   users.users.toast.extraGroups = ["adbusers"];
@@ -186,7 +186,7 @@ in
     gnome-secrets
     # Media
     tuba
-    obs-studio
+    # obs-studio
     video-trimmer
     arduino
     vulkan-headers
