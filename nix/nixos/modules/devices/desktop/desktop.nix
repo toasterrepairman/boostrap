@@ -70,7 +70,7 @@
 
   
   boot.initrd.kernelModules = [ "nvidia" ];
-  boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
+  # boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
   # hardware.nvidia.powerManagement.finegrained = true;
   # intel
   boot.kernelParams = [ "module_blacklist=i915" ];
