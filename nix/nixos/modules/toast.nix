@@ -182,7 +182,9 @@ in
     foliate
     gImageReader
     gnome.gnome-clocks
-    # gimp
+    gimp
+    zim
+    obs-studio
     gnome-secrets
     # Media
     tuba
@@ -216,6 +218,8 @@ in
     kate
     helix
     sysprof
+    vs-codium
+    quod-libet
     cascadia-code
     # bluetooth hack
     bluedevil 

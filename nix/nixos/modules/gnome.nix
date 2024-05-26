@@ -36,6 +36,11 @@
     gnome.gnome-settings-daemon
   ];
 
+  services.avahi.extraConfig = "
+    [publish]
+    disable-user-service-publishing=
+  ";
+
   services.xserver = {
     enable = true;
   };

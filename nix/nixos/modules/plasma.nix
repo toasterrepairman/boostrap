@@ -22,6 +22,12 @@ in
     libgda
     tuba
     ungoogled-chromium
+    qt6.qtwayland
+    kdePackages.plasma-workspace
+  ];
+
+  environment.plasma6.excludePackages = with pkgs.kdePackages; [
+    spectacle
   ];
 
   programs.dconf.enable = true;
