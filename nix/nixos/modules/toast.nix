@@ -149,7 +149,6 @@ in
     gnome.libgnome-keyring
     gnome.gnome-logs
     filelight 
-    qt5.qttools
     appimage-run
     gsettings-desktop-schemas
     libsForQt5.kdenetwork-filesharing
@@ -166,14 +165,14 @@ in
     firefox
     newsflash
     spicetify-cli
-    libsForQt5.ark
-    libsForQt5.kio-extras
-    libsForQt5.libdbusmenu
-    libsForQt5.bluez-qt
-    libsForQt5.kitinerary
-    qt5.qtwebsockets
-    libsForQt5.plasma-framework
-    libsForQt5.qtdeclarative
+    # libsForQt5.ark
+    # libsForQt5.kio-extras
+    # libsForQt5.libdbusmenu
+    # libsForQt5.bluez-qt
+    # libsForQt5.kitinerary
+    # qt5.qtwebsockets
+    # libsForQt5.plasma-framework
+    # libsForQt5.qtdeclarative
     kdeplasma-addons
     bluez
     partition-manager
@@ -218,8 +217,8 @@ in
     kate
     helix
     sysprof
-    vs-codium
-    quod-libet
+    vscodium
+    quodlibet
     cascadia-code
     # bluetooth hack
     bluedevil 

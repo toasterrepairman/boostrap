@@ -42,8 +42,8 @@ in
   # KDE Connect support
   programs.kdeconnect.enable = true;
 
-  services.xserver.desktopManager.plasma6.enable = true;
-  services.xserver.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
   programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.ksshaskpass.out}/bin/ksshaskpass";
   services.xserver.enable = true;
   security.pam.services.toast.enableKwallet = true;
