@@ -151,7 +151,7 @@ in
     filelight 
     appimage-run
     gsettings-desktop-schemas
-    libsForQt5.kdenetwork-filesharing
+    # libsForQt5.kdenetwork-filesharing
     # Ricing
     home-manager
     gradience
@@ -165,16 +165,16 @@ in
     firefox
     newsflash
     spicetify-cli
-    # libsForQt5.ark
-    # libsForQt5.kio-extras
-    # libsForQt5.libdbusmenu
-    # libsForQt5.bluez-qt
+    kdePackages.ark
+    kdePackages.kio-extras
+    # kdePackages.libdbusmenu
+    kdePackages.bluez-qt
     # libsForQt5.kitinerary
     # qt5.qtwebsockets
-    # libsForQt5.plasma-framework
-    # libsForQt5.qtdeclarative
+    # kdePackages.plasma-framework
+    # kdePackages.qtdeclarative
     kdeplasma-addons
-    bluez
+    # bluez
     partition-manager
     # Productity
     evince
@@ -221,7 +221,7 @@ in
     quodlibet
     cascadia-code
     # bluetooth hack
-    bluedevil 
+    # bluedevil 
     # these are my dark GTK passengers
     cairo
     gdk-pixbuf

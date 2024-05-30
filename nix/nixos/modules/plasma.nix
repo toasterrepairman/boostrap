@@ -23,6 +23,7 @@ in
     tuba
     ungoogled-chromium
     qt6.qtwayland
+    kdePackages.bluedevil
     kdePackages.plasma-workspace
   ];
 
