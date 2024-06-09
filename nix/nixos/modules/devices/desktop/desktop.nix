@@ -10,6 +10,9 @@
   hardware.steam-hardware.enable = true;  
   virtualisation.docker.enableNvidia = true;
 
+  # evil (remove later)
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+
   nixpkgs.config.nvidia.acceptLicense = true;
 
   # boot.kernelPackages = pkgs.linuxPackages.extend (self: super: {
@@ -18,6 +21,12 @@
   
   services.xserver = {
     videoDrivers = [ "nvidia" ];
+  };
+
+  # Star Citizen
+  boot.kernel.sysctl = {
+    "vm.max_map_count" = 16777216;
+    "fs.file-max" = 524288;
   };
 
   hardware.nvidia = {

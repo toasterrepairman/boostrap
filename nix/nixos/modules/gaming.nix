@@ -12,12 +12,17 @@
     # obs-studio
     # projectm
     # Tools
-    gamemode
+    # gamemode
     mangohud
     protonup-ng
     # xonotic
     protontricks
   ];
+
+  programs.gamemode = {
+    enable = true;
+    enableRenice = true;
+  };
   
   services.flatpak.enable = true;
 
