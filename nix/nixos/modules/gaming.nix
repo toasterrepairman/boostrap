@@ -19,6 +19,11 @@
     protontricks
   ];
 
+  services.sunshine = {
+    enable = true;
+    openFirewall = true;
+  };
+
   programs.gamemode = {
     enable = true;
     enableRenice = true;

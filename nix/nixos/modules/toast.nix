@@ -181,7 +181,7 @@ in
     foliate
     gImageReader
     gnome.gnome-clocks
-    gimp
+    # gimp
     zim
     obs-studio
     gnome-secrets
