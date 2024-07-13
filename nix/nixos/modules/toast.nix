@@ -218,7 +218,7 @@ in
     helix
     sysprof
     vscodium
-    quodlibet
+    # quodlibet
     cascadia-code
     # bluetooth hack
     # bluedevil 
