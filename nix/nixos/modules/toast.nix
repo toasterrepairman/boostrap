@@ -113,7 +113,7 @@ in
   };
 
   # Enable sound.
-  sound.enable = true;
+  # sound.enable = true;
   hardware.pulseaudio.enable = false; # explicitly set to false for pipewire
   services.pipewire = {
     enable = true;
