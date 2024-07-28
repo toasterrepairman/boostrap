@@ -114,15 +114,15 @@ in
 
   # Enable sound.
   # sound.enable = true;
-  hardware.pulseaudio.enable = false; # explicitly set to false for pipewire
-  services.pipewire = {
-    enable = true;
-    alsa = {
-      enable = true;
-      support32Bit = true;
-    };
-    pulse.enable = true;
-  };
+  # hardware.pulseaudio.enable = false; # explicitly set to false for pipewire
+  # services.pipewire = {
+  #   enable = true;
+  #   alsa = {
+  #     enable = true;
+  #     support32Bit = true;
+  #   };
+  #   pulse.enable = true;
+  # };
 
   # networking = {
   #  nameservers = ["8.8.8.8" "8.8.4.4"];
