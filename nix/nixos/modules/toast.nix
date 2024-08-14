@@ -144,14 +144,13 @@ in
     ungoogled-chromium
     quota
     syncthing
-    gnome.seahorse
-    gnome.gnome-keyring
-    gnome.libgnome-keyring
+    seahorse
+    gnome-keyring
+    libgnome-keyring
     gnome.gnome-logs
     filelight 
     appimage-run
     gsettings-desktop-schemas
-    # libsForQt5.kdenetwork-filesharing
     # Ricing
     home-manager
     gradience
@@ -163,6 +162,7 @@ in
     zafiro-icons
     # Userland
     firefox
+    keypunch
     newsflash
     spicetify-cli
     kdePackages.ark
@@ -178,15 +178,18 @@ in
     partition-manager
     # Productity
     evince
+    wike
     foliate
     gImageReader
     gnome.gnome-clocks
-    # gimp
+    keypunch
+    gimp
     zim
     obs-studio
     gnome-secrets
     # Media
     tuba
+    celluloid
     # obs-studio
     video-trimmer
     arduino
@@ -206,6 +209,7 @@ in
     taxi
     heaptrack
     hotspot
+    winetricks
     # linuxKernel.packages.linux_latest_libre.perf
     okteta
     miniupnpc

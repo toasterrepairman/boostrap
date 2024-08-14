@@ -17,7 +17,7 @@
     tuba
     cartridges
     apostrophe
-    gnome.gnome-tweaks
+    gnome-tweaks
     ungoogled-chromium
   ];
 
@@ -30,7 +30,7 @@
   services.xserver.desktopManager.gnome.enable = true;
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.displayManager.gdm.wayland = true;
-  services.xserver.displayManager.defaultSession = "gnome";
+  services.displayManager.defaultSession = "gnome";
 
   services.udev.packages = with pkgs; [
     gnome.gnome-settings-daemon

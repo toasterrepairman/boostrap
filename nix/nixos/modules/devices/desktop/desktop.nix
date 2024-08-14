@@ -5,10 +5,10 @@
   time.timeZone = "America/Detroit";
 
   # Appease the Nvidia Gods
-  hardware.opengl.extraPackages32 = with pkgs.pkgsi686Linux; [ libva ];
+  hardware.graphics.extraPackages32 = with pkgs.pkgsi686Linux; [ libva ];
   hardware.pulseaudio.support32Bit = true;
   hardware.steam-hardware.enable = true;  
-  virtualisation.docker.enableNvidia = true;
+  hardware.nvidia-container-toolkit.enable = true;
 
   # evil (remove later)
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
@@ -110,8 +110,8 @@
     # linuxKernel.packages.linux_6_6.nvidia_x11_production
   ];
 
-  hardware.opengl.driSupport32Bit = true;
-  hardware.opengl.enable = true;
+  hardware.graphics.enable32Bit = true;
+  hardware.graphics.enable = true;
 
   users.users.toast.packages = with pkgs;
   [
