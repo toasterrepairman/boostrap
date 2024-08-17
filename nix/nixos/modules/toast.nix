@@ -199,7 +199,7 @@ in
     amberol
     shortwave
     gtkcord4
-    easyeffects
+    # easyeffects
     handbrake
     spot
     gnome-podcasts
