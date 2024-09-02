@@ -1,0 +1,22 @@
+theme = "nord"
+
+[editor]
+mouse = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "bar"
+select = "bar"
+
+[editor.file-picker]
+hidden = true
+
+[editor.soft-wrap]
+enable = true
+max-wrap = 2
+max-indent-retain = 0
+wrap-indicator = ""
+
+[editor.lsp]
+enable = true
+display-messages = true

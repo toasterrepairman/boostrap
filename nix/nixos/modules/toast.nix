@@ -98,6 +98,11 @@ in
    cores = 8
   '';
 
+  # prevent EFI overload
+  boot.loader.systemd-boot = {
+    enable = true;
+    configurationLimit = 4;
+  };
 
   # Enable Bluetooth on a hardware level
   hardware.bluetooth.enable = true;

@@ -54,25 +54,22 @@
     nvidiaSettings = true;
 
     # package = config.boot.kernelPackages.nvidiaPackages.;
-
-    # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.production;
-    # package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
-    #     version = "555.58";
-    #     sha256_64bit = "sha256-bXvcXkg2kQZuCNKRZM5QoTaTjF4l2TtrsKUvyicj5ew=";
-    #     sha256_aarch64 = "sha256-7XswQwW1iFP4ji5mbRQ6PVEhD4SGWpjUJe1o8zoXYRE=";
-    #     openSha256 = "sha256-hEAmFISMuXm8tbsrB+WiUcEFuSGRNZ37aKWvf0WJ2/c=";
-    #     settingsSha256 = "sha256-vWnrXlBCb3K5uVkDFmJDVq51wrCoqgPF03lSjZOuU8M=";
-    #     persistencedSha256 = "sha256-lyYxDuGDTMdGxX3CaiWUh1IQuQlkI2hPEs5LI20vEVw=";
-    # };
+    package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
+      version = "560.35.03";
+      sha256_64bit = "sha256-8pMskvrdQ8WyNBvkU/xPc/CtcYXCa7ekP73oGuKfH+M=";
+      openSha256 = "sha256-/32Zf0dKrofTmPZ3Ratw4vDM7B+OgpC4p7s+RHUjCrg=";
+      settingsSha256 = "sha256-kQsvDgnxis9ANFmwIwB7HX5MkIAcpEEAHc8IBOLdXvk=";
+      sha256_aarch64 = lib.fakeSha256;
+      persistencedSha256 = lib.fakeSha256;
+    };
   };
       
  
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   nixpkgs.config = {
-      allowUnfree = true;
-      cudaSupport = true;
+    allowUnfree = true;
+    cudaSupport = true;
   };
 
   programs.xwayland.enable = true;
