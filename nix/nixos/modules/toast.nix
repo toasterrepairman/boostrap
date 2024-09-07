@@ -190,7 +190,7 @@ in
     keypunch
     gimp
     zim
-    obs-studio
+    # obs-studio
     gnome-secrets
     # Media
     tuba
@@ -205,7 +205,7 @@ in
     shortwave
     gtkcord4
     # easyeffects
-    handbrake
+    # handbrake
     spot
     gnome-podcasts
     chatterino2
