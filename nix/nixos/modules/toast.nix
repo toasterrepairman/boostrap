@@ -188,7 +188,7 @@ in
     gImageReader
     gnome.gnome-clocks
     keypunch
-    gimp
+    # gimp
     zim
     # obs-studio
     gnome-secrets
