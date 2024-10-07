@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }: 
+{ config, pkgs, lib, ... }:
 
 {
   # Set your time zone.
@@ -7,7 +7,7 @@
   # Appease the Nvidia Gods
   hardware.graphics.extraPackages32 = with pkgs.pkgsi686Linux; [ libva ];
   hardware.pulseaudio.support32Bit = true;
-  hardware.steam-hardware.enable = true;  
+  hardware.steam-hardware.enable = true;
   hardware.nvidia-container-toolkit.enable = true;
 
   # evil (remove later)
@@ -18,7 +18,7 @@
   # boot.kernelPackages = pkgs.linuxPackages.extend (self: super: {
   #   nvidia_x11 = super.nvidia_x11_beta;
   # });
-  
+
   services.xserver = {
     videoDrivers = [ "nvidia" ];
   };
@@ -42,18 +42,21 @@
 
     # Use the NVidia open source kernel module (not to be confused with the
     # independent third-party "nouveau" open source driver).
-    # Support is limited to the Turing and later architectures. Full list of 
-    # supported GPUs is at: 
-    # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus 
+    # Support is limited to the Turing and later architectures. Full list of
+    # supported GPUs is at:
+    # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus
     # Only available from driver 515.43.04+
     # Currently alpha-quality/buggy, so false is currently the recommended setting.
     open = true;
-    
+
     # Enable the Nvidia settings menu,
   	# accessible via `nvidia-settings`.
     nvidiaSettings = true;
 
-    # package = config.boot.kernelPackages.nvidiaPackages.;
+    package = config.boot.kernelPackages.nvidiaPackages.production;
+
+    # static driver config
+    /*
     package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
       version = "560.35.03";
       sha256_64bit = "sha256-8pMskvrdQ8WyNBvkU/xPc/CtcYXCa7ekP73oGuKfH+M=";
@@ -62,9 +65,11 @@
       sha256_aarch64 = lib.fakeSha256;
       persistencedSha256 = lib.fakeSha256;
     };
+    */
   };
-      
- 
+
+
+
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   nixpkgs.config = {
@@ -74,7 +79,6 @@
 
   programs.xwayland.enable = true;
 
-  
   boot.initrd.kernelModules = [ "nvidia" ];
   # boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
   # hardware.nvidia.powerManagement.finegrained = true;
@@ -103,6 +107,7 @@
   environment.systemPackages = with pkgs; [
     # davinci-resolve
     xorg.libxcb
+    alpaca
     # cudaPackages.cudatoolkit
     # linuxKernel.packages.linux_6_6.nvidia_x11_production
   ];
