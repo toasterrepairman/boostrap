@@ -106,6 +106,9 @@ in
 
   # Enable Bluetooth on a hardware level
   hardware.bluetooth.enable = true;
+  
+  # Enable trackpad gestures, everywhere!
+  services.libinput.enable = true;
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # networking.networkmanager.enable = true;
@@ -199,7 +202,7 @@ in
     video-trimmer
     arduino
     vulkan-headers
-    bitwig-studio
+    bitwig-studio4
     vlc
     amberol
     shortwave
