@@ -12,8 +12,6 @@
 
   # evil (remove later)
   # boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
-  # not evil (keep)
-  boot.kernelParams = [ "psmouse.synaptics_intertouch=0" ];
 
   nixpkgs.config.nvidia.acceptLicense = true;
 
