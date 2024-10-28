@@ -16,7 +16,7 @@
     gnomeExtensions.rounded-window-corners
     tuba
     cartridges
-    apostrophe
+    # apostrophe
     gnome-tweaks
     ungoogled-chromium
   ];

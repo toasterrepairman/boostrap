@@ -11,7 +11,9 @@
   hardware.nvidia-container-toolkit.enable = true;
 
   # evil (remove later)
-  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+  # boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+  # not evil (keep)
+  boot.kernelParams = [ "psmouse.synaptics_intertouch=0" ];
 
   nixpkgs.config.nvidia.acceptLicense = true;
 
@@ -53,7 +55,7 @@
   	# accessible via `nvidia-settings`.
     nvidiaSettings = true;
 
-    package = config.boot.kernelPackages.nvidiaPackages.production;
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
 
     # static driver config
     /*
