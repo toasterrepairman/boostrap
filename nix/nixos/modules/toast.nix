@@ -155,7 +155,7 @@ in
     seahorse
     gnome-keyring
     libgnome-keyring
-    gnome.gnome-logs
+    gnome-logs
     filelight 
     appimage-run
     gsettings-desktop-schemas
@@ -189,7 +189,7 @@ in
     wike
     foliate
     gImageReader
-    gnome.gnome-clocks
+    gnome-clocks
     keypunch
     # gimp
     zim

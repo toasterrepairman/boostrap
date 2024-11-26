@@ -11,9 +11,9 @@
     gnomeExtensions.pano
     gnomeExtensions.appindicator
     gnomeExtensions.caffeine
-    gnomeExtensions.wintile-windows-10-window-tiling-for-gnome
+    # gnomeExtensions.wintile-windows-10-window-tiling-for-gnome
     gnomeExtensions.gsnap
-    gnomeExtensions.rounded-window-corners
+    # gnomeExtensions.rounded-window-corners
     tuba
     cartridges
     # apostrophe
@@ -24,7 +24,7 @@
   programs.dconf.enable = true;
 
   # important
-  programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.gnome.seahorse.out}/libexec/seahorse/ssh-askpass";
+  programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.seahorse.out}/libexec/seahorse/ssh-askpass";
   services.gnome.gnome-keyring.enable = true;
 
   services.xserver.desktopManager.gnome.enable = true;
@@ -33,7 +33,7 @@
   services.displayManager.defaultSession = "gnome";
 
   services.udev.packages = with pkgs; [
-    gnome.gnome-settings-daemon
+    gnome-settings-daemon
   ];
 
   services.avahi.extraConfig = "
@@ -56,8 +56,8 @@
       
     extraGSettingsOverridePackages = [
       pkgs.gsettings-desktop-schemas # for org.gnome.desktop
-      pkgs.gnome.gnome-shell # for org.gnome.shell
-      pkgs.gnome.mutter
+      pkgs.gnome-shell # for org.gnome.shell
+      pkgs.mutter
     ];
   };
 
