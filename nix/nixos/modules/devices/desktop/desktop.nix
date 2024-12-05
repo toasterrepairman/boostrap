@@ -107,7 +107,6 @@
   environment.systemPackages = with pkgs; [
     # davinci-resolve
     xorg.libxcb
-    alpaca
     # cudaPackages.cudatoolkit
     # linuxKernel.packages.linux_6_6.nvidia_x11_production
   ];
