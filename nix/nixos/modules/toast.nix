@@ -7,7 +7,7 @@ let
   imports = [ <home-manager/nixos> ];
 
 in
-{  
+{
   nixpkgs.config = {
     packageOverrides = pkgs: {
       unstable = import unstableTarball {
@@ -42,11 +42,11 @@ in
           };
           "Music" = {        # Name of folder in Syncthing, also the folder ID
             path = "/home/toast/Music";    # Which folder to add to Syncthing
-            devices = [ "toastpad" "toaster" "Phone" ];      # Which devices to share the folder with
+            devices = [ "toastpad" "toaster" ];      # Which devices to share the folder with
           };
           "Books" = {        # Name of folder in Syncthing, also the folder ID
             path = "/home/toast/Documents/Books";    # Which folder to add to Syncthing
-            devices = [ "toastpad" "toaster" "Phone" ];      # Which devices to share the folder with
+            devices = [ "toastpad" "toaster" ];      # Which devices to share the folder with
           };
           "Bitwig" = {        # Name of folder in Syncthing, also the folder ID
             path = "/home/toast/Bitwig Studio";    # Which folder to add to Syncthing
@@ -106,7 +106,7 @@ in
 
   # Enable Bluetooth on a hardware level
   hardware.bluetooth.enable = true;
-  
+
   # Enable trackpad gestures, everywhere!
   services.libinput.enable = true;
 
@@ -135,7 +135,7 @@ in
   # networking = {
   #  nameservers = ["8.8.8.8" "8.8.4.4"];
   # };
-  
+
   virtualisation.libvirtd.enable = true;
 
   programs.fish.enable = true;
@@ -156,7 +156,7 @@ in
     gnome-keyring
     libgnome-keyring
     gnome-logs
-    filelight 
+    filelight
     appimage-run
     gsettings-desktop-schemas
     # Ricing
@@ -233,7 +233,7 @@ in
     # quodlibet
     cascadia-code
     # bluetooth hack
-    # bluedevil 
+    # bluedevil
     # these are my dark GTK passengers
     cairo
     gdk-pixbuf

@@ -113,6 +113,7 @@
 
   hardware.graphics.enable32Bit = true;
   hardware.graphics.enable = true;
+  services.ratbagd.enable = true;
 
   users.users.toast.packages = with pkgs;
   [
