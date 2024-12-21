@@ -27,7 +27,7 @@ in
       # systemService = true;
       settings = {
         devices = {
-          "Phone" = { id = "NHAN2GF-PQN2XBO-K7IQQVE-DRFPP2H-RX7J4SK-CEP2FVF-HUGQXH2-EG5OXAE"; };
+          "Phone" = { id = "4DK5N34-FVRFBOC-FLVRHKG-ZZOOWWT-JC7TX7D-LM2D33I-CJTRUXE-4YODEQH"; };
           "toaster" = { id = "EBRBP4H-7KU7UVJ-G3FXKXD-6EJS7S5-G6KROIW-73L4SSZ-IOFNN2B-T7THGA2"; };
           "toastpad" = { id = "V4MZ27K-QC7SAC2-QVIRM4J-QWDT6SN-7PFTRZH-OLLOI2X-XAGOP76-3I67QQP"; };
         };
