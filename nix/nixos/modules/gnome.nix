@@ -11,7 +11,7 @@
     gnomeExtensions.pano
     gnomeExtensions.appindicator
     gnomeExtensions.caffeine
-    gnomeExtensions.upower-battery
+    gnomeExtensions.bluetooth-battery
     # gnomeExtensions.wintile-windows-10-window-tiling-for-gnome
     gnomeExtensions.gsnap
     # gnomeExtensions.rounded-window-corners
