@@ -11,6 +11,7 @@
     gnomeExtensions.pano
     gnomeExtensions.appindicator
     gnomeExtensions.caffeine
+    gnomeExtensions.upower-battery
     # gnomeExtensions.wintile-windows-10-window-tiling-for-gnome
     gnomeExtensions.gsnap
     # gnomeExtensions.rounded-window-corners
@@ -53,7 +54,7 @@
       experimental-features=['scale-monitor-framebuffer']
     '';
 
-      
+
     extraGSettingsOverridePackages = [
       pkgs.gsettings-desktop-schemas # for org.gnome.desktop
       pkgs.gnome-shell # for org.gnome.shell
