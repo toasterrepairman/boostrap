@@ -16,6 +16,14 @@ in
     };
   };
 
+  services.earlyoom = {
+  	enable = true;
+  	freeMemThreshold = 5;
+  };
+
+  # Enable the OpenSSH daemon.
+    services.openssh.enable = true;
+
   services = {
     syncthing = {
       enable = true;
@@ -249,6 +257,7 @@ in
     gettext
     desktop-file-utils
     wrapGAppsHook4
+    vscode-extensions.llvm-org.lldb-vscode
     # python
     python311
     python311Packages.websockets

@@ -4,9 +4,9 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.toast = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "docker" "user-with-access-to-virtualbox" "video" ]; 
+    extraGroups = [ "wheel" "networkmanager" "docker" "user-with-access-to-virtualbox" "video" ];
   };
-  
+
   users.defaultUserShell = pkgs.fish;
 
   # Docker time!
@@ -42,7 +42,7 @@
   #   enableSSHSupport = true;
   # };
 
-  services.tailscale.enable = true;
+  # services.tailscale.enable = true;
   # networking.firewall.checkReversePath = "loose";
 
   programs.dconf.enable = true;
@@ -74,19 +74,10 @@
 
   # List services that you want to enable:
 
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-
-  services.earlyoom = {
-  	enable = true;
-  	freeMemThreshold = 5;
-  };
-
   # Packages required for profile
   environment.systemPackages = with pkgs; [
-    micro 
+    micro
     helix
-    vscode-extensions.llvm-org.lldb-vscode
     wget
     fish
     btop
@@ -94,7 +85,7 @@
     ponysay
     jq
     fd
-    lsof 
+    lsof
     killall
     rustc
     cargo
