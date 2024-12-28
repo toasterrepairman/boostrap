@@ -8,7 +8,7 @@
     # Extensions
     gnomeExtensions.blur-my-shell
     gnomeExtensions.gsconnect
-    gnomeExtensions.pano
+    # gnomeExtensions.pano
     gnomeExtensions.appindicator
     gnomeExtensions.caffeine
     gnomeExtensions.bluetooth-battery

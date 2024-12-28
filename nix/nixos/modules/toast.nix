@@ -223,7 +223,7 @@ in
     vaapiVdpau
     # Programming
     taxi
-    heaptrack
+    # heaptrack
     hotspot
     winetricks
     # linuxKernel.packages.linux_latest_libre.perf
