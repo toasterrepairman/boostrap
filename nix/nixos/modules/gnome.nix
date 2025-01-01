@@ -4,7 +4,7 @@
   environment.systemPackages = with pkgs; [
     # tilix
     xwayland
-    libgda
+    # libgda
     # Extensions
     gnomeExtensions.blur-my-shell
     gnomeExtensions.gsconnect
