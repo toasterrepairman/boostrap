@@ -1,11 +1,14 @@
-{ config, pkgs, lib, ... }:
-
 {
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
   # Set your time zone.
   time.timeZone = "America/Detroit";
 
   # Appease the Nvidia Gods
-  hardware.graphics.extraPackages32 = with pkgs.pkgsi686Linux; [ libva ];
+  hardware.graphics.extraPackages32 = with pkgs.pkgsi686Linux; [libva];
   hardware.pulseaudio.support32Bit = true;
   hardware.steam-hardware.enable = true;
   hardware.nvidia-container-toolkit.enable = true;
@@ -20,7 +23,7 @@
   # });
 
   services.xserver = {
-    videoDrivers = [ "nvidia" ];
+    videoDrivers = ["nvidia"];
   };
 
   # Star Citizen
@@ -30,7 +33,6 @@
   };
 
   hardware.nvidia = {
-
     # Modesetting is required.
     modesetting.enable = true;
 
@@ -50,7 +52,7 @@
     open = false;
 
     # Enable the Nvidia settings menu,
-  	# accessible via `nvidia-settings`.
+    # accessible via `nvidia-settings`.
     nvidiaSettings = true;
 
     package = config.boot.kernelPackages.nvidiaPackages.beta;
@@ -68,8 +70,6 @@
     */
   };
 
-
-
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   nixpkgs.config = {
@@ -79,11 +79,11 @@
 
   programs.xwayland.enable = true;
 
-  boot.initrd.kernelModules = [ "nvidia" ];
+  boot.initrd.kernelModules = ["nvidia"];
   # boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
   # hardware.nvidia.powerManagement.finegrained = true;
   # intel
-  boot.kernelParams = [ "module_blacklist=i915" ];
+  boot.kernelParams = ["module_blacklist=i915"];
 
   # Use the systemd boot
   boot.loader.systemd-boot.enable = true;
@@ -107,16 +107,23 @@
   environment.systemPackages = with pkgs; [
     # davinci-resolve
     xorg.libxcb
+    sunshine
     # cudaPackages.cudatoolkit
     # linuxKernel.packages.linux_6_6.nvidia_x11_production
   ];
+
+  # sunshine config
+  services.sunshine = {
+    autoStart = false;
+    capSysAdmin = true;
+    enable = true;
+  };
 
   hardware.graphics.enable32Bit = true;
   hardware.graphics.enable = true;
   services.ratbagd.enable = true;
 
-  users.users.toast.packages = with pkgs;
-  [
+  users.users.toast.packages = with pkgs; [
     vulkan-tools
   ];
 }

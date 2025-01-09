@@ -1,11 +1,12 @@
-{ config, pkgs, ... }:
-
 {
-  imports =
-  [ # Here we list the modules we want to add to our config:
-
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
+    # Here we list the modules we want to add to our config:
   ];
-  
+
   # Let Home Manager install and manage itself.
   nixpkgs.config.allowUnfree = true;
 
@@ -31,7 +32,7 @@
       enable = true;
       settings = {
         primary = "#5E81AC";
-        gapless = true; 
+        gapless = true;
         notify = false;
         initial_screen = "library";
       };

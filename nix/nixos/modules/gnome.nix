@@ -1,6 +1,8 @@
-{ pkgs, config, ... }:
-
 {
+  pkgs,
+  config,
+  ...
+}: {
   environment.systemPackages = with pkgs; [
     # tilix
     xwayland
@@ -54,7 +56,6 @@
       experimental-features=['scale-monitor-framebuffer']
     '';
 
-
     extraGSettingsOverridePackages = [
       pkgs.gsettings-desktop-schemas # for org.gnome.desktop
       pkgs.gnome-shell # for org.gnome.shell
@@ -68,10 +69,16 @@
 
   networking.firewall.allowedTCPPortRanges = [
     # KDE Connect
-    { from = 1714; to = 1764; }
+    {
+      from = 1714;
+      to = 1764;
+    }
   ];
   networking.firewall.allowedUDPPortRanges = [
     # KDE Connect
-    { from = 1714; to = 1764; }
+    {
+      from = 1714;
+      to = 1764;
+    }
   ];
 }

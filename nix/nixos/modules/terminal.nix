@@ -1,10 +1,12 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.toast = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "docker" "user-with-access-to-virtualbox" "video" ];
+    extraGroups = ["wheel" "networkmanager" "docker" "user-with-access-to-virtualbox" "video"];
   };
 
   users.defaultUserShell = pkgs.fish;
@@ -17,11 +19,11 @@
 
   programs.git.enable = true;
   programs.git.config = {
-  	init = {
-  	  credential.username = "toasterrepairman";
-  	  user.name = "toast";
-  	  user.email = "smol@toast.cyou";
-  	  };
+    init = {
+      credential.username = "toasterrepairman";
+      user.name = "toast";
+      user.email = "smol@toast.cyou";
+    };
   };
 
   # Configure shell
@@ -32,7 +34,7 @@
   };
 
   # Enable Nix Flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

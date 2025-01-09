@@ -1,11 +1,13 @@
-{ config, pkgs, ... }: 
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   # Set your time zone.
   time.timeZone = "America/Chicago";
 
   # Ensure you have your video drivers installed!
-  
+
   # Choose your bootloader, use boot.loader.grub.device for legacy systems
   boot.loader.systemd-boot.enable = true;
 
@@ -17,7 +19,7 @@
   # replicates the default behaviour.
   networking.useDHCP = false;
   networking.interfaces.enp4s0.useDHCP = true; # Don't forget to check these!
-  networking.interfaces.wlp3s0.useDHCP = true; # You can do so with `ip a` 
+  networking.interfaces.wlp3s0.useDHCP = true; # You can do so with `ip a`
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

@@ -23,13 +23,13 @@ final: prev: let
   ];
 in {
   obsidian = let
-    wrapped = prev.writeShellScriptBin "obsidian" (''
+    wrapped = prev.writeShellScriptBin "obsidian" ''
       exec ${source}/bin/obsidian ${commandLineArgs}
-    '');
+    '';
 
-    wrapped' = prev.writeShellScriptBin "Obsidian" (''
+    wrapped' = prev.writeShellScriptBin "Obsidian" ''
       exec ${source}/bin/Obsidian ${commandLineArgs}
-    '');
+    '';
   in
     prev.symlinkJoin {
       name = "obsidian";
@@ -41,13 +41,13 @@ in {
     };
 
   obsidian-gpu = let
-    wrapped = prev.writeShellScriptBin "obsidian" (''
+    wrapped = prev.writeShellScriptBin "obsidian" ''
       exec ${source}/bin/obsidian ${gpuCommandLineArgs}
-    '');
+    '';
 
-    wrapped' = prev.writeShellScriptBin "Obsidian" (''
+    wrapped' = prev.writeShellScriptBin "Obsidian" ''
       exec ${source}/bin/Obsidian ${gpuCommandLineArgs}
-    '');
+    '';
   in
     prev.symlinkJoin {
       name = "obsidian";

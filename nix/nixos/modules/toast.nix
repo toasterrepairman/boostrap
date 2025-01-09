@@ -1,13 +1,13 @@
-{ config, pkgs, ... }:
-
-let
+{
+  config,
+  pkgs,
+  ...
+}: let
   unstableTarball =
     fetchTarball
-      https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz;
-  imports = [ <home-manager/nixos> ];
-
-in
-{
+    https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz;
+  imports = [<home-manager/nixos>];
+in {
   nixpkgs.config = {
     packageOverrides = pkgs: {
       unstable = import unstableTarball {
@@ -17,12 +17,12 @@ in
   };
 
   services.earlyoom = {
-  	enable = true;
-  	freeMemThreshold = 5;
+    enable = true;
+    freeMemThreshold = 5;
   };
 
   # Enable the OpenSSH daemon.
-    services.openssh.enable = true;
+  services.openssh.enable = true;
 
   services = {
     syncthing = {
@@ -35,30 +35,35 @@ in
       # systemService = true;
       settings = {
         devices = {
-          "Phone" = { id = "4DK5N34-FVRFBOC-FLVRHKG-ZZOOWWT-JC7TX7D-LM2D33I-CJTRUXE-4YODEQH"; };
-          "toaster" = { id = "EBRBP4H-7KU7UVJ-G3FXKXD-6EJS7S5-G6KROIW-73L4SSZ-IOFNN2B-T7THGA2"; };
-          "toastpad" = { id = "V4MZ27K-QC7SAC2-QVIRM4J-QWDT6SN-7PFTRZH-OLLOI2X-XAGOP76-3I67QQP"; };
+          "Phone" = {id = "4DK5N34-FVRFBOC-FLVRHKG-ZZOOWWT-JC7TX7D-LM2D33I-CJTRUXE-4YODEQH";};
+          "toaster" = {id = "EBRBP4H-7KU7UVJ-G3FXKXD-6EJS7S5-G6KROIW-73L4SSZ-IOFNN2B-T7THGA2";};
+          "toastpad" = {id = "V4MZ27K-QC7SAC2-QVIRM4J-QWDT6SN-7PFTRZH-OLLOI2X-XAGOP76-3I67QQP";};
         };
         folders = {
-          "Cloud" = {        # Name of folder in Syncthing, also the folder ID
-            path = "/home/toast/Documents/Cloud";    # Which folder to add to Syncthing
-            devices = [ "toastpad" "toaster" "Phone" ];      # Which devices to share the folder with
+          "Cloud" = {
+            # Name of folder in Syncthing, also the folder ID
+            path = "/home/toast/Documents/Cloud"; # Which folder to add to Syncthing
+            devices = ["toastpad" "toaster" "Phone"]; # Which devices to share the folder with
           };
-          "Pictures" = {        # Name of folder in Syncthing, also the folder ID
-            path = "/home/toast/Pictures";    # Which folder to add to Syncthing
-            devices = [ "toastpad" "toaster" "Phone" ];      # Which devices to share the folder with
+          "Pictures" = {
+            # Name of folder in Syncthing, also the folder ID
+            path = "/home/toast/Pictures"; # Which folder to add to Syncthing
+            devices = ["toastpad" "toaster" "Phone"]; # Which devices to share the folder with
           };
-          "Music" = {        # Name of folder in Syncthing, also the folder ID
-            path = "/home/toast/Music";    # Which folder to add to Syncthing
-            devices = [ "toastpad" "toaster" ];      # Which devices to share the folder with
+          "Music" = {
+            # Name of folder in Syncthing, also the folder ID
+            path = "/home/toast/Music"; # Which folder to add to Syncthing
+            devices = ["toastpad" "toaster"]; # Which devices to share the folder with
           };
-          "Books" = {        # Name of folder in Syncthing, also the folder ID
-            path = "/home/toast/Documents/Books";    # Which folder to add to Syncthing
-            devices = [ "toastpad" "toaster" ];      # Which devices to share the folder with
+          "Books" = {
+            # Name of folder in Syncthing, also the folder ID
+            path = "/home/toast/Documents/Books"; # Which folder to add to Syncthing
+            devices = ["toastpad" "toaster"]; # Which devices to share the folder with
           };
-          "Bitwig" = {        # Name of folder in Syncthing, also the folder ID
-            path = "/home/toast/Bitwig Studio";    # Which folder to add to Syncthing
-            devices = [ "toastpad" "toaster" ];      # Which devices to share the folder with
+          "Bitwig" = {
+            # Name of folder in Syncthing, also the folder ID
+            path = "/home/toast/Bitwig Studio"; # Which folder to add to Syncthing
+            devices = ["toastpad" "toaster"]; # Which devices to share the folder with
           };
         };
       };
@@ -101,9 +106,9 @@ in
   ];
 
   nix.extraOptions = ''
-   binary-caches-parallel-connections = 1
-   connect-timeout = 3
-   cores = 8
+    binary-caches-parallel-connections = 1
+    connect-timeout = 3
+    cores = 8
   '';
 
   # prevent EFI overload
@@ -125,7 +130,7 @@ in
   security.polkit.enable = true;
 
   environment.sessionVariables = {
-     MOZ_ENABLE_WAYLAND = "1";
+    MOZ_ENABLE_WAYLAND = "1";
   };
 
   # Enable sound.
@@ -189,8 +194,6 @@ in
     # qt5.qtwebsockets
     # kdePackages.plasma-framework
     # kdePackages.qtdeclarative
-    kdeplasma-addons
-    # bluez
     partition-manager
     # Productity
     evince
@@ -200,6 +203,7 @@ in
     gnome-clocks
     keypunch
     # gimp
+    ghostty
     zim
     # obs-studio
     gnome-secrets

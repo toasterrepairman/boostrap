@@ -1,6 +1,8 @@
-{ pkgs, config, ... }:
-
 {
+  pkgs,
+  config,
+  ...
+}: {
   # Use the systemd boot
   boot.loader.systemd-boot.enable = true;
 
@@ -12,10 +14,10 @@
   # Set your time zone.
   time.timeZone = "America/Detroit";
   hardware.opengl.driSupport32Bit = true;
-  hardware.opengl.extraPackages32 = with pkgs.pkgsi686Linux; [ libva ];
+  hardware.opengl.extraPackages32 = with pkgs.pkgsi686Linux; [libva];
   hardware.pulseaudio.support32Bit = true;
   hardware.opengl.enable = true;
-  hardware.steam-hardware.enable = true; 
+  hardware.steam-hardware.enable = true;
 
   # services.fprintd.enable = true;
   # services.fprintd.tod.enable = true;

@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   # Set your time zone.
   time.timeZone = "America/Chicago";
 
@@ -17,7 +19,7 @@
   # Latest kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
   # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   # List packages installed in system profile. To search, run:
@@ -31,12 +33,10 @@
   #   enableSSHSupport = true;
   # };
 
-  
   # services.xserver.enable = true;
   # services.xserver.desktopManager.kodi.enable = true;
   # services.xserver.displayManager.autoLogin.enable = true;
   # services.xserver.displayManager.autoLogin.user = "kodi";
-
 
   # TV Server Config:
   # --- Radarr ---
@@ -59,25 +59,25 @@
   services.openssh.enable = true;
   services.openssh.permitRootLogin = "yes";
 
-    #DLNA
-    services.minidlna.enable = true;
-    services.minidlna.settings = {
-      friendly_name = "Home Server";
-      media_dir = [
-       "V,/mnt/media" #Videos files are located here
-      ];
-      log_level = "error";
-    };
+  #DLNA
+  services.minidlna.enable = true;
+  services.minidlna.settings = {
+    friendly_name = "Home Server";
+    media_dir = [
+      "V,/mnt/media" #Videos files are located here
+    ];
+    log_level = "error";
+  };
 
-    users.users.minidlna = {
-      extraGroups = [ "users" ]; # so minidlna can access the files.
-    };
+  users.users.minidlna = {
+    extraGroups = ["users"]; # so minidlna can access the files.
+  };
 
-    services.minidlna.openFirewall = true;
+  services.minidlna.openFirewall = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 22 80 8080 1234 2283 8096 8090 3000 3001 3002 3003 25565 25575 ];
-  networking.firewall.allowedUDPPorts = [ 7359 1900 ];
+  networking.firewall.allowedTCPPorts = [22 80 8080 1234 2283 8096 8090 3000 3001 3002 3003 25565 25575];
+  networking.firewall.allowedUDPPorts = [7359 1900];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
@@ -99,9 +99,8 @@
       ExecStart = ''${pkgs.bash}/bin/bash -c "echo none > /sys/class/leds/user-led/trigger"'';
       # ...
     };
-    wantedBy = [ "multi-user.target" ];
-    after = [ "multi-user.target" ];
-
+    wantedBy = ["multi-user.target"];
+    after = ["multi-user.target"];
   };
   zramSwap.enable = true;
 

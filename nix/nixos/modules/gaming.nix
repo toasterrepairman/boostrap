@@ -1,6 +1,9 @@
-{ config, pkgs, lib, ... }: 
-
 {
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
   # Gaming stuff
   environment.systemPackages = with pkgs; [
     flatpak
@@ -28,7 +31,7 @@
     enable = true;
     enableRenice = true;
   };
-  
+
   services.flatpak.enable = true;
 
   programs.steam = {
@@ -39,18 +42,22 @@
 
   nixpkgs.config.packageOverrides = pkgs: {
     steam = pkgs.steam.override {
-      extraPkgs = pkgs: with pkgs; [
-        libgdiplus
-      ];
+      extraPkgs = pkgs:
+        with pkgs; [
+          libgdiplus
+        ];
     };
   };
   # Get Sunlight working:
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 47984 47989 48010 47990 9757 ];
-    allowedUDPPorts = [ 5353 9757 4242 ];
+    allowedTCPPorts = [47984 47989 48010 47990 9757];
+    allowedUDPPorts = [5353 9757 4242];
     allowedUDPPortRanges = [
-      { from = 47998; to = 48010; }
+      {
+        from = 47998;
+        to = 48010;
+      }
     ];
   };
 }

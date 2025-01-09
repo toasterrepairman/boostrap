@@ -1,13 +1,13 @@
-{ config, pkgs, ... }:
-
-let
+{
+  config,
+  pkgs,
+  ...
+}: let
   unstableTarball =
     fetchTarball
-      https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz;
-  imports = [ <home-manager/nixos> ];
-
-in
-{  
+    https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz;
+  imports = [<home-manager/nixos>];
+in {
   nixpkgs.config = {
     packageOverrides = pkgs: {
       unstable = import unstableTarball {
@@ -49,12 +49,11 @@ in
   services.xserver.enable = true;
   security.pam.services.toast.enableKwallet = true;
 
-	hardware.bluetooth.settings = {
-	  General = {
-	    Enable = "Source,Sink,Media,Socket";
-	  };
-	};
-
+  hardware.bluetooth.settings = {
+    General = {
+      Enable = "Source,Sink,Media,Socket";
+    };
+  };
 
   # Configure keymap in X11
   # services.xserver.layout = "us";

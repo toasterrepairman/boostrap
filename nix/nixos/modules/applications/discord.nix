@@ -23,13 +23,13 @@ final: prev: let
   ];
 in {
   discord = let
-    wrapped = prev.writeShellScriptBin "discord" (''
+    wrapped = prev.writeShellScriptBin "discord" ''
       exec ${source}/bin/discord ${commandLineArgs}
-    '');
+    '';
 
-    wrapped' = prev.writeShellScriptBin "Discord" (''
+    wrapped' = prev.writeShellScriptBin "Discord" ''
       exec ${source}/bin/Discord ${commandLineArgs}
-    '');
+    '';
   in
     prev.symlinkJoin {
       name = "discord";
@@ -41,13 +41,13 @@ in {
     };
 
   discord-gpu = let
-    wrapped = prev.writeShellScriptBin "discord" (''
+    wrapped = prev.writeShellScriptBin "discord" ''
       exec ${source}/bin/discord ${gpuCommandLineArgs}
-    '');
+    '';
 
-    wrapped' = prev.writeShellScriptBin "Discord" (''
+    wrapped' = prev.writeShellScriptBin "Discord" ''
       exec ${source}/bin/Discord ${gpuCommandLineArgs}
-    '');
+    '';
   in
     prev.symlinkJoin {
       name = "discord";
