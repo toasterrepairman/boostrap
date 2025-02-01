@@ -120,6 +120,9 @@ in {
   # Enable Bluetooth on a hardware level
   hardware.bluetooth.enable = true;
 
+  # fwupd online
+  services.fwupd.enable = true;
+
   # Enable trackpad gestures, everywhere!
   services.libinput.enable = true;
 
