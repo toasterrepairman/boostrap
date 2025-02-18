@@ -22,6 +22,13 @@
     # apostrophe
     gnome-tweaks
     ungoogled-chromium
+    alpaca
+    blanket
+    bottles
+    celluloid
+    dissent
+    keypunch
+    libadwaita
   ];
 
   programs.dconf.enable = true;
