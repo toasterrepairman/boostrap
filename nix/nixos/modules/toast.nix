@@ -201,6 +201,7 @@ in {
     # Productity
     evince
     wike
+    alpaca
     foliate
     gImageReader
     gnome-clocks
