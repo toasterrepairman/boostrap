@@ -172,7 +172,6 @@ in {
     gnome-keyring
     libgnome-keyring
     gnome-logs
-    filelight
     appimage-run
     gsettings-desktop-schemas
     # Ricing
@@ -197,7 +196,6 @@ in {
     # qt5.qtwebsockets
     # kdePackages.plasma-framework
     # kdePackages.qtdeclarative
-    partition-manager
     # Productity
     evince
     wike
@@ -242,7 +240,6 @@ in {
     rnote
     meld
     gitg
-    kate
     helix
     sysprof
     vscodium
