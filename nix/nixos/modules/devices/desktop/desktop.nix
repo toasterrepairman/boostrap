@@ -55,7 +55,7 @@
     # accessible via `nvidia-settings`.
     nvidiaSettings = true;
 
-    package = config.boot.kernelPackages.nvidiaPackages.beta;
+    package = config.boot.kernelPackages.nvidiaPackages.production;
 
     # static driver config
     /*
