@@ -138,7 +138,7 @@ in {
 
   # Enable sound.
   # sound.enable = true;
-  # hardware.pulseaudio.enable = false; # explicitly set to false for pipewire
+  # services.pulseaudio.enable = false; # explicitly set to false for pipewire
   # services.pipewire = {
   #   enable = true;
   #   alsa = {
@@ -164,7 +164,7 @@ in {
 
   environment.systemPackages = with pkgs; [
     # OS tools
-    linuxKernel.packages.linux_latest_libre.system76-scheduler
+    system76-scheduler
     ungoogled-chromium
     quota
     syncthing

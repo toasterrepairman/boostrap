@@ -9,7 +9,7 @@
 
   # Appease the Nvidia Gods
   hardware.graphics.extraPackages32 = with pkgs.pkgsi686Linux; [libva];
-  hardware.pulseaudio.support32Bit = true;
+  services.pulseaudio.support32Bit = true;
   hardware.steam-hardware.enable = true;
   hardware.nvidia-container-toolkit.enable = true;
 
@@ -120,7 +120,6 @@
   };
 
   hardware.graphics.enable32Bit = true;
-  hardware.opengl.enable = true;
   hardware.graphics.enable = true;
   services.ratbagd.enable = true;
 

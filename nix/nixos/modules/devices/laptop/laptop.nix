@@ -15,8 +15,8 @@
   time.timeZone = "America/Detroit";
   hardware.opengl.driSupport32Bit = true;
   hardware.opengl.extraPackages32 = with pkgs.pkgsi686Linux; [libva];
-  hardware.pulseaudio.support32Bit = true;
-  hardware.opengl.enable = true;
+  services.pulseaudio.support32Bit = true;
+  hardware.graphics.enable = true;
   hardware.steam-hardware.enable = true;
 
   # services.fprintd.enable = true;
