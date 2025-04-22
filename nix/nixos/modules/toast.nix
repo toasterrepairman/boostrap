@@ -225,7 +225,6 @@ in {
     # handbrake
     spot
     gnome-podcasts
-    chatterino7
     vaapiVdpau
     # Programming
     taxi
