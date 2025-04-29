@@ -109,6 +109,11 @@
     xorg.libxcb
     sunshine
     cudaPackages.cudatoolkit
+    alvr
+    gwe
+    lutris
+    nv-codec-headers-12
+    ollama-cuda
     # linuxKernel.packages.linux_6_6.nvidia_x11_production
   ];
 
