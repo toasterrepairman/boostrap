@@ -117,6 +117,14 @@
     # linuxKernel.packages.linux_6_6.nvidia_x11_production
   ];
 
+  # cuda overrides
+  nixpkgs.overlays = [
+    (self: super: {
+    alvr = super.alvr.override { cudaSupport = true; };
+    blender = super.blender.override { cudaSupport = true; };
+    })
+  ];
+
   # sunshine config
   services.sunshine = {
     autoStart = false;
