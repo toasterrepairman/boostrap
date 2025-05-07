@@ -22,7 +22,6 @@
     # apostrophe
     gnome-tweaks
     ungoogled-chromium
-    alpaca
     blanket
     bottles
     celluloid

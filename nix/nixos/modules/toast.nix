@@ -93,7 +93,7 @@ in {
   # delete these before reaching the gates of heaven
   environment.sessionVariables = rec {
     GOPATH = "\${HOME}/.go";
-    GTK_THEME = "adw-gtk3-dark";
+    GTK_THEME = "";
   };
 
   # i trust these are unneccesary but i dont know anymore
@@ -199,7 +199,6 @@ in {
     # Productity
     evince
     wike
-    alpaca
     foliate
     gImageReader
     gnome-clocks
