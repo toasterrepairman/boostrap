@@ -18,9 +18,9 @@
           version = "2024.1.1";
 
           src = pkgs.fetchFromGitHub {
-            owner = "opentrack";
-            repo = "opentrack";
-            rev = "6aae766520d7cbf493fce6b6f1595f8c96b71fbe";
+            owner = "Priton-CE";
+            repo = "opentrack-StarCitizen";
+            rev = "4dd97af0f139f3ddc8f34a24ee961a1046015d3f";
             hash = "sha256-xN4Z1Cpmj8ktqWCQYPZTfqznHrYe28qlKkPoQxHRPJ8=";
           };
 
