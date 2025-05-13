@@ -20,8 +20,8 @@
           src = pkgs.fetchFromGitHub {
             owner = "opentrack";
             repo = "opentrack";
-            rev = "opentrack-${version}";
-            hash = "sha256-IMhPvOBeJoLE+vg0rsKGs8Vhbpse8bIh0DeOwBubOUw=";
+            rev = "6aae766520d7cbf493fce6b6f1595f8c96b71fbe";
+            hash = "sha256-xN4Z1Cpmj8ktqWCQYPZTfqznHrYe28qlKkPoQxHRPJ8=";
           };
 
           nativeBuildInputs = with pkgs; [
