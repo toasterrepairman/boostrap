@@ -15,13 +15,13 @@
 
         opentrack = pkgs.qt5.mkDerivation rec {
           pname = "opentrack";
-          version = "2023.3.0";
+          version = "2024.1.1";
 
           src = pkgs.fetchFromGitHub {
             owner = "opentrack";
             repo = "opentrack";
             rev = "opentrack-${version}";
-            hash = "sha256-C0jLS55DcLJh/e5yM8kLG7fhhKvBNllv5HkfCWRIfc4=";
+            hash = "sha256-IMhPvOBeJoLE+vg0rsKGs8Vhbpse8bIh0DeOwBubOUw=";
           };
 
           nativeBuildInputs = with pkgs; [
@@ -57,7 +57,7 @@
             "-DCMAKE_BUILD_TYPE=Release"
             # Onnxruntime configuration
             "-DONNXRuntime_DIR=${pkgs.onnxruntime}/lib/cmake/onnxruntime/"
-            "-DONNXRuntime_INCLUDE_DIR=${pkgs.onnxruntime}/include/"
+            # "-DONNXRuntime_INCLUDE_DIR=${pkgs.onnxruntime}/include/"
           ] ++ pkgs.lib.optionals pkgs.stdenv.targetPlatform.isx86_64 [ "-DSDK_WINE=ON" ];
 
           postInstall = ''
@@ -81,7 +81,7 @@
           meta = with pkgs.lib; {
             homepage = "https://github.com/opentrack/opentrack";
             description = "Head tracking software with ONNX support";
-            mainProgram = "opentrack";
+            mainProgram = "PROTON_VERB='runinprefix' opentrack";
             changelog = "https://github.com/opentrack/opentrack/releases/tag/opentrack-${version}";
             license = licenses.isc;
             platforms = platforms.linux;
