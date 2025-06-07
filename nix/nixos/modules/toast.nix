@@ -126,6 +126,10 @@ in {
   # Enable trackpad gestures, everywhere!
   services.libinput.enable = true;
 
+  # appimage settings
+  programs.appimage.enable = true;
+  programs.appimage.binfmt = true;
+
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # networking.networkmanager.enable = true;
   systemd.services.NetworkManager-wait-online.enable = false;
