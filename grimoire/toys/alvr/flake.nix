@@ -85,10 +85,10 @@
             celt
             jack2
             lame
-            libX11
-            libXcursor
-            libXi
-            libXrandr
+            xorg.libX11
+            xorg.libXcursor
+            xorg.libXi
+            xorg.libXrandr
             libdrm
             libglvnd
             libogg
@@ -108,16 +108,10 @@
             xvidcore
 
             # Enhanced ffmpeg with CUDA support
-            (ffmpeg.override {
-              withCuda = true;
-              withNvenc = true;
-              withNvdec = true;
-            })
+            ffmpeg-full
 
-            # Hardware-accelerated x264
-            (x264.override {
-              cudaSupport = true;
-            })
+            # Standard x264 (CUDA acceleration handled by ffmpeg)
+            x264
 
             # CUDA libraries for hardware acceleration
             cudatoolkit
@@ -134,6 +128,7 @@
 
             # Additional media libraries with hardware acceleration
             libva # VAAPI support
+            intel-media-driver # Intel GPU support (for hybrid systems)
           ];
 
           postBuild = ''
@@ -204,6 +199,7 @@
         devShells.default = pkgs.mkShell {
           buildInputs = with pkgs; [
             cudatoolkit
+            nvidia-docker
             vulkan-tools
             mesa-demos
           ];
