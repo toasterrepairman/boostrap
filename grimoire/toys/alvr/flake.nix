@@ -134,7 +134,6 @@
 
             # Additional media libraries with hardware acceleration
             libva # VAAPI support
-            intel-media-driver # Intel GPU support (for hybrid systems)
           ];
 
           postBuild = ''
@@ -205,7 +204,6 @@
         devShells.default = pkgs.mkShell {
           buildInputs = with pkgs; [
             cudatoolkit
-            nvidia-docker
             vulkan-tools
             mesa-demos
           ];
