@@ -52,21 +52,13 @@
             CUDA_ROOT = "${pkgs.cudatoolkit}";
           };
 
-          RUSTFLAGS = map (a: "-C link-arg=${a}") ([
+          RUSTFLAGS = map (a: "-C link-arg=${a}") [
             "-Wl,--push-state,--no-as-needed"
             "-lEGL"
             "-lwayland-client"
             "-lxkbcommon"
             "-Wl,--pop-state"
-          ] ++ pkgs.lib.optionals pkgs.stdenv.isLinux [
-            # CUDA runtime linking
-            "-L${pkgs.cudatoolkit}/lib"
-            "-L${pkgs.cudatoolkit}/lib64"
-            "-lcuda"
-            "-lcudart"
-            "-lnvidia-encode"
-            "-lnvidia-ml"
-          ]);
+          ];
 
           nativeBuildInputs = with pkgs; [
             rust-cbindgen
@@ -113,14 +105,8 @@
             # Standard x264 (CUDA acceleration handled by ffmpeg)
             x264
 
-            # CUDA libraries for hardware acceleration
+            # CUDA libraries for runtime (not all needed at build time)
             cudatoolkit
-            cudaPackages.libcublas
-            cudaPackages.libcufft
-            cudaPackages.libcurand
-            cudaPackages.libcusolver
-            cudaPackages.libcusparse
-            cudaPackages.cudnn
 
             # Nvidia Video Codec SDK (if available)
             # Note: This might not be available in nixpkgs, but NVENC/NVDEC
@@ -147,26 +133,27 @@
             cp -r ./build/alvr_streamer_linux/share/. $out/share
             ln -s $out/lib $out/lib64
 
-            # Ensure CUDA libraries are available at runtime
-            mkdir -p $out/lib/cuda
-            ln -sf ${pkgs.cudatoolkit}/lib/* $out/lib/cuda/
-
-            # Create wrapper script to set up CUDA environment
+            # Create wrapper script to set up CUDA environment at runtime
             mkdir -p $out/bin
             cat > $out/bin/alvr_dashboard_wrapped << 'EOF'
             #!/usr/bin/env bash
-            export CUDA_PATH="${pkgs.cudatoolkit}"
-            export LD_LIBRARY_PATH="${pkgs.cudatoolkit}/lib:${pkgs.cudatoolkit}/lib64:$LD_LIBRARY_PATH"
-            export PATH="${pkgs.cudatoolkit}/bin:$PATH"
+            # Set up CUDA environment if available
+            if [ -d "${pkgs.cudatoolkit}" ]; then
+              export CUDA_PATH="${pkgs.cudatoolkit}"
+              export LD_LIBRARY_PATH="${pkgs.cudatoolkit}/lib:${pkgs.cudatoolkit}/lib64:$LD_LIBRARY_PATH"
+              export PATH="${pkgs.cudatoolkit}/bin:$PATH"
+            fi
+
+            # Also check for system CUDA installation
+            if [ -d "/usr/local/cuda" ]; then
+              export CUDA_PATH="/usr/local/cuda:$CUDA_PATH"
+              export LD_LIBRARY_PATH="/usr/local/cuda/lib64:/usr/local/cuda/lib:$LD_LIBRARY_PATH"
+              export PATH="/usr/local/cuda/bin:$PATH"
+            fi
+
             exec $out/bin/alvr_dashboard "$@"
             EOF
             chmod +x $out/bin/alvr_dashboard_wrapped
-          '';
-
-          # Add runtime dependencies for CUDA
-          preFixup = ''
-            patchelf --add-rpath ${pkgs.cudatoolkit}/lib $out/bin/* || true
-            patchelf --add-rpath ${pkgs.cudatoolkit}/lib64 $out/bin/* || true
           '';
 
           passthru.updateScript = pkgs.nix-update-script { };
