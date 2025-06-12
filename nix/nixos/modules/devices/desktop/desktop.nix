@@ -109,7 +109,6 @@
     xorg.libxcb
     sunshine
     cudaPackages.cudatoolkit
-    alvr
     gwe
     lutris
     nv-codec-headers-12
