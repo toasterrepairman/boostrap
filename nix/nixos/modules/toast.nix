@@ -247,6 +247,8 @@ in {
     vscodium
     # quodlibet
     cascadia-code
+    libratbag
+    libva-vdpau-driver
     # bluetooth hack
     # bluedevil
     # these are my dark GTK passengers

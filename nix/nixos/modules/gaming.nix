@@ -11,6 +11,7 @@
     wine
     gamescope
     protonup
+    wine64
     # prismlauncher
     # obs-studio
     # projectm
