@@ -8,10 +8,8 @@
   environment.systemPackages = with pkgs; [
     flatpak
     discord
-    wine
     gamescope
     protonup
-    wine64
     # prismlauncher
     # obs-studio
     # projectm
@@ -21,6 +19,8 @@
     protonup-ng
     # xonotic
     protontricks
+    wineWowPackages.staging
+    winetricks
   ];
 
   # services.sunshine = {
