@@ -17,7 +17,7 @@
     hyprlock
     hypridle
 
-    # applications
+    # Keep existing applications
     tuba
     cartridges
     blanket
@@ -29,7 +29,6 @@
 
     # Hyprland-compatible tools and alternatives
     kitty # terminal emulator (popular with Hyprland)
-    thunar # file manager
     pavucontrol # audio control
     brightnessctl # brightness control
     playerctl # media control
@@ -39,7 +38,6 @@
     # Additional useful tools for Hyprland
     rofi-wayland # alternative launcher
     dunst # alternative notification daemon
-    polkit-kde-agent # polkit authentication agent
 
     # Keep useful tools
     gnome-tweaks # still useful for some GTK settings
@@ -144,7 +142,7 @@
     bind = $mainMod, Return, exec, kitty
     bind = $mainMod, Q, killactive
     bind = $mainMod, M, exit
-    bind = $mainMod, E, exec, thunar
+    bind = $mainMod, E, exec, nautilus
     bind = $mainMod, V, togglefloating
     bind = $mainMod, D, exec, wofi --show drun
     bind = $mainMod, P, pseudo
@@ -468,7 +466,6 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
-    enableNvidiaPatches = builtins.elem "nvidia" config.services.xserver.videoDrivers;
   };
 
   programs.dconf.enable = true;
@@ -538,23 +535,13 @@
     font-awesome
     noto-fonts
     noto-fonts-emoji
-    (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+    # (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
   ];
 
   # Hardware acceleration and graphics
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
-  };
-
-  # NVIDIA configuration for Hyprland (only on NVIDIA systems)
-  hardware.nvidia = pkgs.lib.mkIf (builtins.elem "nvidia" config.services.xserver.videoDrivers) {
-    modesetting.enable = true;
-    powerManagement.enable = false;
-    powerManagement.finegrained = false;
-    open = false; # Use proprietary driver
-    nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
   # Conditionally set video drivers - override this in your host-specific config
