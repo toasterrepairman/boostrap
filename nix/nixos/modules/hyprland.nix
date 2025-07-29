@@ -15,6 +15,7 @@
     dunst
     grim
     slurp
+    nautilus
 
     xwayland
     tuba

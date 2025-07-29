@@ -93,7 +93,7 @@ in {
   # delete these before reaching the gates of heaven
   environment.sessionVariables = rec {
     GOPATH = "\${HOME}/.go";
-    GTK_THEME = "";
+    GTK_THEME = "adw-gtk3";
   };
 
   # i trust these are unneccesary but i dont know anymore

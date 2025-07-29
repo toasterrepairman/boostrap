@@ -19,6 +19,7 @@
     # gnomeExtensions.rounded-window-corners
     tuba
     cartridges
+    cavalier
     # apostrophe
     gnome-tweaks
     ungoogled-chromium
@@ -28,6 +29,7 @@
     dissent
     keypunch
     libadwaita
+    easyeffects
   ];
 
   programs.dconf.enable = true;
