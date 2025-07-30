@@ -52,7 +52,7 @@
   # Get Sunlight working:
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [47984 47989 48010 47990 9757];
+    allowedTCPPorts = [47984 47989 48010 47990 9757 11434];
     allowedUDPPorts = [5353 9757 4242];
     allowedUDPPortRanges = [
       {
