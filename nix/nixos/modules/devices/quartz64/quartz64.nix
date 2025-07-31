@@ -107,7 +107,6 @@
     # Use extraConfig to define server modules
     extraConfig = ''
       server.modules += ( "mod_access", "mod_accesslog", "mod_fastcgi", "mod_rewrite" )
-      server.document-root = "/var/www/home-landing"
       server.indexfiles = ( "index.html" )
       dir-listing.activate = "disable"
       accesslog.filename = "/var/log/lighttpd/access.log"
