@@ -104,6 +104,7 @@
   services.lighttpd = {
     enable = true;
     port = 80;
+    document-root = "/home/toast/home-landing";
     # Use extraConfig to define server modules
     extraConfig = ''
       server.modules += ( "mod_access", "mod_accesslog", "mod_fastcgi", "mod_rewrite" )
