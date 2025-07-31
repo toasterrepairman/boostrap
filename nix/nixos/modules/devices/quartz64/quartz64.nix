@@ -100,6 +100,61 @@
     web.openFirewall = true;
   };
 
+  # Homepage
+  services.lighttpd = {
+    enable = true;
+    # Listen on all interfaces (LAN accessible)
+    port = 80;
+    # Serve from your static directory
+    modules = [ "mod_fastcgi" "mod_rewrite" ];
+    # Document root
+    server.document-root = "${pkgs.writeShellScriptBin "home-landing" ''
+    #!/bin/sh
+    cd /var/www/home-landing
+    exec ${pkgs.lighttpd}/bin/lighttpd -f /etc/lighttpd/lighttpd.conf
+    ''}";
+      # Custom config
+      extraConfig = ''
+      server.modules += ( "mod_access", "mod_accesslog" )
+      # Serve index.html as default
+      server.indexfiles = ( "index.html" )
+      # Disable directory listing
+      dir-listing.activate = "disable"
+      # Log access and errors
+      accesslog.filename = "/var/log/lighttpd/access.log"
+      errorlog.filename = "/var/log/lighttpd/error.log"
+      '';
+  };
+
+  # Create a directory for your static files
+  # This will be served from /var/www/home-landing
+  fileSystems."/var/www/home-landing" = {
+      device = "/home/toast/home-landing";
+      fsType = "none";
+      options = [ "bind" ];
+  };
+
+  # Copy your HTML files into the system (or use bind mount)
+  # We'll use a symlink from the user's home to /var/www
+  # (Alternative: use `services.lighttpd.root` with `source` if you want to copy)
+
+  # If you want to copy files into /var/www:
+  # services.lighttpd.root = "/home/your-username/home-landing";
+
+  # But better: use bind mount (no copying, always up-to-date)
+  # Create a symlink in /var/www:
+  systemd.tmpfiles.rules = [
+      "m /var/www/home-landing 0755 root root - -"
+      "l /var/www/home-landing /home/toast/home-landing"
+  ];
+
+  # Ensure the user has correct permissions
+  users.users.your-username = {
+      isNormalUser = true;
+      home = "/home/toast";
+      extraGroups = [ "lighttpd" ];
+  };
+
   systemd.services.user-led = {
     enable = true;
     description = "Turn off heartbeat LED";
