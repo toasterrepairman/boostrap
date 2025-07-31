@@ -137,7 +137,7 @@
   ];
 
   # Ensure the user has correct permissions
-  users.users.your-username = {
+  users.users.toast = {
       isNormalUser = true;
       home = "/home/toast";
       extraGroups = [ "lighttpd" ];
