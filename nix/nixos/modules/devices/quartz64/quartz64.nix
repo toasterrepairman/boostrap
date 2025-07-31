@@ -93,6 +93,7 @@
   # networking.firewall.enable = false;
 
   services.deluge = {
+    enable = true;
     user = "toast";
     web.enable = true;
     web.port = 8090;
