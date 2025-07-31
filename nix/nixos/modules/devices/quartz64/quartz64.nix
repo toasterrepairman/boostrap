@@ -103,27 +103,16 @@
   # Homepage
   services.lighttpd = {
     enable = true;
-    # Listen on all interfaces (LAN accessible)
     port = 80;
-    # Serve from your static directory
-    modules = [ "mod_fastcgi" "mod_rewrite" ];
-    # Document root
-    server.document-root = "${pkgs.writeShellScriptBin "home-landing" ''
-    #!/bin/sh
-    cd /var/www/home-landing
-    exec ${pkgs.lighttpd}/bin/lighttpd -f /etc/lighttpd/lighttpd.conf
-    ''}";
-      # Custom config
-      extraConfig = ''
-      server.modules += ( "mod_access", "mod_accesslog" )
-      # Serve index.html as default
+    # Use extraConfig to define server modules
+    extraConfig = ''
+      server.modules += ( "mod_access", "mod_accesslog", "mod_fastcgi", "mod_rewrite" )
+      server.document-root = "/var/www/home-landing"
       server.indexfiles = ( "index.html" )
-      # Disable directory listing
       dir-listing.activate = "disable"
-      # Log access and errors
       accesslog.filename = "/var/log/lighttpd/access.log"
       errorlog.filename = "/var/log/lighttpd/error.log"
-      '';
+    '';
   };
 
   # Create a directory for your static files
