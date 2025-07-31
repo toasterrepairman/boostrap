@@ -72,6 +72,18 @@
     extraGroups = ["users"]; # so minidlna can access the files.
   };
 
+  services.grafana = {
+    enable = true;
+    settings = {
+      server = {
+        # Listening Address
+        http_addr = "127.0.0.1";
+        # and Port
+        http_port = 3000;
+      };
+    };
+  };
+
   services.minidlna.openFirewall = true;
 
   # Open ports in the firewall.
