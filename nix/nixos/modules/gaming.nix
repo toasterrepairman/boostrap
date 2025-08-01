@@ -10,6 +10,8 @@
     discord
     gamescope
     protonup
+    moonlight-qt
+    moonlight-embedded
     # prismlauncher
     # obs-studio
     # projectm
