@@ -87,7 +87,7 @@
   services.minidlna.openFirewall = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [22 80 8080 1234 2283 8096 8090 3000 3001 3002 3003 25565 25575];
+  networking.firewall.allowedTCPPorts = [22 80 8080 1234 2283 8096 8090 3000 3001 3002 3003 25565 25575 11434];
   networking.firewall.allowedUDPPorts = [7359 1900 53];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
