@@ -100,12 +100,10 @@
     web.openFirewall = true;
   };
 
-  # Homepage
   services.lighttpd = {
     enable = true;
     port = 80;
-    document-root = "/home/toast/home-landing";
-    # Use extraConfig to define server modules
+    document-root = "/var/www/home-landing";  # Changed to match bind mount
     extraConfig = ''
       server.modules += ( "mod_access", "mod_accesslog", "mod_fastcgi", "mod_rewrite" )
       server.indexfiles = ( "index.html" )
@@ -113,12 +111,10 @@
     '';
   };
 
-  # Create a directory for your static files
-  # This will be served from /var/www/home-landing
   fileSystems."/var/www/home-landing" = {
-      device = "/home/toast/home-landing";
-      fsType = "none";
-      options = [ "bind" ];
+    device = "/home/toast/home-landing";
+    fsType = "none";
+    options = [ "bind" ];
   };
 
   # Copy your HTML files into the system (or use bind mount)
