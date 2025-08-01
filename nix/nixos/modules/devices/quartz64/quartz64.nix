@@ -109,9 +109,7 @@
     extraConfig = ''
       server.modules += ( "mod_access", "mod_accesslog", "mod_fastcgi", "mod_rewrite" )
       server.indexfiles = ( "index.html" )
-      dir-listing.activate = "disable"
       accesslog.filename = "/var/log/lighttpd/access.log"
-      errorlog.filename = "/var/log/lighttpd/error.log"
     '';
   };
 

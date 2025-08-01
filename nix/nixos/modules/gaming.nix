@@ -23,10 +23,16 @@
     winetricks
   ];
 
-  # services.sunshine = {
-  #   enable = true;
-  #   openFirewall = true;
-  # };
+  # Remote gaming stack
+  services.sunshine = {
+    enable = true;
+    openFirewall = true;
+    capSysAdmin = true;
+  };
+  services.tailscale = {
+    enable = true;
+    openFirewall = true;
+  };
 
   programs.gamemode = {
     enable = true;
