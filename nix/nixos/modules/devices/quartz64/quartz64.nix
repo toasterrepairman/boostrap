@@ -77,7 +77,7 @@
     settings = {
       server = {
         # Listening Address
-        http_addr = "127.0.0.1";
+        http_addr = "0.0.0.0";
         # and Port
         http_port = 3000;
       };
