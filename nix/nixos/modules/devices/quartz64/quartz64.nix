@@ -86,6 +86,7 @@
 
   # enable cache for grafana
   services.influxdb2.enable = true;
+  services.telegraf.enable = true;
 
   services.minidlna.openFirewall = true;
 
