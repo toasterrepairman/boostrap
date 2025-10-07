@@ -180,7 +180,6 @@ in {
     gsettings-desktop-schemas
     # Ricing
     home-manager
-    gradience
     adw-gtk3
     nordic
     xdg-desktop-portal-gtk

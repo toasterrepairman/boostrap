@@ -19,18 +19,18 @@
 
         alvr = pkgs.rustPlatform.buildRustPackage rec {
           pname = "alvr";
-          version = "20.13.0";
+          version = "20.14.1";
 
           src = pkgs.fetchFromGitHub {
             owner = "alvr-org";
             repo = "ALVR";
             tag = "v${version}";
             fetchSubmodules = true;
-            hash = "sha256-h7/fuuolxbNkjUbqXZ7NTb1AEaDMFaGv/S05faO2HIc=";
+            hash = "sha256-CB2FumYZ9v8fAXHEcCkzjjTqg+i3UnlW8QzEo0B9LMk=";
           };
 
           useFetchCargoVendor = true;
-          cargoHash = "sha256-A0ADPMhsREH1C/xpSxW4W2u4ziDrKRrQyY5kBDn//gQ=";
+          cargoHash = "sha256-dmgnaq5x5gKltxAeI8CwgCAMEED1PoYl0Lklqc3vyWw=";
 
           patches = [
             (pkgs.replaceVars ./fix-finding-libs.patch {
