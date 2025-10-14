@@ -113,16 +113,7 @@
     gwe
     lutris
     nv-codec-headers-12
-    ollama-cuda
-    blender
     # linuxKernel.packages.linux_6_6.nvidia_x11_production
-  ];
-
-  # cuda overrides
-  nixpkgs.overlays = [
-      (self: super: {
-        blender = super.blender.override { cudaSupport = true; };
-      })
   ];
 
   # sunshine config

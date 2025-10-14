@@ -187,7 +187,7 @@ in {
     ibm-plex
     zafiro-icons
     # Userland
-    firefox
+    firefox-bin
     keypunch
     newsflash
     spicetify-cli
