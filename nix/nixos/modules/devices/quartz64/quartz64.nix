@@ -107,39 +107,41 @@
   services.lighttpd = {
     enable = true;
     port = 80;
-    document-root = "/var/www/home-landing";  # Changed to match bind mount
+    document-root = "/var/www/home-landing";
     extraConfig = ''
       server.modules += ( "mod_access", "mod_accesslog", "mod_fastcgi", "mod_rewrite" )
       server.indexfiles = ( "index.html" )
       accesslog.filename = "/var/log/lighttpd/access.log"
+
+      # Allow directory listings if no index.html
+      dir-listing.activate = "enable"
     '';
   };
 
+  # Bind mount the user's home-landing directory to /var/www/home-landing
   fileSystems."/var/www/home-landing" = {
     device = "/home/toast/home-landing";
     fsType = "none";
     options = [ "bind" ];
   };
 
-  # Copy your HTML files into the system (or use bind mount)
-  # We'll use a symlink from the user's home to /var/www
-  # (Alternative: use `services.lighttpd.root` with `source` if you want to copy)
-
-  # If you want to copy files into /var/www:
-  # services.lighttpd.root = "/home/your-username/home-landing";
-
-  # But better: use bind mount (no copying, always up-to-date)
-  # Create a symlink in /var/www:
+  # Create the mount point directory with proper permissions
   systemd.tmpfiles.rules = [
-      "m /var/www/home-landing 0755 root root - -"
-      "l /var/www/home-landing /home/toast/home-landing"
+    "d /var/www 0755 root root - -"
+    "d /var/www/home-landing 0755 root root - -"
+    "d /home/toast/home-landing 0755 toast users - -"
   ];
 
-  # Ensure the user has correct permissions
+  # Ensure the user has correct permissions and lighttpd can access files
   users.users.toast = {
-      isNormalUser = true;
-      home = "/home/toast";
-      extraGroups = [ "lighttpd" ];
+    isNormalUser = true;
+    home = "/home/toast";
+    homeMode = "755";  # Allow others to traverse home directory
+    extraGroups = [ "lighttpd" ];
+  };
+
+  users.users.lighttpd = {
+    extraGroups = [ "users" ];
   };
 
   systemd.services.user-led = {
