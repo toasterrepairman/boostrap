@@ -136,7 +136,7 @@
   users.users.toast = {
     isNormalUser = true;
     home = "/home/toast";
-    homeMode = "755";  # Allow others to traverse home directory
+    homeMode = "700";  # Allow others to traverse home directory
     extraGroups = [ "lighttpd" ];
   };
 
