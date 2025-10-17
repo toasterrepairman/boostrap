@@ -117,19 +117,18 @@
     dir-listing.activate = "enable"
 
     # Proxy /api requests to the Rust backend on port 9757
-    $HTTP["url"] =~ "^/api/" {
-        proxy.server = ( "" => (
+    proxy.server = (
+        "/api/" => (
         ( "host" => "127.0.0.1", "port" => 9757 )
-        ))
-    }
+        )
+    )
 
-    # Optional: Serve blog.html directly or proxy the entire /blog path
-    # If you want to serve blog.html from the Rust server:
-    $HTTP["url"] =~ "^/blog.html" {
-        proxy.server = ( "" => (
+    # Optional: Serve blog.html directly from the Rust server
+    proxy.server += (
+        "/blog.html" => (
         ( "host" => "127.0.0.1", "port" => 9757 )
-        ))
-    }
+        )
+    )
     '';
   };
 
