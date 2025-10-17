@@ -117,6 +117,9 @@
             # Additional media libraries with hardware acceleration
             libva # VAAPI support
             intel-media-driver # Intel GPU support (for hybrid systems)
+
+            # Missing linker dependency
+            gmp
           ];
 
           # Critical: Add CUDA libraries to rpath
