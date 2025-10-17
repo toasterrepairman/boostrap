@@ -17,6 +17,9 @@
           };
         };
 
+        # Use modern CUDA packages instead of deprecated cudatoolkit
+        cuda = pkgs.cudaPackages;
+
         alvr = pkgs.rustPlatform.buildRustPackage rec {
           pname = "alvr";
           version = "20.14.1";
@@ -26,11 +29,11 @@
             repo = "ALVR";
             tag = "v${version}";
             fetchSubmodules = true;
-            hash = "sha256-CB2FumYZ9v8fAXHEcCkzjjTqg+i3UnlW8QzEo0B9LMk=";
+            hash = "sha256-9fckUhUPAbcmbqOdUO8RlwuK8/nf1fc7XQBrAu5YaR4=";
           };
 
           useFetchCargoVendor = true;
-          cargoHash = "sha256-dmgnaq5x5gKltxAeI8CwgCAMEED1PoYl0Lklqc3vyWw=";
+          cargoHash = "sha256-OTCMWrlwnfpUhm6ssOE133e/3DaQFnOU+NunN2c1N+g=";
 
           patches = [
             (pkgs.replaceVars ./fix-finding-libs.patch {
@@ -48,8 +51,8 @@
               "-lssl"
             ];
             # CUDA environment variables
-            CUDA_PATH = "${pkgs.cudatoolkit}";
-            CUDA_ROOT = "${pkgs.cudatoolkit}";
+            CUDA_PATH = "${cuda.cudatoolkit}";
+            CUDA_ROOT = "${cuda.cudatoolkit}";
           };
 
           RUSTFLAGS = map (a: "-C link-arg=${a}") [
@@ -65,8 +68,9 @@
             pkg-config
             rustPlatform.bindgenHook
             autoAddDriverRunpath
+            makeWrapper  # For wrapping binaries with CUDA paths
             # CUDA build tools
-            cudatoolkit
+            cuda.cudatoolkit
           ];
 
           buildInputs = with pkgs; [
@@ -102,20 +106,48 @@
             # Enhanced ffmpeg with CUDA support
             ffmpeg-full
 
-            # Standard x264 (CUDA acceleration handled by ffmpeg)
+            # Standard x264
             x264
 
-            # CUDA libraries for runtime (not all needed at build time)
-            cudatoolkit
-
-            # Nvidia Video Codec SDK (if available)
-            # Note: This might not be available in nixpkgs, but NVENC/NVDEC
-            # support should be provided through the CUDA-enabled ffmpeg
+            # CUDA libraries for runtime
+            cuda.cudatoolkit
+            cuda.cuda_cudart
+            cuda.cuda_nvcc
 
             # Additional media libraries with hardware acceleration
             libva # VAAPI support
             intel-media-driver # Intel GPU support (for hybrid systems)
           ];
+
+          # Critical: Add CUDA libraries to rpath
+          postFixup = ''
+            for bin in $out/bin/* $out/libexec/*; do
+              if [ -f "$bin" ] && [ -x "$bin" ]; then
+                echo "Wrapping $bin with CUDA libraries"
+                wrapProgram "$bin" \
+                  --prefix LD_LIBRARY_PATH : "${pkgs.lib.makeLibraryPath [
+                    cuda.cudatoolkit
+                    cuda.cuda_cudart
+                    pkgs.libglvnd
+                    pkgs.vulkan-loader
+                    pkgs.libva
+                  ]}" \
+                  --set CUDA_PATH "${cuda.cudatoolkit}" \
+                  --prefix PATH : "${cuda.cudatoolkit}/bin"
+              fi
+            done
+
+            # Wrap shared libraries if needed
+            for lib in $out/lib/*.so $out/lib64/*.so; do
+              if [ -f "$lib" ]; then
+                patchelf --set-rpath "$(patchelf --print-rpath $lib):${pkgs.lib.makeLibraryPath [
+                  cuda.cudatoolkit
+                  cuda.cuda_cudart
+                  pkgs.libglvnd
+                ]}" "$lib" || true
+              fi
+            done
+          '';
 
           postBuild = ''
             # Build SteamVR driver ("streamer")
@@ -132,28 +164,6 @@
             cp -r ./build/alvr_streamer_linux/libexec/. $out/libexec
             cp -r ./build/alvr_streamer_linux/share/. $out/share
             ln -s $out/lib $out/lib64
-
-            # Create wrapper script to set up CUDA environment at runtime
-            mkdir -p $out/bin
-            cat > $out/bin/alvr_dashboard_wrapped << 'EOF'
-            #!/usr/bin/env bash
-            # Set up CUDA environment if available
-            if [ -d "${pkgs.cudatoolkit}" ]; then
-              export CUDA_PATH="${pkgs.cudatoolkit}"
-              export LD_LIBRARY_PATH="${pkgs.cudatoolkit}/lib:${pkgs.cudatoolkit}/lib64:$LD_LIBRARY_PATH"
-              export PATH="${pkgs.cudatoolkit}/bin:$PATH"
-            fi
-
-            # Also check for system CUDA installation
-            if [ -d "/usr/local/cuda" ]; then
-              export CUDA_PATH="/usr/local/cuda:$CUDA_PATH"
-              export LD_LIBRARY_PATH="/usr/local/cuda/lib64:/usr/local/cuda/lib:$LD_LIBRARY_PATH"
-              export PATH="/usr/local/cuda/bin:$PATH"
-            fi
-
-            exec $out/bin/alvr_dashboard "$@"
-            EOF
-            chmod +x $out/bin/alvr_dashboard_wrapped
           '';
 
           passthru.updateScript = pkgs.nix-update-script { };
@@ -169,7 +179,6 @@
               jopejoe1
             ];
             platforms = platforms.linux;
-            # Note about CUDA requirements
             longDescription = ''
               ALVR allows you to stream VR games from your PC to your headset via Wi-Fi.
               This build includes CUDA support for Nvidia hardware acceleration.
@@ -185,29 +194,28 @@
         # Development shell with CUDA tools
         devShells.default = pkgs.mkShell {
           buildInputs = with pkgs; [
-            cudatoolkit
-            nvidia-docker
+            cuda.cudatoolkit
             vulkan-tools
             mesa-demos
           ];
 
           shellHook = ''
             echo "ALVR development environment with CUDA support"
-            echo "CUDA Path: ${pkgs.cudatoolkit}"
-            export CUDA_PATH="${pkgs.cudatoolkit}"
-            export LD_LIBRARY_PATH="${pkgs.cudatoolkit}/lib:${pkgs.cudatoolkit}/lib64:$LD_LIBRARY_PATH"
+            echo "CUDA Path: ${cuda.cudatoolkit}"
+            export CUDA_PATH="${cuda.cudatoolkit}"
+            export LD_LIBRARY_PATH="${cuda.cudatoolkit}/lib:${pkgs.lib.makeLibraryPath [ cuda.cudatoolkit ]}:$LD_LIBRARY_PATH"
           '';
         };
 
         # Apps for easy running
         apps.default = flake-utils.lib.mkApp {
           drv = alvr;
-          name = "alvr_dashboard_wrapped";
+          name = "alvr_dashboard";
         };
 
         apps.alvr = flake-utils.lib.mkApp {
           drv = alvr;
-          name = "alvr_dashboard_wrapped";
+          name = "alvr_dashboard";
         };
       });
 }
