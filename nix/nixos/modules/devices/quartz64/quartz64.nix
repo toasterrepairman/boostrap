@@ -109,12 +109,27 @@
     port = 80;
     document-root = "/var/www/home-landing";
     extraConfig = ''
-      server.modules += ( "mod_access", "mod_accesslog", "mod_fastcgi", "mod_rewrite" )
-      server.indexfiles = ( "index.html" )
-      accesslog.filename = "/var/log/lighttpd/access.log"
+    server.modules += ( "mod_access", "mod_accesslog", "mod_proxy", "mod_rewrite" )
+    server.indexfiles = ( "index.html" )
+    accesslog.filename = "/var/log/lighttpd/access.log"
 
-      # Allow directory listings if no index.html
-      dir-listing.activate = "enable"
+    # Allow directory listings if no index.html
+    dir-listing.activate = "enable"
+
+    # Proxy /api requests to the Rust backend on port 9757
+    $HTTP["url"] =~ "^/api/" {
+        proxy.server = ( "" => (
+        ( "host" => "127.0.0.1", "port" => 9757 )
+        ))
+    }
+
+    # Optional: Serve blog.html directly or proxy the entire /blog path
+    # If you want to serve blog.html from the Rust server:
+    $HTTP["url"] =~ "^/blog.html" {
+        proxy.server = ( "" => (
+        ( "host" => "127.0.0.1", "port" => 9757 )
+        ))
+    }
     '';
   };
 
