@@ -1,0 +1,12 @@
+diff --git a/apps/desktop/src-tauri/tauri.conf.json b/apps/desktop/src-tauri/tauri.conf.json
+index 1234567..abcdefg 100644
+--- a/apps/desktop/src-tauri/tauri.conf.json
++++ b/apps/desktop/src-tauri/tauri.conf.json
+@@ -1,7 +1,6 @@
+ {
+   "bundle": {
+     "active": true,
+-    "updater": {},
+     "targets": "all"
+   },
+   "plugins": {
