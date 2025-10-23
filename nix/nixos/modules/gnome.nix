@@ -38,9 +38,9 @@
   programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.seahorse.out}/libexec/seahorse/ssh-askpass";
   services.gnome.gnome-keyring.enable = true;
 
-  services.xserver.desktopManager.gnome.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.displayManager.gdm.wayland = true;
+  services.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.displayManager.gdm.wayland = true;
   services.displayManager.defaultSession = "gnome";
 
   services.udev.packages = with pkgs; [
@@ -56,7 +56,7 @@
     enable = true;
   };
 
-  services.xserver.desktopManager.gnome = {
+  services.desktopManager.gnome = {
     extraGSettingsOverrides = ''
       # Change default background
       [org.gnome.mutter]

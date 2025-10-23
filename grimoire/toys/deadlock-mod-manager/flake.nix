@@ -23,11 +23,8 @@
               owner = "deadlock-mod-manager";
               repo = "deadlock-mod-manager";
               rev = "v${version}";
-              hash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="; # Update with actual hash
+              hash = "sha256-meCwpdnRYwNiOB8QzdhDC24CtRiMClimCDlv0EvHHgI=";
             };
-
-            # Patch to disable auto-updater in the artifacts
-            patches = [ ./no-updater-artifacts.patch ];
 
             sourceRoot = "${src.name}";
 
@@ -52,26 +49,28 @@
             pnpmDeps = pkgs.pnpm_10.fetchDeps {
               inherit pname version src;
               fetcherVersion = 2;
-              hash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="; # Update with actual hash
+              hash = "sha256-U02RKSWHqxVu4JoVkPUrQ5F3/Cz9BHP2s/fkbE9/880=";
             };
 
             cargoRoot = "apps/desktop";
 
-            cargoHash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="; # Update with actual hash
+            cargoHash = "sha256-cLdsR9ZCkUKZQDAxsvZpau7c9LxeLt4kUI21ObiY7dA=";
 
-            # Change to the desktop app directory before building
+            # Disable bundle signing - we don't have the signing keys
+            # Setting these to empty/null doesn't work, so we unset them
             preBuild = ''
               cd apps/desktop
+              unset TAURI_SIGNING_PRIVATE_KEY
+              unset TAURI_SIGNING_PUBLIC_KEY
+              unset TAURI_SIGNING_PRIVATE_KEY_PASSWORD
             '';
 
-            # Fix fontconfig issues
+            # Fix fontconfig issues on some systems
             preFixup = ''
               gappsWrapperArgs+=(
                 --set FONTCONFIG_FILE "${pkgs.fontconfig.out}/etc/fonts/fonts.conf"
               )
             '';
-
-            # Desktop file and icons are handled by cargo-tauri.hook
 
             meta = with pkgs.lib; {
               description = "A mod manager for the Valve game Deadlock";
