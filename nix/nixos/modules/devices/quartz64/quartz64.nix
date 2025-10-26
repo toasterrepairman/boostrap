@@ -86,7 +86,10 @@
 
   hardware.graphics = {
     enable = true;
-    enable32Bit = true;  # Optional, for 32-bit app support
+    extraPackages = with pkgs; [
+      mesa
+      mesa.drivers
+    ];
   };
 
   # Install Vulkan tools and libraries
