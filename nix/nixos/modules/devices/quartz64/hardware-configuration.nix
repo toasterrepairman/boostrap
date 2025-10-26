@@ -15,7 +15,14 @@
   boot.initrd.availableKernelModules = ["usbhid" "usb_storage"];
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["panfrost"];
+  boot.kernelParams = ["panfrost.unstable_ioctls=1"];
   boot.extraModulePackages = [];
+
+  # Set environment variable system-wide
+  environment.variables = {
+    # waga
+    PAN_I_WANT_A_BROKEN_VULKAN_DRIVER = "1";
+  };
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/44444444-4444-4444-8888-888888888888";
