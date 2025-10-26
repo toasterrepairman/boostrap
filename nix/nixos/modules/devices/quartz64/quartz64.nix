@@ -84,6 +84,18 @@
     };
   };
 
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;  # Optional, for 32-bit app support
+  };
+
+  # Install Vulkan tools and libraries
+  environment.systemPackages = with pkgs; [
+    vulkan-tools        # Includes vulkaninfo
+    vulkan-loader
+    vulkan-validation-layers
+  ];
+
   # enable cache for grafana
   services.influxdb2.enable = true;
   services.telegraf.enable = true;
