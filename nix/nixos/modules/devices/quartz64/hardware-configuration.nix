@@ -14,7 +14,7 @@
 
   boot.initrd.availableKernelModules = ["usbhid" "usb_storage"];
   boot.initrd.kernelModules = [];
-  boot.kernelModules = [];
+  boot.kernelModules = ["panfrost"];
   boot.extraModulePackages = [];
 
   fileSystems."/" = {
