@@ -94,9 +94,6 @@
 
   # Install Vulkan tools and libraries
   environment.systemPackages = with pkgs; [
-    (llama-cpp.override {
-      vulkanSupport = true;
-    })
     vulkan-tools        # Includes vulkaninfo
     vulkan-loader
     vulkan-validation-layers
