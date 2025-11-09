@@ -207,10 +207,12 @@
 
         # Create discord bot screen session
         ${pkgs.screen}/bin/screen -dmS discord -t "Discord Bot"
-        ${pkgs.screen}/bin/screen -S discord -X stuff $'cd ~/egghead && nix develop . && bash reboot.sh\n'
+        ${pkgs.screen}/bin/screen -S discord -X stuff $'cd ~/egghead\n'
+        ${pkgs.screen}/bin/screen -S discord -X stuff $'nix develop . -c bash reboot.sh\n'
 
         # Create llama-server screen session
         ${pkgs.screen}/bin/screen -dmS llama -t "LLaMA Server"
+        ${pkgs.screen}/bin/screen -S llama -X stuff $'cd ~/.ai\n'
         ${pkgs.screen}/bin/screen -S llama -X stuff $'llama-server --model SmolVLM-500M-Instruct.Q4_K_M.gguf --host 0.0.0.0 --port 11434 --n-predict 512 --mmproj mmproj-SmolVLM-500M-Instruct-Q8_0.gguf\n'
       ''}";
 
