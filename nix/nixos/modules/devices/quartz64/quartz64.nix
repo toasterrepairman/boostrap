@@ -87,7 +87,6 @@
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
-      mesa
       mesa.drivers
     ];
   };
@@ -98,6 +97,7 @@
     vulkan-loader
     vulkan-validation-layers
     screen              # Terminal multiplexer for AI server service
+    llama-cpp
   ];
 
   # enable cache for grafana
