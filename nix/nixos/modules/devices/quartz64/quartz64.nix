@@ -97,6 +97,7 @@
     vulkan-tools        # Includes vulkaninfo
     vulkan-loader
     vulkan-validation-layers
+    screen              # Terminal multiplexer for AI server service
   ];
 
   # enable cache for grafana
@@ -182,6 +183,45 @@
     };
     wantedBy = ["multi-user.target"];
     after = ["multi-user.target"];
+  };
+
+  # AI Server automation service
+  systemd.services.ai-server = {
+    enable = true;
+    description = "AI Server - Discord bot and LLaMA server";
+    wants = ["network-online.target"];
+    after = ["network-online.target" "multi-user.target"];
+    wantedBy = ["multi-user.target"];
+
+    serviceConfig = {
+      Type = "simple";
+      User = "toast";
+      Group = "users";
+      Restart = "always";
+      RestartSec = "10";
+
+      # Create screen sessions and run the services
+      ExecStart = ''${pkgs.bash}/bin/bash -c "
+        # Create or attach to discord bot screen session
+        ${pkgs.screen}/bin/screen -dmS discord -t "Discord Bot"
+        ${pkgs.screen}/bin/screen -S discord -X stuff $'cd ~/egghead && nix develop . && bash reboot.sh\n'
+
+        # Create or attach to llama-server screen session
+        ${pkgs.screen}/bin/screen -dmS llama -t "LLaMA Server"
+        ${pkgs.screen}/bin/screen -S llama -X stuff $'llama-server --model SmolVLM-500M-Instruct.Q4_K_M.gguf --host 0.0.0.0 --port 11434 --n-predict 512 --mmproj mmproj-SmolVLM-500M-Instruct-Q8_0.gguf\n'
+
+        # Keep the service running
+        while true; do
+          sleep 3600
+        done
+      "'';
+
+      # Ensure screen sessions are properly terminated on service stop
+      ExecStop = ''${pkgs.bash}/bin/bash -c "
+        ${pkgs.screen}/bin/screen -S discord -X quit 2>/dev/null || true
+        ${pkgs.screen}/bin/screen -S llama -X quit 2>/dev/null || true
+      "'';
+    };
   };
   zramSwap.enable = true;
 
