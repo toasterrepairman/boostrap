@@ -9,7 +9,6 @@
     flatpak
     discord
     gamescope
-    protonup
     moonlight-qt
     moonlight-embedded
     # prismlauncher
