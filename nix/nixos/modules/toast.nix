@@ -222,12 +222,12 @@ in {
     vlc
     amberol
     shortwave
-    gtkcord4
+    dissent
     # easyeffects
     # handbrake
     spot
     gnome-podcasts
-    vaapiVdpau
+    libva-vdpau-driver
     # Programming
     taxi
     # heaptrack
