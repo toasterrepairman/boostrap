@@ -22,6 +22,7 @@
     cavalier
     # apostrophe
     gnome-tweaks
+    gsettings-desktop-schemas
     ungoogled-chromium
     blanket
     bottles

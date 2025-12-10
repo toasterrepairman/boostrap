@@ -13,6 +13,10 @@
   hardware.steam-hardware.enable = true;
   hardware.nvidia-container-toolkit.enable = true;
 
+  # wivrn (testing)
+  services.wivrn.steam.importOXRRuntimes = true;
+  services.wivrn.enable = true;
+
   # evil (remove later)
   # boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
