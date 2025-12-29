@@ -125,7 +125,6 @@
     sunshine
     cudaPackages.cudatoolkit
     cudaPackages.cuda_cudart
-    gwe
     lutris
     nv-codec-headers-12
     # linuxKernel.packages.linux_6_6.nvidia_x11_production
