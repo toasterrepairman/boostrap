@@ -1,0 +1,207 @@
+/* Waybar Modern Nord Theme */
+
+/* Nord Color Palette */
+@define-color nord0 #2e3440;
+@define-color nord1 #3b4252;
+@define-color nord2 #434c5e;
+@define-color nord3 #4c566a;
+@define-color nord4 #d8dee9;
+@define-color nord5 #e5e9f0;
+@define-color nord6 #eceff4;
+@define-color nord7 #8fbcbb;
+@define-color nord8 #88c0d0;
+@define-color nord9 #81a1c1;
+@define-color nord10 #5e81ac;
+@define-color nord11 #bf616a;
+@define-color nord12 #d08770;
+@define-color nord13 #ebcb8b;
+@define-color nord14 #a3be8c;
+@define-color nord15 #b48ead;
+
+* {
+    border: none;
+    border-radius: 8px;
+    font-family: "Inter", "Font Awesome 6 Free", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+window#waybar {
+    /* Set a background color so the corners are visible */
+    background: alpha(@nord0, 0.05);
+    color: @nord4;
+
+    /* Define the rounded corners here */
+    border-radius: 8px;
+
+    /* Remove CSS margin here since we handle it in JSON */
+    margin: 0px;
+
+    /* Optional: Add a subtle border for better definition */
+    border: 1px solid @nord2;
+    box-shadow: none;
+}
+
+/* Module groups */
+.modules-left,
+.modules-center,
+.modules-right {
+    margin: 0 8px;
+}
+
+/* Individual module styling */
+tooltip {
+    background: alpha(@nord0, 0.95);
+    border: 1px solid @nord2;
+    border-radius: 8px;
+    box-shadow: transparent;
+}
+
+tooltip label {
+    color: @nord4;
+    padding: 4px;
+}
+
+/* Workspaces */
+#workspaces {
+    margin: 0;
+    padding: 0;
+}
+
+#workspaces button {
+    padding: 6px 12px;
+    background: transparent;
+    color: @nord4;
+    border-radius: 8px;
+    margin: 2px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#workspaces button:hover {
+    background: alpha(@nord3, 0.5);
+    color: @nord6;
+}
+
+#workspaces button.active {
+    background: @nord8;
+    color: @nord0;
+}
+
+#workspaces button.urgent {
+    background: @nord11;
+    color: @nord6;
+}
+
+/* Window title */
+#window {
+    color: @nord4;
+    padding: 0 12px;
+    font-weight: 400;
+}
+
+/* Clock */
+#clock {
+    color: @nord6;
+    font-weight: 600;
+    padding: 0 12px;
+}
+
+/* Right side modules */
+#battery,
+#network,
+#pulseaudio,
+#bluetooth,
+#tray {
+    color: @nord4;
+    padding: 0 10px;
+    margin: 0 2px;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+}
+
+#battery:hover,
+#network:hover,
+#pulseaudio:hover,
+#bluetooth:hover {
+    background: alpha(@nord3, 0.3);
+}
+
+/* Battery states */
+#battery.charging {
+    color: @nord14;
+}
+
+#battery.warning:not(.charging) {
+    color: @nord13;
+}
+
+#battery.critical:not(.charging) {
+    color: @nord11;
+    animation: blink 0.6s ease-in-out infinite alternate;
+}
+
+@keyframes blink {
+    to {
+        color: @nord6;
+        text-shadow: 0 0 8px @nord11;
+    }
+}
+
+/* Network states */
+#network.disconnected {
+    color: @nord11;
+}
+
+#network.wifi {
+    color: @nord8;
+}
+
+#network.ethernet {
+    color: @nord14;
+}
+
+/* Bluetooth */
+#bluetooth.on {
+    color: @nord9;
+}
+
+#bluetooth.connected {
+    color: @nord8;
+}
+
+#bluetooth.off {
+    color: @nord3;
+}
+
+#bluetooth.disabled {
+    color: @nord3;
+}
+
+/* Audio */
+#pulseaudio {
+    color: @nord9;
+}
+
+#pulseaudio.muted {
+    color: @nord3;
+}
+
+/* System tray */
+#tray {
+    padding: 0 8px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+#tray > * {
+    margin: 0 4px;
+}
