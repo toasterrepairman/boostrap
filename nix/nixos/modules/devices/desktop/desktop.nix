@@ -7,6 +7,15 @@
   # Set your time zone.
   time.timeZone = "America/Detroit";
 
+  nix.settings = {
+    substituters = [
+      "https://cache.nixos-cuda.org"
+    ];
+    trusted-public-keys = [
+      "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="
+    ];
+  };
+
   # Appease the Nvidia Gods
   hardware.graphics.extraPackages32 = with pkgs.pkgsi686Linux; [libva];
   services.pulseaudio.support32Bit = true;
