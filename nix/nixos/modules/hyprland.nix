@@ -12,6 +12,8 @@
     xcursor-pro
     rofi
     cliphist
+    wl-clipboard
+    gnome-photos
     dunst
     grim
     slurp

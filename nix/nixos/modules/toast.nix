@@ -182,6 +182,7 @@ in {
     home-manager
     adw-gtk3
     nordic
+    inter
     xdg-desktop-portal-gtk
     quintom-cursor-theme
     ibm-plex
