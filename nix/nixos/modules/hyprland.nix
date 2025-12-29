@@ -16,7 +16,11 @@
     grim
     slurp
     nautilus
-
+    swww
+    fuzzel
+    blueman
+    gnome-keyring
+    seahorse  # GUI for managing keys (optional)
     xwayland
     tuba
     cartridges
@@ -36,6 +40,9 @@
     withUWSM = true;
     xwayland.enable = true;
   };
+
+  # Enable the GNOME Keyring daemon service
+  services.gnome.gnome-keyring.enable = true;
 
   services.greetd = {
     enable = true;
@@ -58,6 +65,12 @@
   # important
   xdg.portal.enable = true;
   networking.networkmanager.enable = true;
+
+  # Enable services for auto-mounting and storage devices
+  services.udisks2.enable = true;
+  services.gvfs.enable = true;
+  services.devmon.enable = true;
+  services.upower.enable = true;
 
   networking.firewall.allowedTCPPortRanges = [
     # KDE Connect

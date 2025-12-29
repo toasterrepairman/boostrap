@@ -25,6 +25,7 @@
   fileSystems."/mnt/FastLane" = {
     device = "/dev/disk/by-label/Fast\x20Lane";
     fsType = "btrfs";
+    options = [ "users" "nofail" "auto" "exec" ];
   };
 
   boot.initrd.luks.devices."luks-6ce9fb31-a07d-4f83-8606-ef70f7fa0b7a".device = "/dev/disk/by-uuid/6ce9fb31-a07d-4f83-8606-ef70f7fa0b7a";
