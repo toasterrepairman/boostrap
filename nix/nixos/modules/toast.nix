@@ -183,6 +183,7 @@ in {
     adw-gtk3
     nordic
     inter
+    apple-cursor
     xdg-desktop-portal-gtk
     quintom-cursor-theme
     ibm-plex
