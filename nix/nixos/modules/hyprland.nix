@@ -21,6 +21,9 @@
     blueman
     gnome-keyring
     seahorse  # GUI for managing keys (optional)
+    polkit_gnome  # Polkit authentication agent
+    xdg-desktop-portal-hyprland
+    hyprpolkitagent
     xwayland
     tuba
     cartridges
