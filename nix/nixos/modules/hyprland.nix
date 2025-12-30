@@ -9,11 +9,17 @@
     waybar
     nwg-look
     xorg.xcursorthemes
+    libnotify
     xcursor-pro
     rofi
+    neowall
+    xrandr
+    waybar-mpris
+    waybar-lyric
+    jetbrains-mono
     cliphist
     wl-clipboard
-    gnome-photos
+    loupe
     dunst
     grim
     slurp
