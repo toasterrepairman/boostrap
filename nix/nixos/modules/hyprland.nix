@@ -12,6 +12,7 @@
     libnotify
     xcursor-pro
     rofi
+    wbg
     neowall
     xrandr
     waybar-mpris
