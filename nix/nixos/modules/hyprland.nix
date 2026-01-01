@@ -13,6 +13,7 @@
     xcursor-pro
     rofi
     wbg
+    kdePackages.kdeconnect-kde
     neowall
     xrandr
     waybar-mpris
