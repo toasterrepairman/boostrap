@@ -21,7 +21,7 @@
 * {
     border: none;
     border-radius: 8px;
-    font-family: "Inter", "Font Awesome 6 Free", sans-serif;
+    font-family: "IBM Plex Sans", "Font Awesome 6 Free", sans-serif;
     font-size: 13px;
     font-weight: 500;
     min-height: 0;
@@ -31,7 +31,7 @@
 
 window#waybar {
     /* Set a background color so the corners are visible */
-    background: alpha(@nord0, 0.05);
+    background: alpha(@nord0, 0.15);
     color: @nord4;
 
     /* Define the rounded corners here */

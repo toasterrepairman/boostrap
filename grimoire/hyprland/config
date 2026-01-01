@@ -6,10 +6,10 @@
     "margin-top": 10,
     "margin-left": 10,
     "margin-right": 10,
-    
+
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "bluetooth", "network", "battery", "tray"],
+    "modules-right": ["custom/lyrics", "pulseaudio", "bluetooth", "network", "battery", "tray"],
 
     "hyprland/workspaces": {
         "disable-scroll": true,
@@ -17,7 +17,7 @@
         "format": "{icon}",
         "format-icons": {
             "1": "1",
-            "2": "2", 
+            "2": "2",
             "3": "3",
             "4": "4",
             "5": "5",
@@ -64,6 +64,23 @@
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+
+    "custom/lyrics": {
+      "return-type": "json",
+      "format": "{icon} {0}",
+      "hide-empty-text": true,
+      "format-icons": {
+        "playing": "▶",
+        "paused": "⏸",
+        "lyric": "♪",
+        "music": "♫",
+        "no_lyric": "∅",
+        "getting": "...",
+    },
+      "exec-if": "which waybar-lyric",
+      "exec": "waybar-lyric --quiet",
+      "on-click": "waybar-lyric play-pause",
     },
 
     "bluetooth": {
