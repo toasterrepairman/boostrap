@@ -109,5 +109,6 @@
     unrar
     cryptsetup
     fzf
+    socat
   ];
 }
