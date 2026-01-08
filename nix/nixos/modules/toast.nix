@@ -163,11 +163,11 @@ in {
   # delete this when your system breaks
   # boot.kernelPackages = pkgs.linuxPackages;
 
-  programs.adb.enable = true;
   users.users.toast.extraGroups = ["adbusers"];
 
   environment.systemPackages = with pkgs; [
     # OS tools
+    pkgs.android-tools
     system76-scheduler
     ungoogled-chromium
     quota
