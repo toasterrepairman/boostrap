@@ -184,7 +184,7 @@ in {
     nordic
     inter
     apple-cursor
-    xdg-desktop-portal-kde
+    kdePackages.xdg-desktop-portal-kde
     quintom-cursor-theme
     ibm-plex
     zafiro-icons
