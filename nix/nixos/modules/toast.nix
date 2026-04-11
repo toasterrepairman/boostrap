@@ -21,6 +21,8 @@ in {
     freeMemThreshold = 5;
   };
 
+  documentation.nixos.enable = false;
+
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
@@ -106,9 +108,8 @@ in {
   ];
 
   nix.extraOptions = ''
-    binary-caches-parallel-connections = 1
-    connect-timeout = 3
-    cores = 8
+    binary-caches-parallel-connections = 3
+    connect-timeout = 10
   '';
 
   # prevent EFI overload
@@ -272,8 +273,8 @@ in {
     wrapGAppsHook4
     vscode-extensions.llvm-org.lldb-vscode
     # python
-    python311
-    python311Packages.websockets
-    python311Packages.pip
+    python3
+    python3Packages.websockets
+    python3Packages.pip
   ];
 }

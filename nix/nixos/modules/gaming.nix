@@ -20,7 +20,7 @@
     protonup-ng
     # xonotic
     protontricks
-    wineWowPackages.staging
+    wineWow64Packages.staging
     winetricks
   ];
 

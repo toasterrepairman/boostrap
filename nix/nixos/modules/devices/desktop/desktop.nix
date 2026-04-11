@@ -121,7 +121,7 @@
 
   environment.systemPackages = with pkgs; [
     # davinci-resolve
-    xorg.libxcb
+    libxcb
     sunshine
     cudaPackages.cudatoolkit
     cudaPackages.cuda_cudart
