@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }: {
   # Gaming stuff
@@ -22,6 +23,20 @@
     protontricks
     wineWow64Packages.staging
     winetricks
+  ];
+
+  # temp fix for lutris package + NVIDIA Vulkan ICD in FHS sandbox
+  nixpkgs.overlays = [
+    (_: prev: {
+      openldap = prev.openldap.overrideAttrs {
+        doCheck = !prev.stdenv.hostPlatform.isi686;
+      };
+      lutris = prev.lutris.override {
+        extraLibraries = p: [
+          config.hardware.nvidia.package
+        ];
+      };
+    })
   ];
 
   # Remote gaming stack
