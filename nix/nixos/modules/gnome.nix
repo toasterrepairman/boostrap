@@ -23,7 +23,7 @@
     # apostrophe
     gnome-tweaks
     gsettings-desktop-schemas
-    ungoogled-chromium
+    # ungoogled-chromium
     blanket
     bottles
     celluloid

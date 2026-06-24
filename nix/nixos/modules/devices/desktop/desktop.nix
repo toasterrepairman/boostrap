@@ -104,7 +104,8 @@
 
   # Use the systemd boot
   boot.loader.systemd-boot.enable = true;
-  zramSwap.enable = true;
+  # disable swap on desktop (big memory)
+  zramSwap.enable = false;
 
   networking.hostName = "toaster"; # Define your hostname.
   services.lact.enable = true;

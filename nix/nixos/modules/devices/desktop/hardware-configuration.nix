@@ -35,7 +35,8 @@
     fsType = "vfat";
   };
 
-  swapDevices = [];
+  # Erase mention of swap until further notice
+  # swapDevices = [];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
