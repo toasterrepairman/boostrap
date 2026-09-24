@@ -18,6 +18,7 @@
     # Tools
     # gamemode
     mangohud
+    bitwig-studio4
     protonup-ng
     # xonotic
     protontricks

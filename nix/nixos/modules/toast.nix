@@ -223,7 +223,6 @@ in {
     video-trimmer
     arduino
     vulkan-headers
-    bitwig-studio4
     vlc
     amberol
     shortwave
