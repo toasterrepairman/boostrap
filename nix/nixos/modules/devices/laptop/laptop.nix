@@ -43,4 +43,37 @@
 
   # Enable Bluetooth on a hardware level
   hardware.bluetooth.enable = true;
+
+  boot.kernelParams = ["mem_sleep_default=deep"];
+  boot.kernelPackages = pkgs.linuxPackages_6_12;
+
+  services.logind.lidSwitch = "suspend";
+
+  programs.dconf.enable = true;
+  programs.dconf.profiles.user.databases = [
+    {
+      settings."org/gnome/settings-daemon/plugins/power" = {
+        sleep-inactive-battery-type = "suspend";
+      };
+    }
+  ];
+
+  services.tlp.enable = true;
+  services.tlp.pd.enable = true;
+  services.power-profiles-daemon.enable = false;
+
+  services.thermald.enable = true;
+
+  services.tlp.settings = {
+    CPU_ENERGY_PERF_POLICY_ON_AC = "balance_performance";
+    CPU_ENERGY_PERF_POLICY_ON_BAT = "balance_power";
+    PCIE_ASPM_ON_BAT = "powersupersave";
+    USB_AUTOSUSPEND = 0;
+  };
+
+  boot.kernel.sysctl = {
+    "vm.laptop_mode" = 5;
+    "vm.dirty_writeback_centisecs" = 1500;
+    "kernel.nmi_watchdog" = 0;
+  };
 }
