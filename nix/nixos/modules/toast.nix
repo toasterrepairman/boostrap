@@ -23,6 +23,12 @@ in {
 
   documentation.nixos.enable = false;
 
+  # ableton push
+  services.udev.extraRules = ''
+    SUBSYSTEM=="sound", ATTRS{idVendor}=="09e8", ATTRS{idProduct}=="0015", \
+      RUN+="${pkgs.acl}/bin/setfacl -m u:youruser:rw $devnode"
+  '';
+
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
