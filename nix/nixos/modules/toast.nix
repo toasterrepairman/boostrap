@@ -160,7 +160,7 @@ in {
   # delete this when your system breaks
   # boot.kernelPackages = pkgs.linuxPackages;
 
-  users.users.toast.extraGroups = ["adbusers", "audio"];
+  users.users.toast.extraGroups = ["adbusers" "audio"];
 
   environment.systemPackages = with pkgs; [
     # OS tools
