@@ -44,16 +44,29 @@
   # Enable Bluetooth on a hardware level
   hardware.bluetooth.enable = true;
 
-  boot.kernelParams = ["mem_sleep_default=deep"];
+  boot.kernelParams = [
+    "mem_sleep_default=s2idle"
+    "pcie_port_pm=off"
+    "nvme_core.default_ps_max_latency_us=0"
+  ];
   boot.kernelPackages = pkgs.linuxPackages_6_12;
 
-  services.logind.lidSwitch = "suspend";
+  services.logind.lidSwitch = "ignore";
+  services.logind.lidSwitchExternalPower = "ignore";
+  services.logind.lidSwitchDocked = "ignore";
+  systemd.sleep.settings.Sleep = {
+    AllowSuspend = false;
+    AllowHibernation = false;
+    AllowHybridSleep = false;
+    AllowSuspendThenHibernate = false;
+  };
 
   programs.dconf.enable = true;
   programs.dconf.profiles.user.databases = [
     {
       settings."org/gnome/settings-daemon/plugins/power" = {
-        sleep-inactive-battery-type = "suspend";
+        sleep-inactive-battery-type = "nothing";
+        sleep-inactive-ac-type = "nothing";
       };
     }
   ];
