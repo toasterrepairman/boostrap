@@ -60,7 +60,7 @@
 
   programs.fish = {
     enable = true;
-    interactiveShellInit = "date";
+    interactiveShellInit = "";
     shellAliases = {
       cocosay = "ponysay -f 'Coco Pommel'";
       gitlog = "git log --graph --oneline";
