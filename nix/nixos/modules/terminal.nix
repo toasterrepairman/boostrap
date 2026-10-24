@@ -6,13 +6,16 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.toast = {
     isNormalUser = true;
-    extraGroups = ["wheel" "networkmanager" "docker" "user-with-access-to-virtualbox" "video"];
+    extraGroups = ["wheel" "networkmanager" "podman" "user-with-access-to-virtualbox" "video"];
   };
 
   users.defaultUserShell = pkgs.fish;
 
-  # Docker time!
-  virtualisation.docker.enable = true;
+  # Podman time!
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+  };
   # virtualisation.virtualbox.host.enable = true;
   # virtualisation.virtualbox.host.enableExtensionPack = true;
   # users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
